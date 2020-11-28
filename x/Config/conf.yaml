@@ -1,0 +1,6 @@
+Mysql:
+  type: mysql
+  user: root
+  password: root
+  host: localhost:3306
+  name: ian-test
