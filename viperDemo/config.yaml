@@ -1,0 +1,8 @@
+backend:
+  mysql:
+    address: "localhost"
+    port: "3306"
+  redis:
+    address: "localhost"
+    port: "2345"
+debug: false

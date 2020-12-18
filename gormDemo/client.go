@@ -1,7 +1,7 @@
 package gormDemo
 
 import (
-	//_ "goLibrary/x/vendor/github.com/go-sql-driver/mysql"
+	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
 )
 

@@ -1,0 +1,5 @@
+package logrusDemo
+
+func LoggerToFile()  {
+	
+}
