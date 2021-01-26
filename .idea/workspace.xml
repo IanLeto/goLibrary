@@ -20,65 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9938a792-5a54-4c17-8cdc-187ff3b312f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/syntaxDemo/errorGroup.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/syntaxDemo/errorGroup_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DesignPatterns/singletonPattern/singletonPattern.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DesignPatterns/singletonPattern/singletonPattern_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/syntaxDemo/singletonPatter.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/sirupsen/logrus/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/sirupsen/logrus/.golangci.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/sirupsen/logrus/.travis.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/sirupsen/logrus/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/sirupsen/logrus/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/sirupsen/logrus/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/sirupsen/logrus/alt_exit.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/sirupsen/logrus/appveyor.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/sirupsen/logrus/buffer_pool.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/sirupsen/logrus/doc.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/sirupsen/logrus/entry.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/sirupsen/logrus/exported.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/sirupsen/logrus/formatter.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/sirupsen/logrus/go.mod" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/sirupsen/logrus/go.sum" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/sirupsen/logrus/hooks.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/sirupsen/logrus/json_formatter.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/sirupsen/logrus/logger.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/sirupsen/logrus/logrus.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/sirupsen/logrus/terminal_check_appengine.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/sirupsen/logrus/terminal_check_bsd.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/sirupsen/logrus/terminal_check_js.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/sirupsen/logrus/terminal_check_no_terminal.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/sirupsen/logrus/terminal_check_notappengine.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/sirupsen/logrus/terminal_check_solaris.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/sirupsen/logrus/terminal_check_unix.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/sirupsen/logrus/terminal_check_windows.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/sirupsen/logrus/text_formatter.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/sirupsen/logrus/writer.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/windows/aliases.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/windows/dll_windows.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/windows/empty.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/windows/env_windows.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/windows/eventlog.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/windows/exec_windows.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/windows/memory_windows.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/windows/mkerrors.bash" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/windows/mkknownfolderids.bash" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/windows/mksyscall.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/windows/race.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/windows/race0.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/windows/security_windows.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/windows/service.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/windows/str.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/windows/syscall.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/windows/syscall_windows.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/windows/types_windows.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/windows/types_windows_386.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/windows/types_windows_amd64.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/windows/types_windows_arm.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/windows/zerrors_windows.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/windows/zknownfolderids_windows.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/windows/zsyscall_windows.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/modules.txt" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/modules.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,15 +63,15 @@
     <property name="settings.editor.selected.configurable" value="go.vgo" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/viperDemo" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/syntaxDemo" />
       <recent name="$PROJECT_DIR$/gormDemo" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/viperDemo" />
-    </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestSimpleTest in goLibrary/syntaxDemo">
+  <component name="RunManager" selected="Go Test.singletonPattern_test.go">
     <configuration name="TestSimpleTest in goLibrary/syntaxDemo" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="goLibrary" />
       <working_directory value="$PROJECT_DIR$/syntaxDemo" />
@@ -136,6 +81,16 @@
       <package value="goLibrary/syntaxDemo" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="singletonPattern_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="goLibrary" />
+      <working_directory value="$PROJECT_DIR$/DesignPatterns/singletonPattern" />
+      <framework value="gotest" />
+      <kind value="FILE" />
+      <package value="goLibrary" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/DesignPatterns/singletonPattern/singletonPattern_test.go" />
       <method v="2" />
     </configuration>
     <configuration name="viper_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -150,6 +105,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.singletonPattern_test.go" />
         <item itemvalue="Go Test.TestSimpleTest in goLibrary/syntaxDemo" />
         <item itemvalue="Go Test.viper_test.go" />
       </list>
@@ -175,30 +131,30 @@
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
-    <state width="792" height="295" key="GridCell.Tab.0.bottom" timestamp="1609310431963">
+    <state width="796" height="295" key="GridCell.Tab.0.bottom" timestamp="1611648059804">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="792" height="295" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1609310431963" />
-    <state width="792" height="295" key="GridCell.Tab.0.center" timestamp="1609310431961">
+    <state width="796" height="295" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1611648059804" />
+    <state width="796" height="295" key="GridCell.Tab.0.center" timestamp="1611648059803">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="792" height="295" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1609310431961" />
-    <state width="792" height="295" key="GridCell.Tab.0.left" timestamp="1609310431961">
+    <state width="796" height="295" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1611648059803" />
+    <state width="796" height="295" key="GridCell.Tab.0.left" timestamp="1611648059802">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="792" height="295" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1609310431961" />
-    <state width="792" height="295" key="GridCell.Tab.0.right" timestamp="1609310431962">
+    <state width="796" height="295" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1611648059802" />
+    <state width="796" height="295" key="GridCell.Tab.0.right" timestamp="1611648059803">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="792" height="295" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1609310431962" />
+    <state width="796" height="295" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1611648059803" />
     <state x="349" y="164" key="SettingsEditor" timestamp="1606999069774">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="349" y="164" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1606999069774" />
-    <state x="541" y="280" width="598" height="490" key="find.popup" timestamp="1606999596646">
+    <state x="541" y="280" width="598" height="490" key="find.popup" timestamp="1611646037250">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="541" y="280" width="598" height="490" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1606999596646" />
+    <state x="541" y="280" width="598" height="490" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1611646037250" />
     <state x="570" y="444" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1606999480798">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
