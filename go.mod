@@ -3,6 +3,8 @@ module goLibrary
 go 1.14
 
 require (
+	github.com/cheekybits/genny v1.0.0
+	github.com/cstockton/go-conv v0.0.0-20170524002450-66a2b2ba36e1
 	github.com/go-sql-driver/mysql v1.5.0
 	github.com/jinzhu/gorm v1.9.16
 	github.com/spf13/viper v1.7.1
