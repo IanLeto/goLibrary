@@ -1,9 +1,9 @@
+# github.com/asaskevich/EventBus v0.0.0-20200907212545-49d423059eef
+## explicit
+github.com/asaskevich/EventBus
 # github.com/cheekybits/genny v1.0.0
 ## explicit
-github.com/cheekybits/genny
 github.com/cheekybits/genny/generic
-github.com/cheekybits/genny/out
-github.com/cheekybits/genny/parse
 # github.com/cstockton/go-conv v0.0.0-20170524002450-66a2b2ba36e1
 ## explicit
 github.com/cstockton/go-conv
@@ -67,19 +67,6 @@ golang.org/x/sys/unix
 # golang.org/x/text v0.3.2
 golang.org/x/text/transform
 golang.org/x/text/unicode/norm
-# golang.org/x/tools v0.0.0-20191112195655-aa38f8e97acc
-golang.org/x/tools/go/ast/astutil
-golang.org/x/tools/go/gcexportdata
-golang.org/x/tools/go/internal/gcimporter
-golang.org/x/tools/go/internal/packagesdriver
-golang.org/x/tools/go/packages
-golang.org/x/tools/imports
-golang.org/x/tools/internal/fastwalk
-golang.org/x/tools/internal/gopathwalk
-golang.org/x/tools/internal/imports
-golang.org/x/tools/internal/module
-golang.org/x/tools/internal/semver
-golang.org/x/tools/internal/span
 # gopkg.in/ini.v1 v1.51.0
 gopkg.in/ini.v1
 # gopkg.in/yaml.v2 v2.2.4
