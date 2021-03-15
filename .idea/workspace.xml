@@ -20,7 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9938a792-5a54-4c17-8cdc-187ff3b312f7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/DockerFile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/docker/simpleHttpserver/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logrusDemo/logging.go" beforeDir="false" afterPath="$PROJECT_DIR$/logrusDemo/logging.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logrusDemo/logging_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/logrusDemo/logging_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/modules.txt" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/modules.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,11 +65,13 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/viperDemo" />
+    <property name="go.vendoring.notification.had.been.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/tools/docker/simpleHttpserver" />
     <property name="settings.editor.selected.configurable" value="go.vgo" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tools/docker/simpleHttpserver" />
       <recent name="$PROJECT_DIR$/viperDemo" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -68,7 +79,29 @@
       <recent name="$PROJECT_DIR$/gormDemo" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.singletonPattern_test.go">
+  <component name="RunManager" selected="Go Test.TestHook in goLibrary/logrusDemo">
+    <configuration name="TestConf in goLibrary/logrusDemo" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="goLibrary" />
+      <working_directory value="$PROJECT_DIR$/logrusDemo" />
+      <parameters value=" -testify.m ^TestConf$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="goLibrary/logrusDemo" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestHook in goLibrary/logrusDemo" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="goLibrary" />
+      <working_directory value="$PROJECT_DIR$/logrusDemo" />
+      <parameters value=" -testify.m ^TestHook$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="goLibrary/logrusDemo" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
     <configuration name="TestSimpleTest in goLibrary/syntaxDemo" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="goLibrary" />
       <working_directory value="$PROJECT_DIR$/syntaxDemo" />
@@ -78,6 +111,17 @@
       <package value="goLibrary/syntaxDemo" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestSuite in goLibrary/logrusDemo" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="goLibrary" />
+      <working_directory value="$PROJECT_DIR$/logrusDemo" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="goLibrary/logrusDemo" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestSuite\E$" />
       <method v="2" />
     </configuration>
     <configuration name="singletonPattern_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -90,21 +134,13 @@
       <filePath value="$PROJECT_DIR$/DesignPatterns/singletonPattern/singletonPattern_test.go" />
       <method v="2" />
     </configuration>
-    <configuration name="viper_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="goLibrary" />
-      <working_directory value="$PROJECT_DIR$/viperDemo" />
-      <framework value="gotest" />
-      <kind value="FILE" />
-      <package value="goLibrary" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/viperDemo/viper_test.go" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestHook in goLibrary/logrusDemo" />
+        <item itemvalue="Go Test.TestConf in goLibrary/logrusDemo" />
+        <item itemvalue="Go Test.TestSuite in goLibrary/logrusDemo" />
         <item itemvalue="Go Test.singletonPattern_test.go" />
         <item itemvalue="Go Test.TestSimpleTest in goLibrary/syntaxDemo" />
-        <item itemvalue="Go Test.viper_test.go" />
       </list>
     </recent_temporary>
   </component>
@@ -128,30 +164,34 @@
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1638" height="295" key="GridCell.Tab.0.bottom" timestamp="1611650292314">
+    <state x="565" y="334" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1614335478546">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="295" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1611650292314" />
-    <state width="1638" height="295" key="GridCell.Tab.0.center" timestamp="1611650292313">
+    <state x="565" y="334" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1614335478546" />
+    <state width="1638" height="295" key="GridCell.Tab.0.bottom" timestamp="1615270136460">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="295" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1611650292313" />
-    <state width="1638" height="295" key="GridCell.Tab.0.left" timestamp="1611650292313">
+    <state width="1638" height="295" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1615270136460" />
+    <state width="1638" height="295" key="GridCell.Tab.0.center" timestamp="1615270136459">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="295" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1611650292313" />
-    <state width="1638" height="295" key="GridCell.Tab.0.right" timestamp="1611650292314">
+    <state width="1638" height="295" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1615270136459" />
+    <state width="1638" height="295" key="GridCell.Tab.0.left" timestamp="1615270136459">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="295" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1611650292314" />
+    <state width="1638" height="295" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1615270136459" />
+    <state width="1638" height="295" key="GridCell.Tab.0.right" timestamp="1615270136459">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="295" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1615270136459" />
     <state x="349" y="164" key="SettingsEditor" timestamp="1606999069774">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="349" y="164" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1606999069774" />
-    <state x="541" y="280" width="598" height="490" key="find.popup" timestamp="1611646037250">
+    <state x="541" y="280" width="598" height="490" key="find.popup" timestamp="1615189705286">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="541" y="280" width="598" height="490" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1611646037250" />
+    <state x="541" y="280" width="598" height="490" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1615189705286" />
     <state x="570" y="444" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1606999480798">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>

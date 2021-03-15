@@ -2,6 +2,7 @@ package logrusDemo_test
 
 import (
 	"github.com/stretchr/testify/suite"
+	"goLibrary/logrusDemo"
 	"testing"
 )
 
@@ -13,7 +14,15 @@ func (s *TestLogSuit) SetupTest() {
 
 }
 
-func (s *TestLogSuit) SimpleTest() {
+func (s *TestLogSuit) TestConf() {
+	//logrusDemo.NormalLog()
+	//logrusDemo.SetLogFormatter()
+
+}
+
+func (s *TestLogSuit) TestHook() {
+	//logrusDemo.UseHook()
+	logrusDemo.UseDivLogFile()
 }
 
 func TestSuite(t *testing.T) {

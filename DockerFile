@@ -1,0 +1,12 @@
+# 如何部署二进制文件服务
+# 先要搞个基础镜像
+FROM aipine
+# 指定维护者
+LABEL maintainer="ianleto"
+# 将宿主机文件内容 copy 到容器目录
+# 把当前目录的goLibrary copy 到容器中的/app
+COPY goLibrary /app
+# 执行命令，切换到容器的中app 这个目录
+WORKDIR /app
+# 执行命令
+ENTRYPOINT ["./goLibrary"]
