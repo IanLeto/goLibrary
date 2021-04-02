@@ -5,3 +5,9 @@ func CheckPanicError(err error) {
 		panic(err)
 	}
 }
+
+func NoErr(err error)  {
+	if err != nil {
+		panic(err)
+	}
+}

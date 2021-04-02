@@ -15,8 +15,6 @@ func (s *TestLogSuit) SetupTest() {
 }
 
 func (s *TestLogSuit) TestConf() {
-	//logrusDemo.NormalLog()
-	//logrusDemo.SetLogFormatter()
 
 }
 

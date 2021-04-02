@@ -1,0 +1,19 @@
+run_mode: debug
+address: localhost
+port: 8088
+name: test
+version: v1
+MySql:
+  address: localhost:3306
+  port: 3306
+  user: root
+  password: root
+redis:
+  address: localhost
+  port: 6379
+  isSentinal: false
+  masterName: master
+etcd:
+  address: localhost
+  port: 2379
+
