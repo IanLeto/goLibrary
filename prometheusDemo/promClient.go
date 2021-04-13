@@ -30,12 +30,16 @@ func HelloWorld() {
 			fmt.Println(i2.Timestamp.String())
 			fmt.Println(i2.Value.String())
 		}
-
 	}
 
 	if err != nil {
 		fmt.Printf("Error querying Prometheus: %v\n", err)
 		os.Exit(1)
 	}
+
+}
+
+// 处理返回值
+func FormatModelValue(value model.Value) {
 
 }
