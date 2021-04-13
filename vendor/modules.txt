@@ -54,6 +54,12 @@ github.com/pelletier/go-toml
 github.com/pkg/errors
 # github.com/pmezard/go-difflib v1.0.0
 github.com/pmezard/go-difflib/difflib
+# github.com/prometheus/client_golang v0.9.3
+## explicit
+github.com/prometheus/client_golang/api
+github.com/prometheus/client_golang/api/prometheus/v1
+# github.com/prometheus/common v0.4.0
+github.com/prometheus/common/model
 # github.com/rifflock/lfshook v0.0.0-20180920164130-b9218ef580f5
 ## explicit
 github.com/rifflock/lfshook

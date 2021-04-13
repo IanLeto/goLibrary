@@ -2,8 +2,8 @@ package utils_test
 
 import (
 	"context"
+	"fmt"
 	"github.com/gomodule/redigo/redis"
-	"github.com/spf13/cast"
 	"github.com/stretchr/testify/suite"
 	"goLibrary/config"
 	"goLibrary/testsuites"
@@ -30,9 +30,22 @@ func (s *RedisClientSuite) SetupTest() {
 
 // TestMarshal :
 func (s *RedisClientSuite) TestPing() {
-	res, err := s.client.Do("PING")
-	s.NoError(err)
-	s.Equal("PONG", cast.ToString(res))
+	var xxx = struct {
+		x int
+	}{
+		x: 1,
+	}
+	var a = struct {
+		a int
+	}{
+
+	}
+	if &xxx == nil {
+		fmt.Println(1)
+	}
+	if &a == nil {
+		fmt.Println(2)
+	}
 }
 
 // TestHttpClient :
