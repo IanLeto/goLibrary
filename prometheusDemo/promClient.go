@@ -21,7 +21,8 @@ func HelloWorld() {
 
 	v1api := v1.NewAPI(client)
 	ctx := context.Background()
-	v, err := v1api.Query(ctx, "udisk_hostname{ip='172.27.25.135',diff='\"\"',inspect='udisk-vm-all-patrol'}[1w]", time.Now())
+	var s = time.Time{}
+	v, err := v1api.Query(ctx, "udisk_hostname{ip='172.27.25.135',diff='\"\"',inspect='udisk-vm-all-patrol'}[1w]", s)
 	x, _ := v.(model.Matrix)
 	for _, v := range x {
 		fmt.Println(v.Metric.String())

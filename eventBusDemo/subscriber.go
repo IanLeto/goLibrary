@@ -17,3 +17,4 @@ func ReceiveDemo() {
 
 	//err := GlobalEvent.SubscribeAsync("hh", func() {},false)
 }
+

@@ -12,3 +12,4 @@ func NewRedisClient(ctx context.Context) (redis.Conn, error) {
 	client, err := redis.DialContext(ctx, "tcp", fmt.Sprintf(config.BaseConfig.RedisConfig.Address+":"+config.BaseConfig.RedisConfig.Port))
 	return client, err
 }
+

@@ -9,6 +9,7 @@ demo utils
     - logurs 好用的三方日志库 : /logrusDemo
     - cast 根式转换工具: /castDemo
     - prometheus client /prometheusDemo
+    - gorm 语法 /gormDemo
 #### 工具使用
     - tools 如何部署一个http server by docker:// tools/docker/simpleHttpserver
         
