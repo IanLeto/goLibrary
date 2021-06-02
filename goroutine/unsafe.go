@@ -27,6 +27,7 @@ func UnsafeDemo() int {
 }
 
 func UnsafeDemo2() int {
+	ss := 0
 	unsafe := &struct {
 		a   int
 		res []int
@@ -41,10 +42,11 @@ func UnsafeDemo2() int {
 		go func() {
 			wg.Done()
 			unsafe.a += 1
+			ss += 1
 		}()
 	}
 	wg.Wait()
-	return unsafe.a
+	return ss
 }
 
 func UnsafeDemo3() int {

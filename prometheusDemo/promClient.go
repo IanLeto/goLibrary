@@ -12,7 +12,7 @@ import (
 
 func HelloWorld() {
 	client, err := api.NewClient(api.Config{
-		Address: "http://prometheus.iaas.ucloudadmin.com",
+		Address: "localhost:7111",
 	})
 	if err != nil {
 		fmt.Printf("Error creating client: %v\n", err)
@@ -22,7 +22,7 @@ func HelloWorld() {
 	v1api := v1.NewAPI(client)
 	ctx := context.Background()
 	var s = time.Time{}
-	v, err := v1api.Query(ctx, "udisk_hostname{ip='172.27.25.135',diff='\"\"',inspect='udisk-vm-all-patrol'}[1w]", s)
+	v, err := v1api.Query(ctx, "ianleto{ip='172.27.25.135',diff='\"\"',inspect='udisk-vm-all-patrol'}[1w]", s)
 	x, _ := v.(model.Matrix)
 	for _, v := range x {
 		fmt.Println(v.Metric.String())
