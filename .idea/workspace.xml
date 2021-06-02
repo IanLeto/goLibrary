@@ -23,12 +23,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9938a792-5a54-4c17-8cdc-187ff3b312f7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/goroutine/unsafe.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/goroutine/unsafe_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/httpClientDemo/httpClient.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/httpClientDemo/httpClientUsage.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/httpClientDemo/httpClientUsage_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eventBusDemo/subscriber.go" beforeDir="false" afterPath="$PROJECT_DIR$/eventBusDemo/subscriber.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prometheusDemo/promClient.go" beforeDir="false" afterPath="$PROJECT_DIR$/prometheusDemo/promClient.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prometheusDemo/promClient_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/prometheusDemo/promClient_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/redis.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/redis.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/modules.txt" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/modules.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,47 +93,47 @@
       <recent name="$PROJECT_DIR$/viperDemo" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestSimpleTest in goLibrary/prometheusDemo">
-    <configuration name="TestConfiguration in goLibrary/config" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Test.TestConfig3 in goLibrary/goroutine">
+    <configuration name="TestConfig in goLibrary/goroutine" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="goLibrary" />
-      <working_directory value="$PROJECT_DIR$/config" />
+      <working_directory value="$PROJECT_DIR$/goroutine" />
+      <parameters value=" -testify.m ^TestConfig$" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="goLibrary/config" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <pattern value="^\QTestConfiguration\E$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestHook in goLibrary/logrusDemo" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="goLibrary" />
-      <working_directory value="$PROJECT_DIR$/logrusDemo" />
-      <parameters value=" -testify.m ^TestHook$" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="goLibrary/logrusDemo" />
+      <package value="goLibrary/goroutine" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestPing in goLibrary/utils" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestConfig in goLibrary/httpClientDemo" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="goLibrary" />
-      <working_directory value="$PROJECT_DIR$/utils" />
-      <parameters value=" -testify.m ^TestPing$" />
+      <working_directory value="$PROJECT_DIR$/httpClientDemo" />
+      <parameters value=" -testify.m ^TestConfig$" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="goLibrary/utils" />
+      <package value="goLibrary/httpClientDemo" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestSSTest in goLibrary/prometheusDemo" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestConfig2 in goLibrary/goroutine" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="goLibrary" />
-      <working_directory value="$PROJECT_DIR$/prometheusDemo" />
-      <parameters value=" -testify.m ^TestSSTest$" />
+      <working_directory value="$PROJECT_DIR$/goroutine" />
+      <parameters value=" -testify.m ^TestConfig2$" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="goLibrary/prometheusDemo" />
+      <package value="goLibrary/goroutine" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestConfig3 in goLibrary/goroutine" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="goLibrary" />
+      <working_directory value="$PROJECT_DIR$/goroutine" />
+      <parameters value=" -testify.m ^TestConfig3$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="goLibrary/goroutine" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <method v="2" />
@@ -145,11 +151,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestConfig3 in goLibrary/goroutine" />
+        <item itemvalue="Go Test.TestConfig2 in goLibrary/goroutine" />
+        <item itemvalue="Go Test.TestConfig in goLibrary/goroutine" />
+        <item itemvalue="Go Test.TestConfig in goLibrary/httpClientDemo" />
         <item itemvalue="Go Test.TestSimpleTest in goLibrary/prometheusDemo" />
-        <item itemvalue="Go Test.TestSSTest in goLibrary/prometheusDemo" />
-        <item itemvalue="Go Test.TestPing in goLibrary/utils" />
-        <item itemvalue="Go Test.TestConfiguration in goLibrary/config" />
-        <item itemvalue="Go Test.TestHook in goLibrary/logrusDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -184,44 +190,56 @@
     <state x="615" y="222" key="#xdebugger.evaluate/-1920.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1618047866044" />
     <state x="603" y="235" key="#xdebugger.evaluate/-1920.23.1920.1057/0.0.1680.1050@0.0.1680.1050" timestamp="1617883998209" />
     <state x="-1627" y="416" width="783" height="773" key="#xdebugger.evaluate/-2560.0.2560.1440/0.0.1680.1050@-2560.0.2560.1440" timestamp="1621950544065" />
-    <state width="2518" height="455" key="GridCell.Tab.0.bottom" timestamp="1621998759199">
+    <state width="2560" height="368" key="GridCell.Tab.0.bottom" timestamp="1622533606383">
       <screen x="-2560" y="0" width="2560" height="1440" />
     </state>
     <state width="1878" height="196" key="GridCell.Tab.0.bottom/-1920.0.1920.1080/0.0.1680.1050@-1920.0.1920.1080" timestamp="1621345609482" />
     <state width="1638" height="316" key="GridCell.Tab.0.bottom/-1920.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1618318719218" />
     <state width="1638" height="316" key="GridCell.Tab.0.bottom/-1920.23.1920.1057/0.0.1680.1050@0.0.1680.1050" timestamp="1618454380237" />
     <state width="1638" height="311" key="GridCell.Tab.0.bottom/-1920.23.1920.1057/0.23.1680.1027@0.23.1680.1027" timestamp="1617885825634" />
-    <state width="2518" height="455" key="GridCell.Tab.0.bottom/-2560.0.2560.1440/0.0.1680.1050@-2560.0.2560.1440" timestamp="1621998759199" />
+    <state width="2560" height="368" key="GridCell.Tab.0.bottom/-2560.0.2560.1440/0.0.1680.1050@-2560.0.2560.1440" timestamp="1622533606383" />
+    <state width="1638" height="434" key="GridCell.Tab.0.bottom/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1622087576426" />
+    <state width="1638" height="269" key="GridCell.Tab.0.bottom/-2560.23.2560.1417/0.0.1680.1050@0.0.1680.1050" timestamp="1622087460839" />
+    <state width="2518" height="434" key="GridCell.Tab.0.bottom/-2560.23.2560.1417/0.23.1680.1027@-2560.23.2560.1417" timestamp="1622107936871" />
     <state width="1638" height="295" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1615270136460" />
     <state width="1638" height="316" key="GridCell.Tab.0.bottom/1680.-133.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1618163935573" />
-    <state width="2518" height="455" key="GridCell.Tab.0.center" timestamp="1621998759197">
+    <state width="2560" height="368" key="GridCell.Tab.0.center" timestamp="1622533606381">
       <screen x="-2560" y="0" width="2560" height="1440" />
     </state>
     <state width="1878" height="196" key="GridCell.Tab.0.center/-1920.0.1920.1080/0.0.1680.1050@-1920.0.1920.1080" timestamp="1621345609479" />
     <state width="1638" height="316" key="GridCell.Tab.0.center/-1920.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1618318719216" />
     <state width="1638" height="316" key="GridCell.Tab.0.center/-1920.23.1920.1057/0.0.1680.1050@0.0.1680.1050" timestamp="1618454380235" />
     <state width="1638" height="311" key="GridCell.Tab.0.center/-1920.23.1920.1057/0.23.1680.1027@0.23.1680.1027" timestamp="1617885825632" />
-    <state width="2518" height="455" key="GridCell.Tab.0.center/-2560.0.2560.1440/0.0.1680.1050@-2560.0.2560.1440" timestamp="1621998759197" />
+    <state width="2560" height="368" key="GridCell.Tab.0.center/-2560.0.2560.1440/0.0.1680.1050@-2560.0.2560.1440" timestamp="1622533606381" />
+    <state width="1638" height="434" key="GridCell.Tab.0.center/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1622087576424" />
+    <state width="1638" height="269" key="GridCell.Tab.0.center/-2560.23.2560.1417/0.0.1680.1050@0.0.1680.1050" timestamp="1622087460837" />
+    <state width="2518" height="434" key="GridCell.Tab.0.center/-2560.23.2560.1417/0.23.1680.1027@-2560.23.2560.1417" timestamp="1622107936870" />
     <state width="1638" height="295" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1615270136459" />
     <state width="1638" height="316" key="GridCell.Tab.0.center/1680.-133.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1618163935570" />
-    <state width="2518" height="455" key="GridCell.Tab.0.left" timestamp="1621998759196">
+    <state width="2560" height="368" key="GridCell.Tab.0.left" timestamp="1622533606380">
       <screen x="-2560" y="0" width="2560" height="1440" />
     </state>
     <state width="1878" height="196" key="GridCell.Tab.0.left/-1920.0.1920.1080/0.0.1680.1050@-1920.0.1920.1080" timestamp="1621345609478" />
     <state width="1638" height="316" key="GridCell.Tab.0.left/-1920.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1618318719214" />
     <state width="1638" height="316" key="GridCell.Tab.0.left/-1920.23.1920.1057/0.0.1680.1050@0.0.1680.1050" timestamp="1618454380233" />
     <state width="1638" height="311" key="GridCell.Tab.0.left/-1920.23.1920.1057/0.23.1680.1027@0.23.1680.1027" timestamp="1617885825630" />
-    <state width="2518" height="455" key="GridCell.Tab.0.left/-2560.0.2560.1440/0.0.1680.1050@-2560.0.2560.1440" timestamp="1621998759196" />
+    <state width="2560" height="368" key="GridCell.Tab.0.left/-2560.0.2560.1440/0.0.1680.1050@-2560.0.2560.1440" timestamp="1622533606380" />
+    <state width="1638" height="434" key="GridCell.Tab.0.left/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1622087576423" />
+    <state width="1638" height="269" key="GridCell.Tab.0.left/-2560.23.2560.1417/0.0.1680.1050@0.0.1680.1050" timestamp="1622087460836" />
+    <state width="2518" height="434" key="GridCell.Tab.0.left/-2560.23.2560.1417/0.23.1680.1027@-2560.23.2560.1417" timestamp="1622107936869" />
     <state width="1638" height="295" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1615270136459" />
     <state width="1638" height="316" key="GridCell.Tab.0.left/1680.-133.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1618163935569" />
-    <state width="2518" height="455" key="GridCell.Tab.0.right" timestamp="1621998759198">
+    <state width="2560" height="368" key="GridCell.Tab.0.right" timestamp="1622533606382">
       <screen x="-2560" y="0" width="2560" height="1440" />
     </state>
     <state width="1878" height="196" key="GridCell.Tab.0.right/-1920.0.1920.1080/0.0.1680.1050@-1920.0.1920.1080" timestamp="1621345609480" />
     <state width="1638" height="316" key="GridCell.Tab.0.right/-1920.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1618318719217" />
     <state width="1638" height="316" key="GridCell.Tab.0.right/-1920.23.1920.1057/0.0.1680.1050@0.0.1680.1050" timestamp="1618454380236" />
     <state width="1638" height="311" key="GridCell.Tab.0.right/-1920.23.1920.1057/0.23.1680.1027@0.23.1680.1027" timestamp="1617885825633" />
-    <state width="2518" height="455" key="GridCell.Tab.0.right/-2560.0.2560.1440/0.0.1680.1050@-2560.0.2560.1440" timestamp="1621998759198" />
+    <state width="2560" height="368" key="GridCell.Tab.0.right/-2560.0.2560.1440/0.0.1680.1050@-2560.0.2560.1440" timestamp="1622533606382" />
+    <state width="1638" height="434" key="GridCell.Tab.0.right/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1622087576425" />
+    <state width="1638" height="269" key="GridCell.Tab.0.right/-2560.23.2560.1417/0.0.1680.1050@0.0.1680.1050" timestamp="1622087460838" />
+    <state width="2518" height="434" key="GridCell.Tab.0.right/-2560.23.2560.1417/0.23.1680.1027@-2560.23.2560.1417" timestamp="1622107936870" />
     <state width="1638" height="295" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1615270136459" />
     <state width="1638" height="316" key="GridCell.Tab.0.right/1680.-133.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1618163935572" />
     <state width="2518" height="455" key="GridCell.Tab.1.bottom" timestamp="1621998759202">

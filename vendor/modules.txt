@@ -11,6 +11,9 @@ github.com/cstockton/go-conv/internal/refconv
 github.com/cstockton/go-conv/internal/refutil
 # github.com/davecgh/go-spew v1.1.1
 github.com/davecgh/go-spew/spew
+# github.com/dghubble/sling v1.3.0
+## explicit
+github.com/dghubble/sling
 # github.com/fsnotify/fsnotify v1.4.7
 github.com/fsnotify/fsnotify
 # github.com/go-sql-driver/mysql v1.5.0
@@ -19,6 +22,8 @@ github.com/go-sql-driver/mysql
 # github.com/gomodule/redigo v1.8.4
 ## explicit
 github.com/gomodule/redigo/redis
+# github.com/google/go-querystring v1.0.0
+github.com/google/go-querystring/query
 # github.com/hashicorp/hcl v1.0.0
 github.com/hashicorp/hcl
 github.com/hashicorp/hcl/hcl/ast
@@ -59,6 +64,7 @@ github.com/pmezard/go-difflib/difflib
 github.com/prometheus/client_golang/api
 github.com/prometheus/client_golang/api/prometheus/v1
 # github.com/prometheus/common v0.4.0
+## explicit
 github.com/prometheus/common/model
 # github.com/rifflock/lfshook v0.0.0-20180920164130-b9218ef580f5
 ## explicit
