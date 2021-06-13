@@ -13,9 +13,14 @@ demo utils
     - prometheus client /prometheusDemo
     - gorm 语法 /gormDemo
     - httpClient 一个好用的httpclient /httpClientDemo
+    - backoff 指数退避算法/ backoffDemo
+    - sling httpClient / httpClientDemo
 #### 工具使用
     - tools 如何部署一个http server by docker:// tools/docker/simpleHttpserver
-
+#### 常用方法
+    - NewHttpService 初始化一个http服务
+    - BaseConfig  全局配置文件
+    
 #### have fun
     - 复利计算 /d / m / y
     

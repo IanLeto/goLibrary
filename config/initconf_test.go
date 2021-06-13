@@ -3,7 +3,6 @@ package config_test
 import (
 	"context"
 	"github.com/stretchr/testify/suite"
-	"goLibrary/config"
 	_ "goLibrary/config"
 	"goLibrary/testsuites"
 	"sync"
@@ -42,24 +41,7 @@ func (s *taskManager) start() {
 
 // TestMarshal :
 func (s *TestInitConfigSuit) TestConfig() {
-	s.Equal("debug", config.BaseConfig.RunMode)
-	var worker = make(chan interface{}, 50)
-	var tokenBullet = make(chan interface{}, 50)
-	var jobQuene = make(chan int)
-	for {
-		select {
-		case v, ok := <-jobQuene:
-			if !ok {
-				return
-			}
-			go func(s int) {
 
-			}(v)
-
-
-		}
-
-	}
 }
 
 // TestViperConfiguration :

@@ -13,6 +13,8 @@ redis:
   port: 6379
   isSentinal: false
   masterName: master
+  retry : 3
+
 etcd:
   address: localhost
   port: 2379

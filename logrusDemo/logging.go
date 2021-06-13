@@ -58,7 +58,6 @@ func UseHook() {
 
 // 通过hook 分隔日志
 // 不同日志级别单独出来
-
 func NewFileHook() log.Hook {
 	writer, err := rotatelogs.New("config"+".%Y%m%d%H",
 		// 为日志建立连接
@@ -94,6 +93,7 @@ func NewFileHook() log.Hook {
 	return divHook
 }
 
+// 调用
 func UseDivLogFile() {
 	log.AddHook(NewFileHook())
 	log.Info("Info")
