@@ -7,6 +7,8 @@ import (
 	"github.com/gomodule/redigo/redis"
 	"github.com/sirupsen/logrus"
 	"goLibrary/config"
+	"math/rand"
+	"time"
 )
 
 // redisgo 版本
@@ -61,6 +63,50 @@ loop:
 	}
 }
 
+// 如何运行一个后台cache 周期任务
+//
+
+type CacheTask struct {
+	Interval time.Duration
+	Pipe     goredis.Pipeliner
+	Worker   chan struct{}
+}
+
+func InitCacheTask() *CacheTask {
+	return &CacheTask{
+		Interval: 60 * time.Second,
+		Pipe:     NewRedisPipeline(*NewRedis()).Pipeline(),
+		Worker:   make(chan struct{}, 20),
+	}
+}
+
+func (c *CacheTask) Run() error {
+	// 生成测试数据
+	trick := time.NewTicker(c.Interval.)
+	for {
+		select {
+		case <-trick.C:
+			// 生成测试数据
+			demoData := map[int]int{}
+			for i := 0; i < 50; i++ {
+				demoData[i] = rand.Intn(100)
+			}
+			//
+		}
+	}
+
+	//
+
+}
+
+func (c *CacheTask) Stop() error {
+	panic("implement me")
+}
+
 func SendMsg() {
+
+}
+
+func CacheCron() {
 
 }
