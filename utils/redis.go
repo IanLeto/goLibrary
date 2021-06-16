@@ -16,8 +16,8 @@ func NewRedisClient(ctx context.Context) (redis.Conn, error) {
 }
 
 // goredis 版本
-func NewRedis() {
-	goredis.NewClient(&goredis.Options{
+func NewRedis() *goredis.Client {
+	return goredis.NewClient(&goredis.Options{
 		Network:   "tcp",
 		Addr:      fmt.Sprintf("%s:%s", config.BaseConfig.RedisConfig.Address, config.BaseConfig.RedisConfig.Port),
 		Dialer:    nil,
