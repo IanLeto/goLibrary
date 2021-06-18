@@ -15,6 +15,7 @@ demo utils
     - httpClient 一个好用的httpclient /httpClientDemo
     - backoff 指数退避算法/ backoffDemo
     - sling httpClient / httpClientDemo
+    - gorm gorm/语法/ gormUtils
 #### 工具使用
     - tools 如何部署一个http server by docker:// tools/docker/simpleHttpserver
 #### 常用方法

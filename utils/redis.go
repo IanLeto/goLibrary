@@ -64,12 +64,11 @@ loop:
 }
 
 // 如何运行一个后台cache 周期任务
-//
-
 type CacheTask struct {
-	Interval time.Duration
-	Pipe     goredis.Pipeliner
-	Worker   chan struct{}
+	Interval   time.Duration
+	Pipe       goredis.Pipeliner
+	Worker     chan struct{}
+	Expiration time.Duration
 }
 
 func InitCacheTask() *CacheTask {
@@ -82,7 +81,7 @@ func InitCacheTask() *CacheTask {
 
 func (c *CacheTask) Run() error {
 	// 生成测试数据
-	trick := time.NewTicker(c.Interval.)
+	trick := time.NewTicker(c.Interval)
 	for {
 		select {
 		case <-trick.C:
@@ -91,7 +90,6 @@ func (c *CacheTask) Run() error {
 			for i := 0; i < 50; i++ {
 				demoData[i] = rand.Intn(100)
 			}
-			//
 		}
 	}
 

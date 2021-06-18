@@ -56,7 +56,7 @@ func (s CreditCardDemo) TableName() string {
 }
 
 // 修改表结构
-// 增加列（增加字段）直接在结构提里面继上一个字段就成
+// 增加列（增加字段）直接在结构提里面加上一个字段就成
 
 func (s *TestDBSuit) TestAlterTable() {
 }
@@ -205,6 +205,14 @@ func (s TestDBSuit) TestOne2many() {
 			},
 		},
 	})
+}
+
+// 常用基本语法
+func (s TestDBSuit) TestUtils() {
+	// 查询全部
+	res1 := gormDemo.SelectByID()
+	s.NotEqual(len(res1), 0)
+
 }
 
 func TestSuite(t *testing.T) {
