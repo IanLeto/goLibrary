@@ -16,11 +16,12 @@ require (
 	github.com/lestrrat-go/strftime v1.0.4 // indirect
 	github.com/onsi/ginkgo v1.16.4 // indirect
 	github.com/onsi/gomega v1.13.0 // indirect
+	github.com/pkg/errors v0.8.1
 	github.com/prometheus/client_golang v0.9.3
 	github.com/prometheus/common v0.4.0
 	github.com/rifflock/lfshook v0.0.0-20180920164130-b9218ef580f5
 	github.com/sirupsen/logrus v1.2.0
-	github.com/spf13/cast v1.3.0
+	github.com/spf13/cast v1.3.1
 	github.com/spf13/viper v1.7.1
 	github.com/stretchr/testify v1.6.1
 	golang.org/x/sync v0.0.0-20201020160332-67f06af15bc9
