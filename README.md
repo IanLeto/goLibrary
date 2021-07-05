@@ -21,7 +21,9 @@ demo utils
 #### 常用方法
     - NewHttpService 初始化一个http服务
     - BaseConfig  全局配置文件
-    
+#### 代码模板
+    -  /template/utestTemplate_test.go 代码单元测试模板
+ 
 #### have fun
     - 复利计算 /d / m / y
     
