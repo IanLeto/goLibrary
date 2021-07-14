@@ -10,7 +10,7 @@ demo utils
     - eventBus 轻量级事件服务总线 : /eventDemo
     - logurs 好用的三方日志库 : /logrusDemo
     - cast 根式转换工具: /castDemo
-    - prometheus client /prometheusDemo
+    - prometheus client /prometheusDemo   如何统计goroutine 常见的不安全线程
     - gorm 语法 /gormDemo
     - httpClient 一个好用的httpclient /httpClientDemo
     - backoff 指数退避算法/ backoffDemo
@@ -21,6 +21,7 @@ demo utils
 #### 常用方法
     - NewHttpService 初始化一个http服务
     - BaseConfig  全局配置文件
+    =
 #### 代码模板
     -  /template/utestTemplate_test.go 代码单元测试模板
  

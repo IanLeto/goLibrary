@@ -212,6 +212,8 @@ func (s TestDBSuit) TestUtils() {
 	// 查询全部
 	res1 := gormDemo.SelectByID()
 	s.NotEqual(len(res1), 0)
+	res2 := gormDemo.SelectByIDInIds()
+	s.NotEqual(len(res2), 0)
 
 }
 

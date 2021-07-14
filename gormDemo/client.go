@@ -46,3 +46,19 @@ func SelectByID() []user {
 	// 格式化结果
 	return user
 }
+
+// in 操作
+func SelectByIDInIds() []user {
+	var (
+		err error
+		// 定义输入/输出
+		user []user
+	)
+	// 查询全部
+	err = DB.Table("user").Where("id in (?)", []int{1, 2}).Find(&user).Error
+	if err != nil {
+		panic(err)
+	}
+	// 格式化结果
+	return user
+}

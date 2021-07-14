@@ -34,7 +34,10 @@ func (s *GoroutineSuite) TestConfig3() {
 	for i := 0; i < 20; i++ {
 		s.Equal(100, goroutine.UnsafeDemo3())
 	}
+}
+func (s *GoroutineSuite) TestConfig4() {
 
+	goroutine.UnsafeDemo4()
 }
 
 // TestHttpClient :
