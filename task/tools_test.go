@@ -17,7 +17,7 @@ func (s *TaskSuite) SetupTest() {
 
 // TestMarshal :
 func (s *TaskSuite) TestHelloWorld() {
-
+	task.InitTask()
 
 }
 
