@@ -20,7 +20,7 @@ demo utils
     - backoff 指数退避算法/ backoffDemo
     - sling httpClient / httpClientDemo
     - gorm gorm语法/ gormDemo
-    - viper/cobra 命令行工具
+    - viper/cobra 命令行工具  可goland debug 行为 
     - redis/ redis rediscli
 #### 工具使用
     - tools 如何部署一个http server by docker:// tools/docker/simpleHttpserver

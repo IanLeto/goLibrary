@@ -3,6 +3,7 @@ package gormDemo
 import (
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
+	"goLibrary/utils"
 )
 
 var DB = NewDB()
@@ -78,4 +79,17 @@ func SelectByIDInIdsAnd() []user {
 	}
 	// 格式化结果
 	return user
+}
+
+func InsertJob() {
+	var (
+		err error
+	)
+	err = DB.Table("user").Create(&user{
+		Id:       19,
+		Name:     "11",
+		Follower: "3123",
+	}).Error
+	utils.NoErr(err)
+	
 }

@@ -3,6 +3,7 @@ package utils_test
 import (
 	"fmt"
 	"github.com/stretchr/testify/suite"
+	"goLibrary/httpServerInDocker"
 	"testing"
 )
 
@@ -18,6 +19,7 @@ func (s *TestRateSuit) SetupTest() {
 	//}
 	//fmt.Println(base)
 }
+
 // 银行
 func (s *TestRateSuit) TestRate() {
 	var base float64 = 100000
@@ -38,6 +40,9 @@ func (s *TestRateSuit) TestRate2() {
 	fmt.Println(base)
 }
 
+func (s *TestRateSuit) TestFastDemo() {
+	httpServerInDocker.FastHttpDemo()
+}
 
 func TestRaSuite(t *testing.T) {
 	suite.Run(t, new(TestRateSuit))

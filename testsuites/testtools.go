@@ -20,3 +20,4 @@ func (s ConfigSuit) InitConfigSuit() {
 	//event.Event.Publish("test_config_suit", fmt.Sprintf(dir+"/config.yaml"))
 
 }
+

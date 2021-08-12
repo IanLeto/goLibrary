@@ -1,3 +1,5 @@
+# github.com/andybalholm/brotli v1.0.2
+github.com/andybalholm/brotli
 # github.com/asaskevich/EventBus v0.0.0-20200907212545-49d423059eef
 ## explicit
 github.com/asaskevich/EventBus
@@ -17,8 +19,19 @@ github.com/davecgh/go-spew/spew
 # github.com/dghubble/sling v1.3.0
 ## explicit
 github.com/dghubble/sling
+# github.com/fasthttp/router v1.4.1
+## explicit
+github.com/fasthttp/router
+github.com/fasthttp/router/radix
 # github.com/fsnotify/fsnotify v1.4.9
 github.com/fsnotify/fsnotify
+# github.com/globalsign/mgo v0.0.0-20181015135952-eeefdecb41b8
+## explicit
+github.com/globalsign/mgo
+github.com/globalsign/mgo/bson
+github.com/globalsign/mgo/internal/json
+github.com/globalsign/mgo/internal/sasl
+github.com/globalsign/mgo/internal/scram
 # github.com/go-redis/redis v6.15.9+incompatible
 ## explicit
 github.com/go-redis/redis
@@ -52,8 +65,14 @@ github.com/hashicorp/hcl/json/token
 github.com/jinzhu/gorm
 # github.com/jinzhu/inflection v1.0.0
 github.com/jinzhu/inflection
+# github.com/klauspost/compress v1.12.2
+github.com/klauspost/compress/flate
+github.com/klauspost/compress/gzip
+github.com/klauspost/compress/zlib
 # github.com/konsorten/go-windows-terminal-sequences v1.0.1
 github.com/konsorten/go-windows-terminal-sequences
+# github.com/kr/pretty v0.2.0
+## explicit
 # github.com/lestrrat-go/file-rotatelogs v2.4.0+incompatible
 ## explicit
 github.com/lestrrat-go/file-rotatelogs
@@ -86,6 +105,10 @@ github.com/prometheus/common/model
 # github.com/rifflock/lfshook v0.0.0-20180920164130-b9218ef580f5
 ## explicit
 github.com/rifflock/lfshook
+# github.com/savsgio/gotils v0.0.0-20210617111740-97865ed5a873
+github.com/savsgio/gotils/bytes
+github.com/savsgio/gotils/strconv
+github.com/savsgio/gotils/strings
 # github.com/sirupsen/logrus v1.2.0
 ## explicit
 github.com/sirupsen/logrus
@@ -109,18 +132,34 @@ github.com/stretchr/testify/require
 github.com/stretchr/testify/suite
 # github.com/subosito/gotenv v1.2.0
 github.com/subosito/gotenv
-# golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9
+# github.com/valyala/bytebufferpool v1.0.0
+github.com/valyala/bytebufferpool
+# github.com/valyala/fasthttp v1.28.0
+## explicit
+github.com/valyala/fasthttp
+github.com/valyala/fasthttp/fasthttputil
+github.com/valyala/fasthttp/stackless
+# github.com/valyala/fastjson v1.6.3
+## explicit
+github.com/valyala/fastjson
+github.com/valyala/fastjson/fastfloat
+# golang.org/x/crypto v0.0.0-20210513164829-c07d793c2f9a
 golang.org/x/crypto/ssh/terminal
 # golang.org/x/sync v0.0.0-20201020160332-67f06af15bc9
 ## explicit
 golang.org/x/sync/errgroup
-# golang.org/x/sys v0.0.0-20210423082822-04245dca01da
+# golang.org/x/sys v0.0.0-20210514084401-e8d321eab015
 golang.org/x/sys/internal/unsafeheader
+golang.org/x/sys/plan9
 golang.org/x/sys/unix
 golang.org/x/sys/windows
+# golang.org/x/term v0.0.0-20201126162022-7de9c90e9dd1
+golang.org/x/term
 # golang.org/x/text v0.3.6
 golang.org/x/text/transform
 golang.org/x/text/unicode/norm
+# gopkg.in/check.v1 v1.0.0-20190902080502-41f04d3bba15
+## explicit
 # gopkg.in/ini.v1 v1.51.0
 gopkg.in/ini.v1
 # gopkg.in/yaml.v2 v2.4.0

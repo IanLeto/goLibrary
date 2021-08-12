@@ -18,6 +18,7 @@ func (s *TestErrorGroupSuit) TestSimpleTest() {
 	syntaxDemo.ErrorGroupDemoRun()
 }
 
+
 func TestSuite(t *testing.T) {
 	suite.Run(t, new(TestErrorGroupSuit))
 }

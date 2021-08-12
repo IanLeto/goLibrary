@@ -1,6 +1,8 @@
 package httpServerInDocker
 
 import (
+	"github.com/fasthttp/router"
+	"github.com/valyala/fasthttp"
 	"goLibrary/utils"
 	"net/http"
 )
@@ -25,4 +27,13 @@ func Run() {
 		_, err := responseWriter.Write([]byte(`pong`))
 		utils.CheckPanicError(err)
 	})
+}
+
+// fastHttp 版本
+// 服务端
+func FastHttpDemo() {
+	r := router.New()
+	r.GET("/", HandlerHelloWorld)
+	r.GET("/value", HandlerGetDemo)
+	utils.NoErr(fasthttp.ListenAndServe(":8001", r.Handler))
 }
