@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/stretchr/testify/suite"
 	"goLibrary/httpServerInDocker"
+	"goLibrary/utils"
 	"testing"
 )
 
@@ -38,6 +39,10 @@ func (s *TestRateSuit) TestRate2() {
 		base = base * (1 - rate)
 	}
 	fmt.Println(base)
+}
+
+func (s *TestRateSuit) TestEnv() {
+	s.Equal(utils.GetLocalOSEnv("CCMODE"), "DEBUG")
 }
 
 func (s *TestRateSuit) TestFastDemo() {

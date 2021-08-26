@@ -105,6 +105,9 @@ github.com/prometheus/common/model
 # github.com/rifflock/lfshook v0.0.0-20180920164130-b9218ef580f5
 ## explicit
 github.com/rifflock/lfshook
+# github.com/samuel/go-zookeeper v0.0.0-20201211165307-7117e9ea2414
+## explicit
+github.com/samuel/go-zookeeper/zk
 # github.com/savsgio/gotils v0.0.0-20210617111740-97865ed5a873
 github.com/savsgio/gotils/bytes
 github.com/savsgio/gotils/strconv

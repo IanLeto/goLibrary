@@ -21,3 +21,8 @@ func NewMongoClient(url string) *mgo.Session {
 	utils.NoErr(session.Ping())
 	return session
 }
+
+// bson 演示
+func FindOne() {
+
+}
