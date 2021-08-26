@@ -7,7 +7,10 @@ import (
 	"goLibrary/utils"
 )
 
-func NewMongoClient(url string) *mgo.Session {
+var DB = NewMongoClient("localhost:27017", "ian")
+
+func NewMongoClient(address, db string) *mgo.Database {
+	url := fmt.Sprintf("mongodb://%s/%s", address, db)
 	if url == "" {
 		url = "mongodb://root:root.toor@172.18.38.86:27017/uhost_admin"
 	}
@@ -19,10 +22,17 @@ func NewMongoClient(url string) *mgo.Session {
 	}
 	fmt.Println(info)
 	utils.NoErr(session.Ping())
-	return session
+	return session.DB("")
 }
 
-// bson 演示
-func FindOne() {
+func NewCollection(dbName string) *mgo.Collection {
+	return DB.C(dbName)
+}
 
+type TestDB struct {
+	*mgo.Collection
+}
+
+func (d *TestDB) Find() {
+	d.Update()
 }

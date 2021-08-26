@@ -24,6 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9938a792-5a54-4c17-8cdc-187ff3b312f7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mongo/mogo.go" beforeDir="false" afterPath="$PROJECT_DIR$/mongo/mogo.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -286,11 +287,11 @@
     </state>
     <state x="-1579" y="475" width="598" height="490" key="find.popup/-2560.0.2560.1440/0.0.1680.1050@-2560.0.2560.1440" timestamp="1623986145302" />
     <state x="644" y="346" width="568" height="490" key="find.popup/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1629777225485" />
-    <state x="-1790" y="320" width="1021" height="928" key="search.everywhere.popup" timestamp="1629447380543">
-      <screen x="-2560" y="0" width="2560" height="1440" />
+    <state x="505" y="233" width="671" height="677" key="search.everywhere.popup" timestamp="1629964315949">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="-1790" y="320" width="1021" height="928" key="search.everywhere.popup/-2560.0.2560.1440/0.0.1680.1050@-2560.0.2560.1440" timestamp="1629447380543" />
-    <state x="505" y="233" width="671" height="677" key="search.everywhere.popup/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1628135574149" />
+    <state x="505" y="233" width="671" height="677" key="search.everywhere.popup/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1629964315949" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
