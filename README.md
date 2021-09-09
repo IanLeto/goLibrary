@@ -6,7 +6,7 @@ demo utils
     - select 超时
     -
 #### 常用实现golang Demo
-    - path 如何读相对路径
+    - utils/path 如何读相对路径
     - goroutine/unsafe 不安全的线程
     - respone/baseresponse golang 组合继承语法 
 #### 常用三方库函数 Demo

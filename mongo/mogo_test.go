@@ -3,7 +3,6 @@ package mongo_test
 import (
 	"github.com/globalsign/mgo"
 	"github.com/stretchr/testify/suite"
-	"goLibrary/mongo"
 	"testing"
 )
 
@@ -13,7 +12,7 @@ type TestMongoSuit struct {
 }
 
 func (s *TestMongoSuit) SetupTest() {
-	s.session = mongo.NewMongoClient("mongodb://localhost:27017/uhost_admin")
+	//s.session = mongo.NewMongoClient("mongodb://localhost:27017/uhost_admin")
 }
 
 func (s *TestMongoSuit) TestSimpleTest() {
