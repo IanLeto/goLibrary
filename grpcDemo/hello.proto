@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package grpcDemo;
+
+message String {
+  string hello = 1; //
+}
