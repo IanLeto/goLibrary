@@ -22,11 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9938a792-5a54-4c17-8cdc-187ff3b312f7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpcDemo/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpcDemo/server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mongo/mogo.go" beforeDir="false" afterPath="$PROJECT_DIR$/mongo/mogo.go" afterDir="false" />
-    </list>
+    <list default="true" id="9938a792-5a54-4c17-8cdc-187ff3b312f7" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -193,25 +189,21 @@
     <state width="1638" height="279" key="GridCell.Tab.0.bottom" timestamp="1631169879440">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="2518" height="261" key="GridCell.Tab.0.bottom/-2560.0.2560.1440/0.0.1680.1050@-2560.0.2560.1440" timestamp="1626330979392" />
     <state width="1638" height="279" key="GridCell.Tab.0.bottom/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1631169694585" />
     <state width="1638" height="279" key="GridCell.Tab.0.bottom/-2560.23.2560.1417/0.0.1680.1050@0.0.1680.1050" timestamp="1631169879440" />
     <state width="1638" height="279" key="GridCell.Tab.0.center" timestamp="1631169879438">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="2518" height="261" key="GridCell.Tab.0.center/-2560.0.2560.1440/0.0.1680.1050@-2560.0.2560.1440" timestamp="1626330979389" />
     <state width="1638" height="279" key="GridCell.Tab.0.center/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1631169694584" />
     <state width="1638" height="279" key="GridCell.Tab.0.center/-2560.23.2560.1417/0.0.1680.1050@0.0.1680.1050" timestamp="1631169879438" />
     <state width="1638" height="279" key="GridCell.Tab.0.left" timestamp="1631169879438">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="2518" height="261" key="GridCell.Tab.0.left/-2560.0.2560.1440/0.0.1680.1050@-2560.0.2560.1440" timestamp="1626330979388" />
     <state width="1638" height="279" key="GridCell.Tab.0.left/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1631169694583" />
     <state width="1638" height="279" key="GridCell.Tab.0.left/-2560.23.2560.1417/0.0.1680.1050@0.0.1680.1050" timestamp="1631169879438" />
     <state width="1638" height="279" key="GridCell.Tab.0.right" timestamp="1631169879439">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="2518" height="261" key="GridCell.Tab.0.right/-2560.0.2560.1440/0.0.1680.1050@-2560.0.2560.1440" timestamp="1626330979391" />
     <state width="1638" height="279" key="GridCell.Tab.0.right/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1631169694584" />
     <state width="1638" height="279" key="GridCell.Tab.0.right/-2560.23.2560.1417/0.0.1680.1050@0.0.1680.1050" timestamp="1631169879439" />
     <state width="1638" height="316" key="GridCell.Tab.1.bottom" timestamp="1631169879433">
@@ -242,10 +234,6 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="349" y="164" key="SettingsEditor/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1631958487808" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1626256563830">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="500" height="445" key="SwitcherDM/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1626256563830" />
     <state x="642" y="417" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1628238279715">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -254,15 +242,11 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="428" y="198" key="com.intellij.database.dbimport.ImportDialog/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1628242923359" />
-    <state x="-1924" y="413" width="687" height="743" key="dock-window-1" timestamp="1626330194205">
-      <screen x="-2560" y="23" width="2560" height="1417" />
-    </state>
-    <state x="-2560" y="0" width="2560" height="1440" key="dock-window-1/-2560.23.2560.1417/0.0.1680.1050@0.0.1680.1050" timestamp="1626314981299" />
-    <state x="-1924" y="413" width="687" height="743" key="dock-window-1/-2560.23.2560.1417/0.23.1680.1027@0.23.1680.1027" timestamp="1626330194205" />
-    <state x="644" y="346" width="568" height="490" key="find.popup" timestamp="1629777225485">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state x="644" y="361" width="568" height="490" key="find.popup" timestamp="1635304905450">
+      <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="644" y="346" width="568" height="490" key="find.popup/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1629777225485" />
+    <state x="644" y="361" width="568" height="490" key="find.popup/-2560.23.2560.1417/0.23.1680.1027@0.23.1680.1027" timestamp="1635304905450" />
     <state x="-1790" y="320" width="1021" height="928" key="search.everywhere.popup" timestamp="1634888321185">
       <screen x="-2560" y="0" width="2560" height="1440" />
     </state>
