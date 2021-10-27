@@ -34,5 +34,5 @@ type TestDB struct {
 }
 
 func (d *TestDB) Find() {
-	d.Update()
+
 }
