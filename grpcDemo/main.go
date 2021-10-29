@@ -13,7 +13,7 @@ func main() {
 	// 启动 rpc service
 	go func() {
 		rpcServer := grpc.NewServer()
-		// 注册 product server
+		// 注册 product server gen 自动生成的
 		product.RegisterProductServerServer(rpcServer, new(server.ProductServer))
 		//
 		listener, err := net.Listen("tcp", ":9001")
