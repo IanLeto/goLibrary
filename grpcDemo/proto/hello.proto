@@ -1,0 +1,19 @@
+syntax = "proto3";
+package hello;
+
+// 输出到go 项目的位置
+option go_package = "./";
+
+service Hello {
+  rpc SayHello(HelloRequest) returns (HelloResponse){}
+}
+
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloResponse {
+  string message = 1;
+}
+
+

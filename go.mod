@@ -30,6 +30,7 @@ require (
 	github.com/valyala/fasthttp v1.28.0
 	github.com/valyala/fastjson v1.6.3
 	golang.org/x/sync v0.0.0-20201020160332-67f06af15bc9
+	google.golang.org/grpc v1.33.2
 	google.golang.org/protobuf v1.26.0
 	gopkg.in/check.v1 v1.0.0-20190902080502-41f04d3bba15 // indirect
 )

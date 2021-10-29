@@ -30,7 +30,7 @@ demo utils
     - NewHttpService 初始化一个http服务
     - BaseConfig  全局配置文件
     - task      初始化周期任务
-    =
+    - utils/conv 常用转化 arr str null "" 和 map 
 #### 代码模板
     -  /template/utestTemplate_test.go 代码单元测试模板
  
