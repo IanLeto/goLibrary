@@ -23,12 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9938a792-5a54-4c17-8cdc-187ff3b312f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/utils/limit.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/limit_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/modules.txt" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/modules.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,10 +174,6 @@
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
-    <state x="440" y="190" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1628237581058">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="440" y="190" key="#com.intellij.execution.impl.EditConfigurationsDialog/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1628237581058" />
     <state x="546" y="334" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1635500065154">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -227,26 +218,14 @@
     </state>
     <state width="1638" height="316" key="GridCell.Tab.1.right/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1631168129122" />
     <state width="1638" height="316" key="GridCell.Tab.1.right/-2560.23.2560.1417/0.0.1680.1050@0.0.1680.1050" timestamp="1631169879433" />
-    <state width="233" height="457" key="HiddenNamespacesPopup" timestamp="1628329833904">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="233" height="457" key="HiddenNamespacesPopup/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1628329833904" />
     <state x="349" y="164" key="SettingsEditor" timestamp="1631958487808">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="349" y="164" key="SettingsEditor/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1631958487808" />
-    <state x="642" y="417" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1628238279715">
+    <state x="644" y="346" width="568" height="490" key="find.popup" timestamp="1637217155286">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="642" y="417" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1628238279715" />
-    <state x="428" y="198" key="com.intellij.database.dbimport.ImportDialog" timestamp="1628242923359">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="428" y="198" key="com.intellij.database.dbimport.ImportDialog/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1628242923359" />
-    <state x="644" y="346" width="568" height="490" key="find.popup" timestamp="1635499283812">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="644" y="346" width="568" height="490" key="find.popup/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1635499283812" />
+    <state x="644" y="346" width="568" height="490" key="find.popup/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1637217155286" />
     <state x="644" y="361" width="568" height="490" key="find.popup/-2560.23.2560.1417/0.23.1680.1027@0.23.1680.1027" timestamp="1635304905450" />
     <state x="505" y="233" width="671" height="677" key="search.everywhere.popup" timestamp="1635501142083">
       <screen x="0" y="0" width="1680" height="1050" />
