@@ -30,6 +30,22 @@ func (s *SortSuite) TestHelloWorld() {
 	}
 }
 
+func (s *SortSuite) TestAnySort() {
+	users := []SortDemo{
+		{&Rank{index: 2}, "a"},
+		{&Rank{index: 1}, "w"},
+		{&Rank{index: 4}, "z"},
+		{&Rank{index: 12}, "x"},
+	}
+
+	sort.Slice(users, func(i, j int) bool {
+		return users[i].index < users[j].index
+	})
+	for _, u := range users {
+		fmt.Println(u.Name)
+	}
+}
+
 func TestViperConfiguration(t *testing.T) {
 	suite.Run(t, new(SortSuite))
 }
