@@ -9,7 +9,8 @@ demo utils
     - utils/path 如何读相对路径
     - goroutine/unsafe 不安全的线程
     - respone/baseresponse golang 组合继承语法
-    - 任意排序  utils/sorts 
+    - 任意排序  utils/sorts
+    - 简易令牌桶 task/task_test 
 #### 常用三方库函数 Demo
     - golang 范型（生成代码模板模拟泛型）: /gennyDemo
     - eventBus 轻量级事件服务总线 : /eventDemo 如何初始化一个发布订阅的周期任务
