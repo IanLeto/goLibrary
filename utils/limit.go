@@ -2,14 +2,18 @@ package utils
 
 import (
 	"context"
+	"math/rand"
 	"sync"
+	"time"
 )
 
 type DemoTask struct {
 }
 
 func (d *DemoTask) Start() error {
-	panic("implement me")
+	time.Sleep(1 * time.Millisecond)
+	println(rand.Intn(1000))
+	return nil
 }
 
 func (d *DemoTask) Work() error {
@@ -29,9 +33,8 @@ func NewPool() {
 }
 
 type Manager struct {
-	wg    sync.WaitGroup
-	ctx   context.Context
-	queue []*Task
+	wg  sync.WaitGroup
+	ctx context.Context
 }
 
 func (m Manager) Receive(t []DemoTask, info chan interface{}) {

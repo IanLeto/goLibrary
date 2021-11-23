@@ -23,10 +23,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9938a792-5a54-4c17-8cdc-187ff3b312f7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/utils/task_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/sorts.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/sorts.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/sorts_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/sorts_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/define.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/define.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/limit.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/limit.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/task.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/task.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +94,7 @@
       <recent name="$PROJECT_DIR$/tools/docker/simpleHttpserver" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestList in goLibrary/utils">
+  <component name="RunManager" selected="Go Test.TestTaskManager in goLibrary/utils">
     <configuration name="go build goLibrary/grpcDemo" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="goLibrary" />
       <working_directory value="$PROJECT_DIR$" />
@@ -103,35 +104,13 @@
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestEnv in goLibrary/utils" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestAnySort in goLibrary/utils" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="goLibrary" />
       <working_directory value="$PROJECT_DIR$/utils" />
-      <parameters value=" -testify.m ^TestEnv$" />
+      <parameters value=" -testify.m ^TestAnySort$" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
       <package value="goLibrary/utils" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestHelloWorld in goLibrary/utils/path" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="goLibrary" />
-      <working_directory value="$PROJECT_DIR$/utils/path" />
-      <parameters value=" -testify.m ^TestHelloWorld$" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="goLibrary/utils/path" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestHelloWorld in goLibrary/viperDemo" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="goLibrary" />
-      <working_directory value="$PROJECT_DIR$/viperDemo" />
-      <parameters value=" -testify.m ^TestHelloWorld$" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="goLibrary/viperDemo" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <method v="2" />
@@ -147,13 +126,34 @@
       <filePath value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
+    <configuration name="TestTaskManager in goLibrary/utils" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="goLibrary" />
+      <working_directory value="$PROJECT_DIR$/utils" />
+      <parameters value=" -testify.m ^TestTaskManager$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="goLibrary/utils" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="goLibrary" />
+      <working_directory value="$PROJECT_DIR$/utils" />
+      <framework value="gotest" />
+      <kind value="FILE" />
+      <package value="goLibrary" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/utils/test_test.go" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestTaskManager in goLibrary/utils" />
+        <item itemvalue="Go Test.test_test.go" />
+        <item itemvalue="Go Test.TestAnySort in goLibrary/utils" />
         <item itemvalue="Go Test.TestList in goLibrary/utils" />
         <item itemvalue="Go Build.go build goLibrary/grpcDemo" />
-        <item itemvalue="Go Test.TestHelloWorld in goLibrary/utils/path" />
-        <item itemvalue="Go Test.TestEnv in goLibrary/utils" />
-        <item itemvalue="Go Test.TestHelloWorld in goLibrary/viperDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -181,26 +181,30 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="546" y="334" key="#com.intellij.fileTypes.FileTypeChooser/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1635500065154" />
-    <state width="1638" height="279" key="GridCell.Tab.0.bottom" timestamp="1636464446229">
+    <state width="1638" height="279" key="GridCell.Tab.0.bottom" timestamp="1637657647009">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="279" key="GridCell.Tab.0.bottom/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1636464446229" />
+    <state width="1638" height="279" key="GridCell.Tab.0.bottom/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1637657647009" />
     <state width="1638" height="279" key="GridCell.Tab.0.bottom/-2560.23.2560.1417/0.0.1680.1050@0.0.1680.1050" timestamp="1631169879440" />
-    <state width="1638" height="279" key="GridCell.Tab.0.center" timestamp="1636464446227">
+    <state width="1638" height="279" key="GridCell.Tab.0.bottom/1680.-318.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1637514523238" />
+    <state width="1638" height="279" key="GridCell.Tab.0.center" timestamp="1637657647008">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="279" key="GridCell.Tab.0.center/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1636464446227" />
+    <state width="1638" height="279" key="GridCell.Tab.0.center/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1637657647008" />
     <state width="1638" height="279" key="GridCell.Tab.0.center/-2560.23.2560.1417/0.0.1680.1050@0.0.1680.1050" timestamp="1631169879438" />
-    <state width="1638" height="279" key="GridCell.Tab.0.left" timestamp="1636464446226">
+    <state width="1638" height="279" key="GridCell.Tab.0.center/1680.-318.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1637514523237" />
+    <state width="1638" height="279" key="GridCell.Tab.0.left" timestamp="1637657647006">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="279" key="GridCell.Tab.0.left/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1636464446226" />
+    <state width="1638" height="279" key="GridCell.Tab.0.left/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1637657647006" />
     <state width="1638" height="279" key="GridCell.Tab.0.left/-2560.23.2560.1417/0.0.1680.1050@0.0.1680.1050" timestamp="1631169879438" />
-    <state width="1638" height="279" key="GridCell.Tab.0.right" timestamp="1636464446228">
+    <state width="1638" height="279" key="GridCell.Tab.0.left/1680.-318.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1637514523236" />
+    <state width="1638" height="279" key="GridCell.Tab.0.right" timestamp="1637657647009">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="279" key="GridCell.Tab.0.right/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1636464446228" />
+    <state width="1638" height="279" key="GridCell.Tab.0.right/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1637657647009" />
     <state width="1638" height="279" key="GridCell.Tab.0.right/-2560.23.2560.1417/0.0.1680.1050@0.0.1680.1050" timestamp="1631169879439" />
+    <state width="1638" height="279" key="GridCell.Tab.0.right/1680.-318.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1637514523238" />
     <state width="1638" height="316" key="GridCell.Tab.1.bottom" timestamp="1631169879433">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -225,11 +229,12 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="349" y="164" key="SettingsEditor/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1631958487808" />
-    <state x="644" y="346" width="568" height="490" key="find.popup" timestamp="1637317064046">
+    <state x="644" y="346" width="568" height="490" key="find.popup" timestamp="1637655579412">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="644" y="346" width="568" height="490" key="find.popup/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1637317064046" />
+    <state x="644" y="346" width="568" height="490" key="find.popup/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1637655579412" />
     <state x="644" y="361" width="568" height="490" key="find.popup/-2560.23.2560.1417/0.23.1680.1027@0.23.1680.1027" timestamp="1635304905450" />
+    <state x="644" y="346" width="568" height="490" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1637597452008" />
     <state x="505" y="233" width="671" height="677" key="search.everywhere.popup" timestamp="1635501142083">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -258,11 +263,6 @@
           <url>file://$PROJECT_DIR$/redis/redisCli_test.go</url>
           <line>31</line>
           <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/utils/util.go</url>
-          <line>17</line>
-          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
