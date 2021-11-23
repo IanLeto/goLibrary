@@ -29,7 +29,7 @@ func (e *EchoRandTask) Stop(ctx context.Context) error {
 	panic("implement me")
 }
 
-type CallBackFuncType func(err error)
+type CallBackFuncType func(t Task)
 
 type TaskManager struct {
 	// 待完成的任务队列, 外部可以不断往里推送任务
@@ -108,6 +108,56 @@ func (m *TaskManager) PushTask() {
 	m.jobWg.Add(1)
 
 }
+func (m *TaskManager) PushTaskCallback() {
+	// 开始执行任务
+	m.startTime = time.Now()
+	go func() {
+		defer func() {
+			// 任务关停
+			m.isRunning = false
+		}()
+		for {
+			select {
+			case task := <-m.JobQueue:
+				// 当我们拿到一个任务的时候，先去看看是否有可用的执行令牌
+				<-m.tokenBucket
+				// 拿到执行令牌，开始派遣goroutine 执行
+				m.wg.Add(1)
+				go func(job Task) {
+					defer func() {
+						// 本case 执行结束
+						m.wg.Done()
+						// 交还令牌
+						m.tokenBucket <- struct{}{}
+						// 总任务量
+						m.jobWg.Done()
+					}()
+					m.callBackFunc(task)
+				}(task)
+			case <-m.ctx.Done():
+				return
+			}
+		}
+	}()
+
+	go func() {
+		defer func() {
+			m.jobWg.Done()
+		}()
+		for _, task := range m.taskList {
+			select {
+			case m.JobQueue <- task:
+				m.jobWg.Add(1)
+			// 考虑到有缓冲chan 关闭问题，这里选择使用ctx 主动关闭任务推送
+			case <-m.ctx.Done():
+				return
+			}
+		}
+	}()
+	//我们认为，push 任务到chan 也是需要时间的
+	m.jobWg.Add(1)
+
+}
 
 func (m *TaskManager) WaitJob() error {
 	m.jobWg.Wait()
@@ -122,8 +172,7 @@ func (m *TaskManager) Wait() error {
 
 func (m *TaskManager) Stop() error {
 	m.cancelFunc()
-	m.endTime = time.Now()
-	logrus.Debugf("耗时%ds", m.endTime.Sub(m.startTime))
+	logrus.Debugf("耗时%ds", time.Since(m.startTime))
 	return nil
 }
 func NewTaskManager(ctx context.Context, cancelFunc context.CancelFunc, taskList []Task,
