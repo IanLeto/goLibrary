@@ -22,11 +22,12 @@ func main() {
 		}
 		_ = rpcServer.Serve(listener)
 	}()
+
 	conn, err := grpc.Dial(":9001", grpc.WithInsecure())
 	if err != nil {
 		panic(err)
 	}
-	defer conn.Close()
+	defer func() { _ = conn.Close() }()
 
 	cli := product.NewProductServerClient(conn)
 	res, err := cli.GetProduct(context.Background(), &product.ProductReq{Id: 1})
