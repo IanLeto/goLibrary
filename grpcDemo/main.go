@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 	"goLibrary/grpcDemo/proto/product"
-	"goLibrary/grpcDemo/server"
+	"service"
 	"google.golang.org/grpc"
 	"net"
 )
@@ -14,7 +14,7 @@ func main() {
 	go func() {
 		rpcServer := grpc.NewServer()
 		// 注册 product server gen 自动生成的
-		product.RegisterProductServerServer(rpcServer, new(server.ProductServer))
+		product.RegisterProductServerServer(rpcServer, new(servicew.ProductServer))
 		//
 		listener, err := net.Listen("tcp", ":9001")
 		if err != nil {

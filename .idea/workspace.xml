@@ -23,8 +23,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9938a792-5a54-4c17-8cdc-187ff3b312f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/grpcDemo/protos/product.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpcDemo/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpcDemo/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpcDemo/protos/product.proto" beforeDir="false" afterPath="$PROJECT_DIR$/grpcDemo/protos/product.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpcDemo/server/product.proto" beforeDir="false" afterPath="$PROJECT_DIR$/grpcDemo/product.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpcDemo/server/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpcDemo/service/server.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +89,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/grpcDemo" />
       <recent name="$PROJECT_DIR$/testsuites" />
       <recent name="$PROJECT_DIR$/syntaxDemo" />
       <recent name="$PROJECT_DIR$/gormDemo" />
