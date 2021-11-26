@@ -1,0 +1,22 @@
+syntax = "proto3";
+package ecommerce.v1; // 防止命名冲突
+import "google/protobuf/wrappers.proto";
+
+message Product{
+  int32 id = 100010;
+  string name = 100011;
+  string region = 100012;
+}
+
+message ProductReq{
+  int32 id = 1;
+}
+
+message ProductRes{
+  string name = 1;
+}
+
+service ProductServer{
+  rpc GetProduct(ProductReq) returns (ProductRes);
+  rpc addProduct(Product) returns (ProductRes);
+}
