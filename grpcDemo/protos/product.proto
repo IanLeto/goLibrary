@@ -16,7 +16,7 @@ message ProductRes{
   string name = 2;
 }
 
-service ProductServer{
+service ProductInfo{
   rpc GetProduct(ProductReq) returns (ProductRes);
   rpc addProduct(Product) returns (ProductRes);
 }

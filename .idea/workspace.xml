@@ -23,9 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9938a792-5a54-4c17-8cdc-187ff3b312f7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/grpcDemo/service/product/server.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpcDemo/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpcDemo/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpcDemo/proto/hello.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpcDemo/product.proto" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/grpcDemo/protos/product.proto" beforeDir="false" afterPath="$PROJECT_DIR$/grpcDemo/protos/product.proto" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -231,10 +231,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="349" y="164" key="SettingsEditor/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1631958487808" />
-    <state x="644" y="346" width="568" height="490" key="find.popup" timestamp="1637655579412">
+    <state x="644" y="346" width="568" height="490" key="find.popup" timestamp="1638275744225">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="644" y="346" width="568" height="490" key="find.popup/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1637655579412" />
+    <state x="644" y="346" width="568" height="490" key="find.popup/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1638275744225" />
     <state x="644" y="361" width="568" height="490" key="find.popup/-2560.23.2560.1417/0.23.1680.1027@0.23.1680.1027" timestamp="1635304905450" />
     <state x="644" y="346" width="568" height="490" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1637597452008" />
     <state x="505" y="233" width="671" height="677" key="search.everywhere.popup" timestamp="1635501142083">
