@@ -1,6 +1,7 @@
 syntax = "proto3";
 package ecommerce.v1; // 防止命名冲突
-
+option go_package = "./product";
+// protoc -I ../protos  --go_out=../pbs  ../protos/product.proto
 message Product{
   int32 id = 100010;
   string name = 100011;
@@ -12,7 +13,7 @@ message ProductReq{
 }
 
 message ProductRes{
-  string name = 1;
+  string name = 2;
 }
 
 service ProductServer{

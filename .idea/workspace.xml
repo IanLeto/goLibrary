@@ -25,9 +25,8 @@
     <list default="true" id="9938a792-5a54-4c17-8cdc-187ff3b312f7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grpcDemo/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpcDemo/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpcDemo/proto/hello.proto" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/grpcDemo/protos/product.proto" beforeDir="false" afterPath="$PROJECT_DIR$/grpcDemo/protos/product.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpcDemo/server/product.proto" beforeDir="false" afterPath="$PROJECT_DIR$/grpcDemo/product.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpcDemo/server/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpcDemo/service/server.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +70,7 @@
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
     <property name="go.vendoring.notification.had.been.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/grpcDemo/protos" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/grpcDemo/service/product" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -81,18 +80,18 @@
     <property name="settings.editor.selected.configurable" value="google.prototext.language" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/grpcDemo/protos" />
-      <recent name="$PROJECT_DIR$/utils" />
-      <recent name="$PROJECT_DIR$/eventBusDemo" />
-      <recent name="$PROJECT_DIR$/config" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/grpcDemo" />
       <recent name="$PROJECT_DIR$/testsuites" />
       <recent name="$PROJECT_DIR$/syntaxDemo" />
       <recent name="$PROJECT_DIR$/gormDemo" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/grpcDemo/service/product" />
+      <recent name="$PROJECT_DIR$/grpcDemo/protos" />
+      <recent name="$PROJECT_DIR$/utils" />
+      <recent name="$PROJECT_DIR$/eventBusDemo" />
+      <recent name="$PROJECT_DIR$/config" />
     </key>
   </component>
   <component name="RunManager" selected="Go Test.TestFunc in goLibrary/utils">
