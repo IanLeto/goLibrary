@@ -10,13 +10,20 @@ message Product{
 
 message ProductReq{
   int32 id = 1;
+  repeated string items = 1011;
 }
 
 message ProductRes{
   string name = 2;
+  string id = 3;
+}
+
+message ProductSearchReq{
+  repeated string items = 2001;
 }
 
 service ProductInfo{
   rpc GetProduct(ProductReq) returns (ProductRes);
   rpc addProduct(Product) returns (ProductRes);
+  rpc SearchProduct(ProductSearchReq) returns (ProductRes);
 }

@@ -12,6 +12,7 @@ require (
 	github.com/globalsign/mgo v0.0.0-20181015135952-eeefdecb41b8
 	github.com/go-redis/redis v6.15.9+incompatible
 	github.com/go-sql-driver/mysql v1.5.0
+	github.com/gofrs/uuid v4.2.0+incompatible
 	github.com/gomodule/redigo v1.8.4
 	github.com/jinzhu/gorm v1.9.16
 	github.com/kr/pretty v0.2.0 // indirect
@@ -19,7 +20,6 @@ require (
 	github.com/lestrrat-go/strftime v1.0.4 // indirect
 	github.com/onsi/ginkgo v1.16.4 // indirect
 	github.com/onsi/gomega v1.13.0 // indirect
-	github.com/panjf2000/ants/v2 v2.4.6 // indirect
 	github.com/pkg/errors v0.8.1
 	github.com/prometheus/client_golang v0.9.3
 	github.com/prometheus/common v0.4.0
@@ -31,7 +31,6 @@ require (
 	github.com/valyala/fasthttp v1.28.0
 	github.com/valyala/fastjson v1.6.3
 	golang.org/x/sync v0.0.0-20201020160332-67f06af15bc9
-	golang.org/x/time v0.0.0-20190308202827-9d24e82272b4 // indirect
 	google.golang.org/grpc v1.33.2
 	google.golang.org/protobuf v1.26.0
 	gopkg.in/check.v1 v1.0.0-20190902080502-41f04d3bba15 // indirect
