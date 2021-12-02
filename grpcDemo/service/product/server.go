@@ -9,6 +9,11 @@ import (
 type Service struct {
 }
 
+// 单项流
+func (s *Service) SearchProduct(ctx context.Context, req *pb.ProductSearchReq) (*pb.ProductRes, error) {
+	panic("implement me")
+}
+
 func (s *Service) GetProduct(ctx context.Context, req *pb.ProductReq) (*pb.ProductRes, error) {
 	out, err := uuid.NewV4()
 	if err != nil {
