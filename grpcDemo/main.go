@@ -18,4 +18,6 @@ func main() {
 	service := grpc.NewServer()
 	product.RegisterProductInfoServer(service, &productServer.Service{})
 	utils.NoErr(service.Serve(listen))
+
+
 }
