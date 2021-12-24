@@ -45,8 +45,16 @@ func (s *TesttimeUtils_testSuite) SetupTest() {
 	logrus.Info(tnsec.Format(time.RFC3339Nano))
 
 	// time.duration to second
-	logrus.Infof("time.duration to second: %v", time.Since(time.Now()).Seconds())
-	fmt.Println(time.Duration(7275022937323587072).Seconds())
+	// time.duration to ms
+	time.Sleep(1 * time.Second)
+	logrus.Infof("time.duration to second: %d", int64(time.Since(s.timeDemo)/time.Second))
+	logrus.Infof("time.duration to ms: %d", int64(time.Since(s.timeDemo)/time.Millisecond))
+
+	// 时间计算
+	nowCalc := time.Now().Unix()
+	nowCalc = nowCalc - 3600
+	// 1小时之前
+	logrus.Infof("1 小时之前 %d", nowCalc)
 
 	// 解析字符串时间
 	hours, _ := time.ParseDuration("10h")
