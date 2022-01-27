@@ -18,3 +18,15 @@ func GetLocalOSEnv(key string) string {
 	return os.Getenv(key)
 
 }
+
+// 分批处理slice
+func Batch(s []int, limit int) [][]int {
+
+	var batches [][]int
+
+	for limit < len(s) {
+		s, batches = s[limit:], append(batches, s[0:limit:limit])
+	}
+	batches = append(batches, s)
+	return batches
+}

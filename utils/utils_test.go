@@ -48,6 +48,9 @@ func (s *TestRateSuit) TestEnv() {
 func (s *TestRateSuit) TestFastDemo() {
 	httpServerInDocker.FastHttpDemo()
 }
+func (s *TestRateSuit) TestBatch() {
+	s.Equal([][]int{{0, 1, 2}, {3, 4, 5}, {6, 7, 8}, {9}}, utils.Batch([]int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, 3))
+}
 
 func TestRaSuite(t *testing.T) {
 	suite.Run(t, new(TestRateSuit))
