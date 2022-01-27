@@ -14,6 +14,10 @@ func (s *TestPromClientSuit) SetupTest() {
 
 }
 
+func (s *TestPromClientSuit) TestPush() {
+	prometheusDemo.Pusher()
+}
+
 func (s *TestPromClientSuit) TestSSTest() {
 	prometheusDemo.ValueModel()
 }

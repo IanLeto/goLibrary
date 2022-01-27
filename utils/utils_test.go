@@ -52,6 +52,13 @@ func (s *TestRateSuit) TestBatch() {
 	s.Equal([][]int{{0, 1, 2}, {3, 4, 5}, {6, 7, 8}, {9}}, utils.Batch([]int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, 3))
 }
 
+func (s *TestRateSuit) TestFormatJson() {
+	t := "1,2,3cxx\n{\"a\":\"1\"}"
+	err, res := utils.FormatJson(t)
+	s.NoError(err)
+	s.Equal(res["a"], "1")
+}
+
 func TestRaSuite(t *testing.T) {
 	suite.Run(t, new(TestRateSuit))
 }

@@ -1,7 +1,10 @@
 package utils
 
 import (
+	"encoding/json"
+	"errors"
 	"os"
+	"strings"
 )
 
 func MakeRange(min, max int) []int {
@@ -29,4 +32,41 @@ func Batch(s []int, limit int) [][]int {
 	}
 	batches = append(batches, s)
 	return batches
+}
+
+func FormatJson(input string) (err error, j map[string]interface{}) {
+	// 提醒推送
+
+	if err = json.Unmarshal([]byte(input), &j); err != nil {
+		// json 处理
+		resultList2 := strings.Split(input, "\n")
+		str3 := ""
+		for i := range resultList2 {
+			str3 = StringBuilder([]string{resultList2[len(resultList2)-i-1], "\n", str3})
+			if err = ParamIllegalJsonCheck(str3); err == nil {
+				input = str3
+				break
+			}
+		}
+	}
+	if err = json.Unmarshal([]byte(input), &j); err != nil {
+		return err, j
+	}
+	return nil, j
+}
+func ParamIllegalJsonCheck(param string) error {
+	if !json.Valid([]byte(param)) {
+		return errors.New("Param is not Json")
+	}
+	return nil
+}
+
+// StringBuilder 高效率字符串拼接
+func StringBuilder(p []string) string {
+	var b strings.Builder
+	l := len(p)
+	for i := 0; i < l; i++ {
+		b.WriteString(p[i])
+	}
+	return b.String()
 }

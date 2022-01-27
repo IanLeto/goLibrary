@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"github.com/prometheus/client_golang/api"
 	"github.com/prometheus/client_golang/api/prometheus/v1"
+	"github.com/prometheus/client_golang/prometheus"
+	"github.com/prometheus/client_golang/prometheus/push"
 	"github.com/prometheus/common/model"
 	"os"
 	"time"
@@ -66,5 +68,21 @@ func ValueModel() {
 
 // 处理返回值
 func FormatModelValue(value model.Value) {
+
+}
+
+func Pusher() {
+	reg := prometheus.NewRegistry()
+	records := prometheus.NewGaugeVec(prometheus.GaugeOpts{
+		Name: "Ian",
+		Help: "",
+	}, []string{"ip"})
+	reg.MustRegister(records)
+	records.WithLabelValues("199.01").Set(float64(10))
+	pusher := push.New("http://172.20.178.124:9091", "inspect").Gatherer(reg)
+	fmt.Println("ready to push")
+	if err := pusher.Push(); err != nil {
+		fmt.Println("Could not push completion time to Pushgateway:", err)
+	}
 
 }
