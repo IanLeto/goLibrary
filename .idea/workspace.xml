@@ -23,14 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9938a792-5a54-4c17-8cdc-187ff3b312f7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/utils/cmd.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prometheusDemo/promClient.go" beforeDir="false" afterPath="$PROJECT_DIR$/prometheusDemo/promClient.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prometheusDemo/promClient_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/prometheusDemo/promClient_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/util.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/util.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/utils_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/utils_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/modules.txt" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/modules.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -256,11 +250,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/prometheusDemo/promClient.go</url>
-          <line>27</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/utils/redis_test.go</url>
           <line>58</line>
