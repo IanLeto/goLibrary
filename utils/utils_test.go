@@ -58,6 +58,23 @@ func (s *TestRateSuit) TestFormatJson() {
 	s.NoError(err)
 	s.Equal(res["a"], "1")
 }
+func (s *TestRateSuit) TestWget() {
+	//testFilePath := fmt.Sprintf("%s", path.PathADD("./", "test"))
+	//if utils.Exists(testFilePath) {
+	//	err := os.Remove(testFilePath)
+	//	if err != nil {
+	//		panic(err)
+	//	}
+	//}
+	//fileObj ,err:= os.OpenFile(testFilePath, os.O_RDWR|os.O_APPEND, 0777)
+	//if err != nil {
+	//	panic(err)
+	//}
+}
+
+func (s *TestRateSuit)Test()  {
+	
+}
 
 func TestRaSuite(t *testing.T) {
 	suite.Run(t, new(TestRateSuit))

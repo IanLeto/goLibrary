@@ -34,12 +34,14 @@ demo utils
     - BaseConfig  全局配置文件
     - task      初始化周期任务
     - utils/conv 常用转化 arr str null "" 和 map
-    - 文件路径拼接 
+    - 文件路径拼接 文件拼接路径 
+    - wget
 #### 代码模板
     -  /template/utestTemplate_test.go 代码单元测试模板
  
 #### have fun
     - 复利计算 /d / m / y
+    
 #### utils
     - 拆分slice
     - 格式化 json

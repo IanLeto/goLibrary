@@ -3,7 +3,9 @@ package utils
 import (
 	"encoding/json"
 	"errors"
+	"fmt"
 	"os"
+	"os/exec"
 	"strings"
 )
 
@@ -71,3 +73,8 @@ func StringBuilder(p []string) string {
 	return b.String()
 }
 
+
+//
+func Wget(url ,fileName ,logOut string, retry string, limit int)  {
+	exec.Command("wget", "-a",fmt.Sprintf("%s", fileName), "-o", fmt.Sprintf("%s", logOut), "-t", retry)
+}

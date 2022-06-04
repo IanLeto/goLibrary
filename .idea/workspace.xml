@@ -23,8 +23,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9938a792-5a54-4c17-8cdc-187ff3b312f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/utils/cmd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fileTransfer/fileClient.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/test.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/test.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/ioDemo.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/ioDemo.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/ioDemo_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/ioDemo_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/path/path.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/path/path.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/util.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/util.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/utils_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/utils_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/mkerrors.sh" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/mkerrors.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux_386.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux_386.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux_amd64.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux_amd64.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux_arm.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux_arm.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux_arm64.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux_arm64.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux_mips.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux_mips.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux_mips64.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux_mips64.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux_mips64le.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux_mips64le.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux_mipsle.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux_mipsle.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux_ppc64.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux_ppc64.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux_ppc64le.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux_ppc64le.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux_riscv64.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux_riscv64.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux_s390x.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux_s390x.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux_sparc64.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux_sparc64.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/ztypes_linux.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/ztypes_linux.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/windows/exec_windows.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/windows/exec_windows.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/windows/syscall_windows.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/windows/syscall_windows.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/windows/types_windows.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/windows/types_windows.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/windows/zsyscall_windows.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/windows/zsyscall_windows.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/modules.txt" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/modules.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,18 +123,7 @@
       <recent name="$PROJECT_DIR$/config" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestPush in goLibrary/prometheusDemo">
-    <configuration name="TestBatch in goLibrary/utils" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="goLibrary" />
-      <working_directory value="$PROJECT_DIR$/utils" />
-      <parameters value=" -testify.m ^TestBatch$" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="goLibrary/utils" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Go Test.TestOpeFile in goLibrary/utils">
     <configuration name="TestFormatJson in goLibrary/utils" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="goLibrary" />
       <working_directory value="$PROJECT_DIR$/utils" />
@@ -126,13 +146,24 @@
       <filePath value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestHelloWorld in goLibrary/backoffDemo" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestHelloWorld in goLibrary/utils" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="goLibrary" />
-      <working_directory value="$PROJECT_DIR$/backoffDemo" />
+      <working_directory value="$PROJECT_DIR$/utils" />
       <parameters value=" -testify.m ^TestHelloWorld$" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="goLibrary/backoffDemo" />
+      <package value="goLibrary/utils" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestOpeFile in goLibrary/utils" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="goLibrary" />
+      <working_directory value="$PROJECT_DIR$/utils" />
+      <parameters value=" -testify.m ^TestOpeFile$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="goLibrary/utils" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <method v="2" />
@@ -150,11 +181,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestOpeFile in goLibrary/utils" />
+        <item itemvalue="Go Test.TestHelloWorld in goLibrary/utils" />
         <item itemvalue="Go Test.TestPush in goLibrary/prometheusDemo" />
         <item itemvalue="Go Test.TestFunc in goLibrary/utils" />
         <item itemvalue="Go Test.TestFormatJson in goLibrary/utils" />
-        <item itemvalue="Go Test.TestBatch in goLibrary/utils" />
-        <item itemvalue="Go Test.TestHelloWorld in goLibrary/backoffDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -178,74 +209,39 @@
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
-    <state x="546" y="334" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1635500065154">
+    <state width="1638" height="302" key="GridCell.Tab.0.bottom" timestamp="1652259629918">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1638" height="302" key="GridCell.Tab.0.bottom/1680.-295.2560.1417/0.23.1680.1027@0.23.1680.1027" timestamp="1652259629918" />
+    <state width="1638" height="302" key="GridCell.Tab.0.bottom/1680.-318.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1652000580524" />
+    <state width="1638" height="302" key="GridCell.Tab.0.center" timestamp="1652259629917">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1638" height="302" key="GridCell.Tab.0.center/1680.-295.2560.1417/0.23.1680.1027@0.23.1680.1027" timestamp="1652259629917" />
+    <state width="1638" height="302" key="GridCell.Tab.0.center/1680.-318.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1652000580523" />
+    <state width="1638" height="302" key="GridCell.Tab.0.left" timestamp="1652259629917">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1638" height="302" key="GridCell.Tab.0.left/1680.-295.2560.1417/0.23.1680.1027@0.23.1680.1027" timestamp="1652259629917" />
+    <state width="1638" height="302" key="GridCell.Tab.0.left/1680.-318.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1652000580522" />
+    <state width="1638" height="302" key="GridCell.Tab.0.right" timestamp="1652259629918">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1638" height="302" key="GridCell.Tab.0.right/1680.-295.2560.1417/0.23.1680.1027@0.23.1680.1027" timestamp="1652259629918" />
+    <state width="1638" height="302" key="GridCell.Tab.0.right/1680.-318.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1652000580524" />
+    <state x="-1920" y="-101" width="1920" height="1080" key="dock-window-1" timestamp="1654321451807">
+      <screen x="-1920" y="-101" width="1920" height="1080" />
+    </state>
+    <state x="-1920" y="-101" width="1920" height="1080" key="dock-window-1/-1920.-101.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1654321451807" />
+    <state x="541" y="280" width="598" height="490" key="find.popup" timestamp="1654319552375">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="546" y="334" key="#com.intellij.fileTypes.FileTypeChooser/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1635500065154" />
-    <state width="1638" height="264" key="GridCell.Tab.0.bottom" timestamp="1643276531774">
+    <state x="541" y="280" width="598" height="490" key="find.popup/-1920.-101.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1654319552375" />
+    <state x="541" y="280" width="598" height="490" key="find.popup/1680.-318.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1653399918757" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1654319347582">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="2518" height="461" key="GridCell.Tab.0.bottom/-2560.0.2560.1440/0.0.1680.1050@-2560.0.2560.1440" timestamp="1638523783571" />
-    <state width="1638" height="264" key="GridCell.Tab.0.bottom/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1643276531774" />
-    <state width="1638" height="322" key="GridCell.Tab.0.bottom/-2560.23.2560.1417/0.0.1680.1050@0.0.1680.1050" timestamp="1638359721305" />
-    <state width="1638" height="499" key="GridCell.Tab.0.bottom/-2560.23.2560.1417/0.23.1680.1027@0.23.1680.1027" timestamp="1639463923685" />
-    <state width="1638" height="279" key="GridCell.Tab.0.bottom/1680.-318.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1637514523238" />
-    <state width="1638" height="264" key="GridCell.Tab.0.center" timestamp="1643276531773">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="2518" height="461" key="GridCell.Tab.0.center/-2560.0.2560.1440/0.0.1680.1050@-2560.0.2560.1440" timestamp="1638523783570" />
-    <state width="1638" height="264" key="GridCell.Tab.0.center/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1643276531773" />
-    <state width="1638" height="322" key="GridCell.Tab.0.center/-2560.23.2560.1417/0.0.1680.1050@0.0.1680.1050" timestamp="1638359721303" />
-    <state width="1638" height="499" key="GridCell.Tab.0.center/-2560.23.2560.1417/0.23.1680.1027@0.23.1680.1027" timestamp="1639463923683" />
-    <state width="1638" height="279" key="GridCell.Tab.0.center/1680.-318.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1637514523237" />
-    <state width="1638" height="264" key="GridCell.Tab.0.left" timestamp="1643276531772">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="2518" height="461" key="GridCell.Tab.0.left/-2560.0.2560.1440/0.0.1680.1050@-2560.0.2560.1440" timestamp="1638523783569" />
-    <state width="1638" height="264" key="GridCell.Tab.0.left/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1643276531772" />
-    <state width="1638" height="322" key="GridCell.Tab.0.left/-2560.23.2560.1417/0.0.1680.1050@0.0.1680.1050" timestamp="1638359721302" />
-    <state width="1638" height="499" key="GridCell.Tab.0.left/-2560.23.2560.1417/0.23.1680.1027@0.23.1680.1027" timestamp="1639463923682" />
-    <state width="1638" height="279" key="GridCell.Tab.0.left/1680.-318.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1637514523236" />
-    <state width="1638" height="264" key="GridCell.Tab.0.right" timestamp="1643276531774">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="2518" height="461" key="GridCell.Tab.0.right/-2560.0.2560.1440/0.0.1680.1050@-2560.0.2560.1440" timestamp="1638523783571" />
-    <state width="1638" height="264" key="GridCell.Tab.0.right/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1643276531774" />
-    <state width="1638" height="322" key="GridCell.Tab.0.right/-2560.23.2560.1417/0.0.1680.1050@0.0.1680.1050" timestamp="1638359721304" />
-    <state width="1638" height="499" key="GridCell.Tab.0.right/-2560.23.2560.1417/0.23.1680.1027@0.23.1680.1027" timestamp="1639463923684" />
-    <state width="1638" height="279" key="GridCell.Tab.0.right/1680.-318.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1637514523238" />
-    <state width="1638" height="316" key="GridCell.Tab.1.bottom" timestamp="1637674312794">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="1638" height="316" key="GridCell.Tab.1.bottom/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1637674312794" />
-    <state width="1638" height="316" key="GridCell.Tab.1.center" timestamp="1637674312792">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="1638" height="316" key="GridCell.Tab.1.center/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1637674312792" />
-    <state width="1638" height="316" key="GridCell.Tab.1.left" timestamp="1637674312792">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="1638" height="316" key="GridCell.Tab.1.left/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1637674312792" />
-    <state width="1638" height="316" key="GridCell.Tab.1.right" timestamp="1637674312793">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="1638" height="316" key="GridCell.Tab.1.right/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1637674312793" />
-    <state x="-1721" y="0" width="1422" height="1053" maximized="true" key="dock-window-1" timestamp="1639827515048">
-      <screen x="-2560" y="0" width="2560" height="1440" />
-    </state>
-    <state x="-1721" y="0" width="1422" height="1053" maximized="true" key="dock-window-1/-2560.0.2560.1440/0.23.1680.1027@0.23.1680.1027" timestamp="1639733560969" />
-    <state x="644" y="346" width="568" height="490" key="find.popup" timestamp="1643266400360">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="644" y="346" width="568" height="490" key="find.popup/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1643266400360" />
-    <state x="644" y="361" width="568" height="490" key="find.popup/-2560.23.2560.1417/0.23.1680.1027@0.23.1680.1027" timestamp="1639827499443" />
-    <state x="644" y="346" width="568" height="490" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1637597452008" />
-    <state x="505" y="233" width="671" height="677" key="search.everywhere.popup" timestamp="1640091076254">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="-1790" y="320" width="1021" height="928" key="search.everywhere.popup/-2560.0.2560.1440/0.0.1680.1050@-2560.0.2560.1440" timestamp="1634888321185" />
-    <state x="505" y="233" width="671" height="677" key="search.everywhere.popup/-2560.0.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1640091076254" />
-    <state x="505" y="251" width="671" height="663" key="search.everywhere.popup/-2560.23.2560.1417/0.23.1680.1027@0.23.1680.1027" timestamp="1639827495841" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/-1920.-101.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1654319347582" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

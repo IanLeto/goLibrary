@@ -14,6 +14,7 @@ func GetFilePath(path string) string {
 	return filepath.Join(getRootPath(), path)
 }
 
+// 文件拼接路径
 func PathADD(path string, target string)  string{
 	return filepath.Join(path, target)
 }
