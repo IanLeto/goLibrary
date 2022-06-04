@@ -172,3 +172,4 @@ func IsFile(path string) bool {
 	return !IsDir(path)
 
 }
+

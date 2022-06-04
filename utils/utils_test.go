@@ -59,6 +59,7 @@ func (s *TestRateSuit) TestFormatJson() {
 	s.Equal(res["a"], "1")
 }
 func (s *TestRateSuit) TestWget() {
+	s.NoError(utils.Wget("www.baidu.com", "/Users/ian/go/src/goLibrary/utils/test1", "wget_logs", "1", 1))
 	//testFilePath := fmt.Sprintf("%s", path.PathADD("./", "test"))
 	//if utils.Exists(testFilePath) {
 	//	err := os.Remove(testFilePath)

@@ -1,8 +1,10 @@
 package utils
 
 import (
+	"bufio"
 	"fmt"
 	"github.com/stretchr/testify/suite"
+	"os"
 	"testing"
 )
 
@@ -20,6 +22,15 @@ func (s *IOSuite) TestHelloWorld() {
 // TestMarshal :
 func (s *IOSuite) TestOpeFile() {
 	fmt.Println(MakeFileName("test", 1, "","use-",".py"))
+}
+
+func (s *IOSuite) TestScan() {
+	file,err := os.OpenFile("./test.txt",0,0777)
+	s.NoError(err)
+	scan:= bufio.NewScanner(file)
+	for scan.Scan() {
+		fmt.Println(scan.Text())
+	}
 }
 
 
