@@ -5,8 +5,12 @@ import (
 	"errors"
 	"os"
 	"os/exec"
+	"path/filepath"
+	"runtime"
 	"strings"
 )
+
+var BaseTestFilePath = GetFilePath("utils/path")
 
 func MakeRange(min, max int) []int {
 	a := make([]int, max-min+1)
@@ -72,9 +76,48 @@ func StringBuilder(p []string) string {
 	return b.String()
 }
 
+var (
+	_, b, _, _ = runtime.Caller(0)
+
+	// Root folder of this project
+	Root = filepath.Join(filepath.Dir(b), "../..","goLibrary")
+)
+
+func IncludeString(s []string, e string) bool {
+	for _, a := range s {
+		if a == e {
+			return true
+		}
+	}
+	return false
+}
+
+func getRootPath() string {
+	path, _ := os.Getwd()
+	return filepath.Join(path, "")
+}
+
+func GetFilePath(path string) string {
+	return filepath.Join(Root, path)
+}
 
 //
-func Wget(url ,target ,logOut string, retry string, limit int)  error{
-	cmd := exec.Command("wget", "-O",target, "-o",logOut, "-t", retry, url)
+func Wget(url, target, logOut string, retry string, limit int) error {
+	cmd := exec.Command("wget", "-O", target, "-o", logOut, "-t", retry, url)
 	return cmd.Start()
+}
+
+// 文件名， 文件路径， 文件基础路径， wget 日志路径， wget 日志名， retry
+// 返回 该文件的绝对路径
+func TransferFilePath(fileName, filePath, url string) (path string) {
+	address := filepath.Join(url, filePath, fileName)
+	// 目标文件目录
+	dir := MakeFileName(fileName, 1, BaseTestFilePath,"","")
+	// 创建目标文件目录
+	_ = os.MkdirAll(dir, os.ModePerm)
+	// 目标文件绝对路径
+	abs := filepath.Join(dir,fileName)
+
+	_ = Wget(address, filepath.Join(dir,fileName),filepath.Join(dir, "wgetLog"), "1",1)
+	return abs
 }
