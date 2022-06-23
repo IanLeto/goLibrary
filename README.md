@@ -26,6 +26,7 @@ demo utils
     - viper/cobra 命令行工具  可goland debug 行为 
     - redis/ redis rediscli
     - grpc / grpcDemo
+    - consul
 #### 工具使用
     - tools 如何部署一个http server by docker:// tools/docker/simpleHttpserver
     - pprof 如何使用pprof 测试接口速度

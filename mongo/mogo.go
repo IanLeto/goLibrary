@@ -24,15 +24,3 @@ func NewMongoClient(address, db string) *mgo.Database {
 	utils.NoErr(session.Ping())
 	return session.DB("")
 }
-
-func NewCollection(dbName string) *mgo.Collection {
-	return DB.C(dbName)
-}
-
-type TestDB struct {
-	*mgo.Collection
-}
-
-func (d *TestDB) Find() {
-
-}

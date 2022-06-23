@@ -24,9 +24,11 @@
   <component name="ChangeListManager">
     <list default="true" id="9938a792-5a54-4c17-8cdc-187ff3b312f7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/ioDemo_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/ioDemo_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mongo/mogo.go" beforeDir="false" afterPath="$PROJECT_DIR$/mongo/mogo.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/limit_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/limit_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/util.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/util.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viperDemo/cmdDemo.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/viperDemo/cmdDemo_test.go" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,25 +54,28 @@
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="1l9ATR01fb6p8fm1khFP7dCBlZ2" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.go.format.on.save.advertiser.fired": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "RunOnceActivity.go.vendoring.notification.had.been.shown": "true",
-    "RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "go.import.settings.migrated": "true",
-    "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "/Users/ian"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.go.format.on.save.advertiser.fired&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.vendoring.notification.had.been.shown&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/ian&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/grpcDemo" />
@@ -189,93 +194,6 @@
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="585" y="399" key="#Updates" timestamp="1655897692954">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="585" y="399" key="#Updates/-1920.-101.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1655897692954" />
-    <state x="564" y="334" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1654415624919">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="564" y="334" key="#com.intellij.fileTypes.FileTypeChooser/-1920.-101.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1654415624919" />
-    <state x="603" y="235" key="#xdebugger.evaluate" timestamp="1654415556558">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="603" y="235" key="#xdebugger.evaluate/-1920.-101.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1654415556558" />
-    <state width="1638" height="316" key="GridCell.Tab.0.bottom" timestamp="1655898174863">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="1638" height="316" key="GridCell.Tab.0.bottom/-1920.-101.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1655898174863" />
-    <state width="1638" height="302" key="GridCell.Tab.0.bottom/-1920.-78.1920.1057/0.0.1680.1050@0.0.1680.1050" timestamp="1654416075615" />
-    <state width="1638" height="302" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1654420990428" />
-    <state width="1638" height="302" key="GridCell.Tab.0.bottom/1680.-295.2560.1417/0.23.1680.1027@0.23.1680.1027" timestamp="1652259629918" />
-    <state width="1638" height="302" key="GridCell.Tab.0.bottom/1680.-318.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1652000580524" />
-    <state width="1638" height="316" key="GridCell.Tab.0.center" timestamp="1655898174862">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="1638" height="316" key="GridCell.Tab.0.center/-1920.-101.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1655898174862" />
-    <state width="1638" height="302" key="GridCell.Tab.0.center/-1920.-78.1920.1057/0.0.1680.1050@0.0.1680.1050" timestamp="1654416075613" />
-    <state width="1638" height="302" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1654420990426" />
-    <state width="1638" height="302" key="GridCell.Tab.0.center/1680.-295.2560.1417/0.23.1680.1027@0.23.1680.1027" timestamp="1652259629917" />
-    <state width="1638" height="302" key="GridCell.Tab.0.center/1680.-318.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1652000580523" />
-    <state width="1638" height="316" key="GridCell.Tab.0.left" timestamp="1655898174861">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="1638" height="316" key="GridCell.Tab.0.left/-1920.-101.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1655898174861" />
-    <state width="1638" height="302" key="GridCell.Tab.0.left/-1920.-78.1920.1057/0.0.1680.1050@0.0.1680.1050" timestamp="1654416075612" />
-    <state width="1638" height="302" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1654420990425" />
-    <state width="1638" height="302" key="GridCell.Tab.0.left/1680.-295.2560.1417/0.23.1680.1027@0.23.1680.1027" timestamp="1652259629917" />
-    <state width="1638" height="302" key="GridCell.Tab.0.left/1680.-318.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1652000580522" />
-    <state width="1638" height="316" key="GridCell.Tab.0.right" timestamp="1655898174863">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="1638" height="316" key="GridCell.Tab.0.right/-1920.-101.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1655898174863" />
-    <state width="1638" height="302" key="GridCell.Tab.0.right/-1920.-78.1920.1057/0.0.1680.1050@0.0.1680.1050" timestamp="1654416075614" />
-    <state width="1638" height="302" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1654420990427" />
-    <state width="1638" height="302" key="GridCell.Tab.0.right/1680.-295.2560.1417/0.23.1680.1027@0.23.1680.1027" timestamp="1652259629918" />
-    <state width="1638" height="302" key="GridCell.Tab.0.right/1680.-318.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1652000580524" />
-    <state width="1638" height="316" key="GridCell.Tab.1.bottom" timestamp="1655898174866">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="1638" height="316" key="GridCell.Tab.1.bottom/-1920.-101.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1655898174866" />
-    <state width="1638" height="316" key="GridCell.Tab.1.center" timestamp="1655898174865">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="1638" height="316" key="GridCell.Tab.1.center/-1920.-101.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1655898174865" />
-    <state width="1638" height="316" key="GridCell.Tab.1.left" timestamp="1655898174864">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="1638" height="316" key="GridCell.Tab.1.left/-1920.-101.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1655898174864" />
-    <state width="1638" height="316" key="GridCell.Tab.1.right" timestamp="1655898174866">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="1638" height="316" key="GridCell.Tab.1.right/-1920.-101.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1655898174866" />
-    <state x="349" y="164" key="SettingsEditor" timestamp="1655897649870">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="349" y="164" key="SettingsEditor/-1920.-101.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1655897649870" />
-    <state x="-1920" y="-101" width="1920" height="1080" key="dock-window-1" timestamp="1654365300539">
-      <screen x="-1920" y="-78" width="1920" height="1057" />
-    </state>
-    <state x="-1920" y="-101" width="1920" height="1080" key="dock-window-1/-1920.-101.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1654321451807" />
-    <state x="-1920" y="-101" width="1920" height="1080" key="dock-window-1/-1920.-78.1920.1057/0.0.1680.1050@0.0.1680.1050" timestamp="1654365300539" />
-    <state x="0" y="0" width="1680" height="1050" maximized="true" key="dock-window-1/0.23.1680.1027@0.23.1680.1027" timestamp="1654359064761" />
-    <state x="-1920" y="-78" width="1920" height="1057" maximized="true" key="dock-window-2" timestamp="1655656177234">
-      <screen x="-1920" y="-78" width="1920" height="1057" />
-    </state>
-    <state x="-1920" y="-101" width="1907" height="1080" maximized="true" key="dock-window-2/-1920.-101.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1654415543873" />
-    <state x="-1920" y="-78" width="1920" height="1057" maximized="true" key="dock-window-2/-1920.-78.1920.1057/0.23.1680.1027@0.23.1680.1027" timestamp="1655656177234" />
-    <state x="541" y="297" width="598" height="490" key="find.popup" timestamp="1654453434392">
-      <screen x="0" y="23" width="1680" height="1027" />
-    </state>
-    <state x="541" y="280" width="598" height="490" key="find.popup/-1920.-101.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1654365486679" />
-    <state x="541" y="297" width="598" height="490" key="find.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1654453434392" />
-    <state x="541" y="280" width="598" height="490" key="find.popup/1680.-318.2560.1440/0.0.1680.1050@0.0.1680.1050" timestamp="1653399918757" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1654319347582">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/-1920.-101.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1654319347582" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
