@@ -24,11 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9938a792-5a54-4c17-8cdc-187ff3b312f7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mongo/mogo.go" beforeDir="false" afterPath="$PROJECT_DIR$/mongo/mogo.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/limit_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/limit_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viperDemo/cmdDemo.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/viperDemo/cmdDemo_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/ioDemo.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/ioDemo.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

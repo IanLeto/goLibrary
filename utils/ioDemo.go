@@ -125,17 +125,52 @@ func MakeDirAll(path string) error {
 	return os.MkdirAll(path, os.ModePerm)
 }
 
-// 创建文件
+// CreatFile 创建文件
 func CreatFile(path string) error {
 	_, err := os.OpenFile(path, os.O_WRONLY|os.O_CREATE, 0666)
 	return err
 }
 
-// 创建 if 不存在
-
+// CreatOrOver 创建 if 不存在
 func CreatOrOver(path string) (*os.File, error) {
 	return os.OpenFile(path, os.O_WRONLY|os.O_CREATE, 0666)
 
+}
+
+// 写入文件
+func Write(content, fileName string) {
+	fileObj, err := os.OpenFile(fileName, os.O_WRONLY|os.O_CREATE, 0666)
+	if err != nil {
+		panic(err)
+	}
+	defer fileObj.Close()
+	writerObj := bufio.NewWriterSize(fileObj, 4096)
+	buf := []byte(content)
+	if _, err := writerObj.Write(buf); err != nil {
+		if err := writerObj.Flush(); err != nil {
+			panic(err)
+		}
+	}
+}
+
+func ReadFile() {
+	fileObj, err := os.Open("demo.txt")
+	if err != nil {
+		fmt.Println("文件打开失败：", err)
+		return
+	}
+	defer fileObj.Close()
+	//一个文件对象本身是实现了io.Reader的 使用bufio.NewReader去初始化一个Reader对象，存在buffer中的，读取一次就会被清空
+	reader := bufio.NewReader(fileObj)
+	buf := make([]byte, 1024)
+	//读取 Reader 对象中的内容到 []byte 类型的 buf 中
+	info, err := reader.Read(buf)
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println("读取的字节数:" + strconv.Itoa(info))
+	//这里的buf是一个[]byte，因此如果需要只输出内容，仍然需要将文件内容的换行符替换掉
+	fmt.Println("读取的文件内容:", string(buf))
 }
 
 // 根据条件生成文件名称
@@ -172,4 +207,3 @@ func IsFile(path string) bool {
 	return !IsDir(path)
 
 }
-
