@@ -100,11 +100,3 @@ func (c *CacheTask) Run() error {
 func (c *CacheTask) Stop() error {
 	panic("implement me")
 }
-
-func SendMsg() {
-
-}
-
-func CacheCron() {
-
-}

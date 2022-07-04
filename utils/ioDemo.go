@@ -82,7 +82,7 @@ func IanIODemo(input, output string) {
 
 }
 
-// 将cmd 的输出不断地写入file
+// BoWrite 将cmd 的输出不断地写入file
 func BoWrite() {
 	c1 := exec.Command("/bin/bash", path.GetFilePath("goLibrary/utils/test.sh"))
 	outputFile, err := os.OpenFile(path.GetFilePath("goLibrary/utils/test.txt"), os.O_RDWR|os.O_APPEND, 0777)
@@ -189,7 +189,7 @@ func MakeFileName(name string, id int, path string, prefix, suffix string) strin
 	return fileName
 }
 
-// 判断所给路径是否为文件夹
+// IsDir 判断所给路径是否为文件夹
 func IsDir(path string) bool {
 	s, err := os.Stat(path)
 	if err != nil {

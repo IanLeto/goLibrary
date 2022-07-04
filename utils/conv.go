@@ -2,6 +2,7 @@ package utils
 
 import (
 	"encoding/json"
+	"github.com/cstockton/go-conv"
 	"github.com/spf13/cast"
 	"strings"
 )
@@ -14,14 +15,13 @@ func ArrToString(sql []string) string {
 	return strings.Join(sql, ",")
 }
 
-func StringToMap(sql string) []string {
-	//v, _ := json.Marshal(sql)
-	return nil
-	//return cast.ToString(v)
+func MapToString(v map[string]interface{}) string {
+	//return strings.Join(sql, ",")
+	return ""
 }
-
-func MapToString(sql []string) string {
-	return strings.Join(sql, ",")
+func StringToMap(v string) map[string]interface{} {
+	//return strings.Join(sql, ",")
+	return map[string]interface{}{}
 }
 
 func PayloadToString(payload interface{}) string {
@@ -30,4 +30,10 @@ func PayloadToString(payload interface{}) string {
 		return ""
 	}
 	return string(res)
+}
+
+// 强制转换
+func AnyToString(any interface{}) string {
+	res, _ := conv.String(any)
+	return res
 }
