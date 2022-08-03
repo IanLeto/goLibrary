@@ -3,7 +3,6 @@ package utils_test
 import (
 	"fmt"
 	"github.com/stretchr/testify/suite"
-	"goLibrary/httpServerInDocker"
 	"goLibrary/utils"
 	"testing"
 )
@@ -45,9 +44,6 @@ func (s *TestRateSuit) TestEnv() {
 	s.Equal(utils.GetLocalOSEnv("CCMODE"), "DEBUG")
 }
 
-func (s *TestRateSuit) TestFastDemo() {
-	httpServerInDocker.FastHttpDemo()
-}
 func (s *TestRateSuit) TestBatch() {
 	s.Equal([][]int{{0, 1, 2}, {3, 4, 5}, {6, 7, 8}, {9}}, utils.Batch([]int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, 3))
 }
@@ -73,8 +69,8 @@ func (s *TestRateSuit) TestWget() {
 	//}
 }
 
-func (s *TestRateSuit)Test()  {
-	
+func (s *TestRateSuit) Test() {
+
 }
 
 func TestRaSuite(t *testing.T) {
