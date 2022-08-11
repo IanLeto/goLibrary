@@ -37,7 +37,11 @@ func (s *TestK8sSuit) TestConf() {
 	for _, v := range nsList.Items {
 		fmt.Println(v.Name)
 	}
+}
 
+func (s *TestK8sSuit) TestAPI() {
+	s.client.CoreV1()
+	s.client.CoreV1()
 }
 
 func (s *TestK8sSuit) TestHook() {
