@@ -1,0 +1,4 @@
+package httpClientDemo
+
+func NewHttpClient() {
+}

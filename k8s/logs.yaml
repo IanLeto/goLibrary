@@ -1,0 +1,13 @@
+#### pv yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: routine1
+  labels:
+    hello: world
+spec:
+  containers:
+    - name: routine1
+      image: ianleto/hello
+
+
