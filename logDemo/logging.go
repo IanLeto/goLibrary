@@ -1,4 +1,4 @@
-package logrusDemo
+package logDemo
 
 import (
 	"github.com/lestrrat-go/file-rotatelogs"
