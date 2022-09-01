@@ -26,6 +26,7 @@ demo utils
     - viper/cobra 命令行工具  可goland debug 行为 
     - redis/ redis rediscli
     - grpc / grpcDemo
+    - consul
 #### 工具使用
     - tools 如何部署一个http server by docker:// tools/docker/simpleHttpserver
     - pprof 如何使用pprof 测试接口速度
@@ -33,12 +34,16 @@ demo utils
     - NewHttpService 初始化一个http服务
     - BaseConfig  全局配置文件
     - task      初始化周期任务
-    - utils/conv 常用转化 arr str null "" 和 map 
+    - utils/conv 常用转化 arr str null "" 和 map
+    - 文件路径拼接 文件拼接路径 
+    - wget
+    - 增加反射benchmark 
 #### 代码模板
     -  /template/utestTemplate_test.go 代码单元测试模板
  
 #### have fun
     - 复利计算 /d / m / y
+    
 #### utils
     - 拆分slice
     - 格式化 json

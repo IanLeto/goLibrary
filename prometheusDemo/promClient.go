@@ -42,32 +42,6 @@ func HelloWorld() {
 }
 
 func ValueModel() {
-	//var res = model.SampleStream{
-	//	Metric: map[model.LabelName]model.LabelValue{
-	//		"labelName1": "labelValue1",
-	//		"labelName2": "labelValue2",
-	//		"labelName3": "labelValue3",
-	//		"diff":       "testDiff",
-	//	},
-	//	Values: []model.SamplePair{
-	//		{Timestamp: 1621378684104,
-	//			Value: 11},
-	//	},
-	//}
-	//sz := model.Matrix{&res}
-	//for _, stream := range sz {
-	//	for lablename, lablevalue := range stream.Metric {
-	//
-	//		fmt.Println(string(map[string]string{}))
-	//		//fmt.Println(conv.String(lablevalue))
-	//
-	//	}
-	//
-	//}
-}
-
-// 处理返回值
-func FormatModelValue(value model.Value) {
 
 }
 

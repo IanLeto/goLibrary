@@ -41,10 +41,7 @@ func NewLocalhostClient(doer sling.Doer) *LocalhostClient {
 }
 
 // 定义baseclient
-
-
 // 手把手 写一个http get 请求
-
 // step1 定义 req and res
 
 type LocalhostHelloRequestInfo struct {
@@ -55,9 +52,8 @@ type LocalhostResponseInfo struct {
 	Code int         `json:"code"`
 	Data interface{} `json:"data"`
 }
+
 //step2 new http cli
-
-
 
 func (c *LocalhostClient) GetHelloWorld() (*LocalhostResponseInfo, error) {
 	// 定义返回结构

@@ -3,7 +3,6 @@ package utils_test
 import (
 	"fmt"
 	"github.com/stretchr/testify/suite"
-	"goLibrary/httpServerInDocker"
 	"goLibrary/utils"
 	"testing"
 )
@@ -45,9 +44,6 @@ func (s *TestRateSuit) TestEnv() {
 	s.Equal(utils.GetLocalOSEnv("CCMODE"), "DEBUG")
 }
 
-func (s *TestRateSuit) TestFastDemo() {
-	httpServerInDocker.FastHttpDemo()
-}
 func (s *TestRateSuit) TestBatch() {
 	s.Equal([][]int{{0, 1, 2}, {3, 4, 5}, {6, 7, 8}, {9}}, utils.Batch([]int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, 3))
 }
@@ -57,6 +53,24 @@ func (s *TestRateSuit) TestFormatJson() {
 	err, res := utils.FormatJson(t)
 	s.NoError(err)
 	s.Equal(res["a"], "1")
+}
+func (s *TestRateSuit) TestWget() {
+	s.NoError(utils.Wget("www.baidu.com", "/Users/ian/go/src/goLibrary/utils/test1", "wget_logs", "1", 1))
+	//testFilePath := fmt.Sprintf("%s", path.PathADD("./", "test"))
+	//if utils.Exists(testFilePath) {
+	//	err := os.Remove(testFilePath)
+	//	if err != nil {
+	//		panic(err)
+	//	}
+	//}
+	//fileObj ,err:= os.OpenFile(testFilePath, os.O_RDWR|os.O_APPEND, 0777)
+	//if err != nil {
+	//	panic(err)
+	//}
+}
+
+func (s *TestRateSuit) Test() {
+
 }
 
 func TestRaSuite(t *testing.T) {

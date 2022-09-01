@@ -1,33 +1,20 @@
 package utils
 
 import (
-	"encoding/json"
-	"github.com/spf13/cast"
+	"github.com/cstockton/go-conv"
 	"strings"
 )
 
 func StringToArr(sql string) []string {
-	return cast.ToStringSlice(sql)
+	return strings.Split(sql, ",")
 }
 
 func ArrToString(sql []string) string {
 	return strings.Join(sql, ",")
 }
 
-func StringToMap(sql string) []string {
-	//v, _ := json.Marshal(sql)
-	return nil
-	//return cast.ToString(v)
-}
-
-func MapToString(sql []string) string {
-	return strings.Join(sql, ",")
-}
-
-func PayloadToString(payload interface{}) string {
-	res, err := json.Marshal(payload)
-	if err != nil {
-		return ""
-	}
-	return string(res)
+// 强制转换
+func AnyToString(any interface{}) string {
+	res, _ := conv.String(any)
+	return res
 }
