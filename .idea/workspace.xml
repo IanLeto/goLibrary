@@ -22,7 +22,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9938a792-5a54-4c17-8cdc-187ff3b312f7" name="Default Changelist" comment="" />
+    <list default="true" id="9938a792-5a54-4c17-8cdc-187ff3b312f7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prometheusDemo/promClient.go" beforeDir="false" afterPath="$PROJECT_DIR$/prometheusDemo/promClient.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prometheusDemo/promClient_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/prometheusDemo/promClient_test.go" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -88,7 +94,7 @@
       <recent name="$PROJECT_DIR$/gormDemo" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.BenchmarkRefectNew in goLibrary/utils">
+  <component name="RunManager" selected="Go Test.TestSimpleTest in goLibrary/prometheusDemo">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="goLibrary" />
       <working_directory value="$PROJECT_DIR$" />
@@ -136,17 +142,17 @@
       <pattern value="^\QTestSuite\E$/^\QTestConf\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestHelloWorld in goLibrary/utils" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestSimpleTest in goLibrary/prometheusDemo" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="goLibrary" />
-      <working_directory value="$PROJECT_DIR$/utils" />
-      <parameters value=" -testify.m ^TestHelloWorld$" />
+      <working_directory value="$PROJECT_DIR$/prometheusDemo" />
+      <parameters value=" -testify.m ^TestSimpleTest$" />
       <root_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <package value="goLibrary/utils" />
+      <package value="goLibrary/prometheusDemo" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
-      <pattern value="^\QTestRetryConfiguration\E$/^\QTestHelloWorld\E$" />
+      <pattern value="^\QTestPromClientSuite\E$/^\QTestSimpleTest\E$" />
       <method v="2" />
     </configuration>
     <configuration name="TestSuite in goLibrary/k8s" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -174,11 +180,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestSimpleTest in goLibrary/prometheusDemo" />
         <item itemvalue="Go Test.BenchmarkRefectNew in goLibrary/utils" />
         <item itemvalue="Go Test.BenchmarkStr in goLibrary/utils" />
         <item itemvalue="Go Test.TestConf in goLibrary/k8s" />
         <item itemvalue="Go Test.TestSuite in goLibrary/k8s" />
-        <item itemvalue="Go Test.TestHelloWorld in goLibrary/utils" />
       </list>
     </recent_temporary>
   </component>

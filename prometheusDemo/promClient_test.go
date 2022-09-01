@@ -23,7 +23,8 @@ func (s *TestPromClientSuit) TestSSTest() {
 }
 
 func (s *TestPromClientSuit) TestSimpleTest() {
-	prometheusDemo.HelloWorld()
+	//prometheusDemo.HelloWorld()
+	prometheusDemo.NewPromMetrics()
 	//prometheusDemo.PromQueryRequest("http://172.20.178.124:9091","up")
 	//var res = make(chan int)
 	//var x = make([]int, 0, 1000)

@@ -6,15 +6,20 @@ import (
 	"github.com/prometheus/client_golang/api"
 	"github.com/prometheus/client_golang/api/prometheus/v1"
 	"github.com/prometheus/client_golang/prometheus"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/prometheus/client_golang/prometheus/push"
 	"github.com/prometheus/common/model"
+	"github.com/sirupsen/logrus"
+	"github.com/spf13/cast"
+	"net/http"
 	"os"
+	"runtime"
 	"time"
 )
 
 func HelloWorld() {
 	client, err := api.NewClient(api.Config{
-		Address: "localhost:7111",
+		Address: "localhost:9091",
 	})
 	if err != nil {
 		fmt.Printf("Error creating client: %v\n", err)
@@ -58,5 +63,46 @@ func Pusher() {
 	if err := pusher.Push(); err != nil {
 		fmt.Println("Could not push completion time to Pushgateway:", err)
 	}
+
+}
+
+// NewPromMetrics 上报metric
+func NewPromMetrics() {
+	cpu := prometheus.NewGauge(prometheus.GaugeOpts{
+		Name: "ian_test_cpu",
+		Help: "hei",
+	})
+	failures := prometheus.NewCounterVec(prometheus.CounterOpts{
+		Name: "errors_total",
+		Help: "errors",
+	}, []string{"device"})
+
+	count := prometheus.NewCounter(prometheus.CounterOpts{
+		Name: "count",
+		Help: "x",
+	})
+
+	goroutines := prometheus.NewGauge(prometheus.GaugeOpts{
+		Namespace:   "",
+		Subsystem:   "",
+		Name:        "goroutine_nums",
+		Help:        "",
+		ConstLabels: nil,
+	})
+
+	// Metrics have to be registered to be exposed:
+	prometheus.MustRegister(cpu)
+	prometheus.MustRegister(failures, count, goroutines)
+
+	cpu.Set(65.3)
+	failures.With(prometheus.Labels{"device": "/dev/sda"}).Inc()
+	count.Inc()
+	goroutines.Set(cast.ToFloat64(runtime.NumGoroutine()))
+	http.Handle("/metrics", promhttp.Handler())
+	logrus.Fatal(http.ListenAndServe(":8080", nil))
+
+}
+
+func init() {
 
 }
