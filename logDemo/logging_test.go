@@ -1,8 +1,8 @@
-package logrusDemo_test
+package logDemo_test
 
 import (
 	"github.com/stretchr/testify/suite"
-	"goLibrary/logrusDemo"
+	"goLibrary/logDemo"
 	"testing"
 )
 
@@ -19,8 +19,8 @@ func (s *TestLogSuit) TestConf() {
 }
 
 func (s *TestLogSuit) TestHook() {
-	//logrusDemo.UseHook()
-	logrusDemo.UseDivLogFile()
+	//logDemo.UseHook()
+	logDemo.UseDivLogFile()
 }
 
 func TestSuite(t *testing.T) {
