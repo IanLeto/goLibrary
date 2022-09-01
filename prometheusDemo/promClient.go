@@ -95,6 +95,7 @@ func NewPromMetrics() {
 	failures.With(prometheus.Labels{"device": "/dev/sda"}).Inc()
 	count.Inc()
 
+	// import !!
 	goroutinesGauge1 := goroutines.WithLabelValues("1", "test", "golang")  // 给三个标签赋值
 	goroutinesGauge2 := goroutines.WithLabelValues("1", "debug", "golang") // 给三个标签赋值
 	goroutinesGauge1.Add(12)
