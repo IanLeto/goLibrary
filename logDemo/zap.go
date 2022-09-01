@@ -1,4 +1,4 @@
-package logrusDemo
+package logDemo
 
 import "go.uber.org/zap"
 
