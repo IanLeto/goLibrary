@@ -10,10 +10,8 @@ import (
 	"github.com/prometheus/client_golang/prometheus/push"
 	"github.com/prometheus/common/model"
 	"github.com/sirupsen/logrus"
-	"github.com/spf13/cast"
 	"net/http"
 	"os"
-	"runtime"
 	"time"
 )
 
@@ -82,13 +80,12 @@ func NewPromMetrics() {
 		Help: "x",
 	})
 
-	goroutines := prometheus.NewGauge(prometheus.GaugeOpts{
-		Namespace:   "",
-		Subsystem:   "",
+	goroutines := prometheus.NewGaugeVec(prometheus.GaugeOpts{
+
 		Name:        "goroutine_nums",
 		Help:        "",
 		ConstLabels: nil,
-	})
+	}, []string{"base", "version", "golang"}) // 三个标签
 
 	// Metrics have to be registered to be exposed:
 	prometheus.MustRegister(cpu)
@@ -97,7 +94,11 @@ func NewPromMetrics() {
 	cpu.Set(65.3)
 	failures.With(prometheus.Labels{"device": "/dev/sda"}).Inc()
 	count.Inc()
-	goroutines.Set(cast.ToFloat64(runtime.NumGoroutine()))
+
+	goroutinesGauge1 := goroutines.WithLabelValues("1", "test", "golang")  // 给三个标签赋值
+	goroutinesGauge2 := goroutines.WithLabelValues("1", "debug", "golang") // 给三个标签赋值
+	goroutinesGauge1.Add(12)
+	goroutinesGauge2.Set(8)
 	http.Handle("/metrics", promhttp.Handler())
 	logrus.Fatal(http.ListenAndServe(":8080", nil))
 
