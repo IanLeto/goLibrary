@@ -44,10 +44,6 @@ func HelloWorld() {
 	}
 }
 
-func ValueModel() {
-
-}
-
 func Pusher() {
 	reg := prometheus.NewRegistry()
 	records := prometheus.NewGaugeVec(prometheus.GaugeOpts{
@@ -56,7 +52,7 @@ func Pusher() {
 	}, []string{"ip"})
 	reg.MustRegister(records)
 	records.WithLabelValues("199.01").Set(float64(10))
-	pusher := push.New("http://172.20.178.124:9091", "inspect").Gatherer(reg)
+	pusher := push.New("http://124.222.48.125:9091", "inspect").Gatherer(reg)
 	fmt.Println("ready to push")
 	if err := pusher.Push(); err != nil {
 		fmt.Println("Could not push completion time to Pushgateway:", err)
