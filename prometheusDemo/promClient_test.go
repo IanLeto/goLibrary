@@ -19,7 +19,6 @@ func (s *TestPromClientSuit) TestPush() {
 }
 
 func (s *TestPromClientSuit) TestSSTest() {
-	prometheusDemo.ValueModel()
 }
 
 func (s *TestPromClientSuit) TestSimpleTest() {
