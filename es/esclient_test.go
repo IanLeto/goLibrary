@@ -6,8 +6,11 @@ import (
 	"fmt"
 	"github.com/globalsign/mgo"
 	"github.com/olivere/elastic/v7"
+	"github.com/spf13/cast"
 	"github.com/stretchr/testify/suite"
+	"math/rand"
 	"testing"
+	"time"
 )
 
 type TestESSuit struct {
@@ -22,6 +25,55 @@ func (s *TestESSuit) SetupTest() {
 	s.NoError(err)
 	s.client = client
 	s.ctx = context.Background()
+
+}
+
+type Sp struct {
+	ID      int
+	Name    string
+	BigText string
+	Script  string
+	AAA     string
+	BBB     string
+}
+
+// 长度为62
+var bytes []byte = []byte("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890")
+
+func init() {
+	// 保证每次生成的随机数不一样
+	rand.Seed(time.Now().UnixNano())
+}
+
+// 方法一
+func RandStr1(n int) string {
+	result := make([]byte, n)
+	for i := 0; i < n; i++ {
+		result[i] = bytes[rand.Int31()%62]
+	}
+	return string(result)
+}
+
+func (s *TestESSuit) TestCreateForBench() {
+	var ch = make(chan struct{}, 10)
+	for i := 0; i < 200000; i++ {
+		i := i
+		ch <- struct{}{}
+		go func(chan struct{}) {
+			_, _ = s.client.Index().Index("benchmark").BodyJson(&Sp{
+				ID:      i,
+				Name:    fmt.Sprintf("name%d", i),
+				BigText: RandStr1(40),
+				Script:  fmt.Sprintf("script%s", cast.ToString(i)),
+				AAA:     "",
+				BBB:     "",
+			}).Do(context.Background())
+			defer func() {
+				<-ch
+			}()
+		}(ch)
+
+	}
 
 }
 
@@ -82,6 +134,32 @@ func (s *TestESSuit) TestQuery2() {
 	res, err := s.client.Search().Index("script").Query(eq).Query(bq).Do(s.ctx)
 	s.NoError(err)
 	formatHit(res)
+}
+
+// base
+func BenchmarkQuery(b *testing.B) {
+	client, _ := elastic.NewClient(elastic.SetSniff(false), elastic.SetURL("http://124.222.48.125:9200/"))
+	bq := elastic.NewBoolQuery()
+	bq.Must(elastic.NewMatchQuery("ID", 100))
+	for i := 0; i < b.N; i++ {
+		_, _ = client.Search().Index("benchmark").Query(bq).Do(context.TODO())
+	}
+
+}
+
+// 多线程
+func BenchmarkQuery2(b *testing.B) {
+	var ch = make(chan struct{}, 10)
+	client, _ := elastic.NewClient(elastic.SetSniff(false), elastic.SetURL("http://124.222.48.125:9200/"))
+	bq := elastic.NewBoolQuery()
+	bq.Filter(elastic.NewMatchQuery("ID", 100))
+	for i := 0; i < b.N; i++ {
+		ch <- struct{}{}
+		go func(chan struct{}) {
+			_, _ = client.Search().Index("benchmark").Query(bq).Do(context.TODO())
+		}(ch)
+		<-ch
+	}
 }
 
 func TestES(t *testing.T) {
