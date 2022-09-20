@@ -8,6 +8,7 @@ import (
 	"github.com/olivere/elastic/v7"
 	"github.com/spf13/cast"
 	"github.com/stretchr/testify/suite"
+	"goLibrary/utils"
 	"math/rand"
 	"testing"
 	"time"
@@ -96,8 +97,8 @@ func (s *TestESSuit) TestSimpleTest() {
 }
 
 func formatHit(result *elastic.SearchResult) {
+	defer utils.TimeCost()()
 	for _, hit := range result.Hits.Hits {
-
 		r, _ := hit.Source.MarshalJSON()
 		fmt.Println(*hit.Score, ":", string(r))
 	}
@@ -113,6 +114,15 @@ func (s *TestESSuit) TestQuery() {
 	formatHit(res)
 }
 
+func (s *TestESSuit) TestDel() {
+	bq := elastic.NewBoolQuery()
+	bq.Must(elastic.NewTermQuery("Content", "echo"))
+	res, err := s.client.DeleteByQuery().Index("script").Query(bq).Do(s.ctx)
+	s.NoError(err)
+	fmt.Println(res.Total)
+	//formatHit(res)
+}
+
 // 基础查询，查询 uploader 为 ian 且有效的数据
 func (s *TestESSuit) TestQueryBase() {
 	bq := elastic.NewBoolQuery()
@@ -121,6 +131,7 @@ func (s *TestESSuit) TestQueryBase() {
 	res, err := s.client.Search().Index("script").Query(bq).Query(eq).Do(s.ctx)
 	s.NoError(err)
 	formatHit(res)
+
 }
 
 // 基础查询，查询 脚本中 有docker 相关的数据 且name中不含有test
@@ -132,6 +143,16 @@ func (s *TestESSuit) TestQuery2() {
 	eq := elastic.NewExistsQuery("Uploader")
 	// 注意顺序
 	res, err := s.client.Search().Index("script").Query(eq).Query(bq).Do(s.ctx)
+	s.NoError(err)
+	formatHit(res)
+}
+
+// 基础查询3，查询 脚本中 基础id
+func (s *TestESSuit) TestQuery3() {
+	bq := elastic.NewBoolQuery()
+	bq.Filter(elastic.NewTermQuery("_id", "Q1TzOYMBtW3yHWAAjPx3"))
+	// 注意顺序
+	res, err := s.client.Search().Index("script").Query(bq).Do(s.ctx)
 	s.NoError(err)
 	formatHit(res)
 }

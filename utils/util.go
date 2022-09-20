@@ -3,11 +3,13 @@ package utils
 import (
 	"encoding/json"
 	"errors"
+	"fmt"
 	"os"
 	"os/exec"
 	"path/filepath"
 	"runtime"
 	"strings"
+	"time"
 )
 
 var BaseTestFilePath = GetFilePath("utils/path")
@@ -80,7 +82,7 @@ var (
 	_, b, _, _ = runtime.Caller(0)
 
 	// Root folder of this project
-	Root = filepath.Join(filepath.Dir(b), "../..","goLibrary")
+	Root = filepath.Join(filepath.Dir(b), "../..", "goLibrary")
 )
 
 func IncludeString(s []string, e string) bool {
@@ -112,12 +114,28 @@ func Wget(url, target, logOut string, retry string, limit int) error {
 func TransferFilePath(fileName, filePath, url string) (path string) {
 	address := filepath.Join(url, filePath, fileName)
 	// 目标文件目录
-	dir := MakeFileName(fileName, 1, BaseTestFilePath,"","")
+	dir := MakeFileName(fileName, 1, BaseTestFilePath, "", "")
 	// 创建目标文件目录
 	_ = os.MkdirAll(dir, os.ModePerm)
 	// 目标文件绝对路径
-	abs := filepath.Join(dir,fileName)
+	abs := filepath.Join(dir, fileName)
 
-	_ = Wget(address, filepath.Join(dir,fileName),filepath.Join(dir, "wgetLog"), "1",1)
+	_ = Wget(address, filepath.Join(dir, fileName), filepath.Join(dir, "wgetLog"), "1", 1)
 	return abs
+}
+
+func trace2() {
+	pc := make([]uintptr, 15)
+	n := runtime.Callers(3, pc)
+	frames := runtime.CallersFrames(pc[:n])
+	frame, _ := frames.Next()
+	fmt.Printf("%s:%d %s\n", frame.File, frame.Line, frame.Function)
+}
+
+func TimeCost() func() {
+	start := time.Now()
+	return func() {
+		fmt.Println("cost", time.Since(start))
+		trace2()
+	}
 }
