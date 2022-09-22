@@ -52,7 +52,7 @@ func (s *TestPromClientSuit) TestQuery1() {
 	}
 }
 
-//62084223
+//3262639057
 func BenchmarkQuery(b *testing.B) {
 
 	cli, _ := api.NewClient(api.Config{
@@ -60,25 +60,38 @@ func BenchmarkQuery(b *testing.B) {
 	})
 	api := v1.NewAPI(cli)
 	for i := 0; i < b.N; i++ {
-		api.Query(context.TODO(), "(node_cpu_seconds_total)[1d]", time.Time{})
+		_, err := api.Query(context.TODO(), "go_gc_duration_seconds[14d]", time.Now())
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
 	}
 
 }
 
-//68915036 没快多少？
+//90230955
+//92693207
+//82626286
+//139188935
+//121219658
 func BenchmarkQueryRange(b *testing.B) {
 
 	cli, _ := api.NewClient(api.Config{
 		Address: "http://124.222.48.125:9090",
 	})
 	api := v1.NewAPI(cli)
-	start := time.Now().Add(time.Duration(-24) * time.Hour)
+	start := time.Now().Add(time.Duration(-24) * time.Hour * 7 * 2)
 
 	for i := 0; i < b.N; i++ {
-		api.QueryRange(context.TODO(), "(node_cpu_seconds_total)", v1.Range{
+		_, err := api.QueryRange(context.TODO(), "node_entropy_available_bits", v1.Range{
 			Start: start,
 			End:   time.Now(),
+			Step:  time.Duration(24) * time.Hour,
 		})
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
 	}
 }
 

@@ -22,7 +22,8 @@ type TestESSuit struct {
 }
 
 func (s *TestESSuit) SetupTest() {
-	client, err := elastic.NewClient(elastic.SetSniff(false), elastic.SetURL("http://124.222.48.125:9200/"))
+	//client, err := elastic.NewClient(elastic.SetSniff(false), elastic.SetURL("http://124.222.48.125:9200/"))
+	client, err := elastic.NewClient(elastic.SetSniff(false), elastic.SetURL("http://localhost:9200/"))
 	s.NoError(err)
 	s.client = client
 	s.ctx = context.Background()
