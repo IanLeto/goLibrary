@@ -19,7 +19,7 @@ type causeError interface {
 	Cause() error
 }
 
-// 以防万一的处理异常方式
+// RecoverError 以防万一的处理异常方式
 func RecoverError(fn func(error)) {
 	v := recover()
 	switch err := v.(type) {
