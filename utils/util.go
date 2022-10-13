@@ -8,6 +8,7 @@ import (
 	"os/exec"
 	"path/filepath"
 	"runtime"
+	"sort"
 	"strings"
 	"time"
 )
@@ -148,4 +149,21 @@ func RmEle(tar int, origin []int) []int {
 		}
 	}
 	return target
+}
+
+func Consisten(a []int) []int {
+
+	if len(a) < 3 {
+
+	}
+	res := make([]int, 0)
+	sort.Ints(a)
+	for i, j := 0, 1; i < len(a)-1; i, j = i+1, j+1 {
+		if x := a[j] - a[i]; x > 1 {
+			for z := 0; z < x-1; z++ {
+				res = append(res, i+1)
+			}
+		}
+	}
+	return res
 }

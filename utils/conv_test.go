@@ -124,22 +124,23 @@ func (s *ConvSuite) TestConvArr3() {
 		{ID: "1.3.21", PID: "1.23", Deep: 0},
 		{ID: "1.2.2.1", PID: "1.3.21", Deep: 0},
 		{ID: "1.2.2.1", PID: "1.3.21", Deep: 0},
+		{ID: "1.2.2.1.5.5", PID: "1.3.21.1", Deep: 0},
+		{ID: "1.2.2.1.4.6", PID: "1.3.21.2", Deep: 0},
 		{ID: "12222221", PID: "32221", Deep: 0},
 		{ID: "222", PID: "2", Deep: 0},
 	}
-	inde := make([]int, len(cases))
+	inde := make([]int, 0)
 	for i := range cases {
 		cases[i].Deep = len(strings.Split(cases[i].ID, "."))
 	}
 	// 遍历数组，将当前节点的子节点收集起来
-	var getRoot = func(id string, nodes []*Node) ([]*Node, []*Node) {
+	var getRoot = func(id string, nodes []*Node) []*Node {
 		var resR []*Node
-		var tar []*Node
 		for i := 0; i < len(nodes); i++ {
 			if nodes[i].PID == id {
 				resR = append(resR, nodes[i])
 				x := i
-				inde = append(inde, x) // 收集首尾互连的index
+				inde = append(inde, x) // 一对多，收集首尾互连的index
 			}
 		}
 
@@ -148,11 +149,11 @@ func (s *ConvSuite) TestConvArr3() {
 		//		resR = append(resR, nodes[index])
 		//	}
 		//}
-		return resR, tar
+		return resR
 	}
 	getTree = func(id string, insert *Node, oldNode []*Node, deep int) {
 		// 拿根节点
-		epRoot, tar := getRoot(id, oldNode)
+		epRoot := getRoot(id, oldNode)
 		// 如果该根节点是叶子节点 则return
 		if epRoot == nil {
 			return
@@ -161,16 +162,15 @@ func (s *ConvSuite) TestConvArr3() {
 		for _, node := range epRoot {
 			// insert 是当前节点，将收集到的子节点串联
 			insert.Child = append(insert.Child, node)
-			getTree(node.ID, node, tar, deep)
+			getTree(node.ID, node, cases, deep)
 		}
 	}
-	roots, root2 := getRoot("", cases)
+	roots := getRoot("", cases)
 	for _, root := range roots {
 		var deep = 1
-		getTree(root.ID, root, root2, deep)
+		getTree(root.ID, root, cases, deep)
 	}
 	toJs(roots)
-	toJs(root2)
 	fmt.Println(inde)
 }
 

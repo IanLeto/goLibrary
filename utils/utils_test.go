@@ -75,6 +75,12 @@ func (s *TestRateSuit) Test() {
 	s.Equal([]int{7, 8, 9, 10, 1, 3, 5, 6}, utils.RmEle(5, ori))
 
 }
+func (s *TestRateSuit) TestConsisten() {
+	//ori := []int{7, 8, 9, 10, 1, 3, 3, 5, 6}
+
+	s.Equal(utils.Consisten([]int{0, 7, 8, 9, 10, 1, 3, 5, 6}), []int{2, 4})
+
+}
 
 func TestRaSuite(t *testing.T) {
 	suite.Run(t, new(TestRateSuit))
