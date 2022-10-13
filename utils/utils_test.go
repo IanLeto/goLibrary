@@ -70,6 +70,9 @@ func (s *TestRateSuit) TestWget() {
 }
 
 func (s *TestRateSuit) Test() {
+	ori := []int{7, 8, 9, 10, 1, 3, 3, 5, 6}
+
+	s.Equal([]int{7, 8, 9, 10, 1, 3, 5, 6}, utils.RmEle(5, ori))
 
 }
 

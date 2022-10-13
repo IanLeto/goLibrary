@@ -139,3 +139,13 @@ func TimeCost() func() {
 		trace2()
 	}
 }
+
+func RmEle(tar int, origin []int) []int {
+	target := origin[:0]
+	for _, item := range origin {
+		if item != tar {
+			target = append(target, item)
+		}
+	}
+	return target
+}
