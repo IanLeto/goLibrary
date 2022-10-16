@@ -78,7 +78,8 @@ func (s *TestRateSuit) Test() {
 func (s *TestRateSuit) TestConsisten() {
 	//ori := []int{7, 8, 9, 10, 1, 3, 3, 5, 6}
 
-	s.Equal(utils.Consisten([]int{0, 7, 8, 9, 10, 1, 3, 5, 6}), []int{2, 4})
+	s.Equal([]int{}, utils.Consisten([]int{7, 8, 9, 10, 4, 5, 6}))
+	s.Equal([]int{11}, utils.Consisten([]int{7, 8, 9, 10, 4, 12, 5, 6}))
 
 }
 

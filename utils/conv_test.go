@@ -6,6 +6,7 @@ import (
 	"github.com/cstockton/go-conv"
 	"github.com/stretchr/testify/suite"
 	"goLibrary/utils"
+	"math"
 	"strings"
 
 	"testing"
@@ -39,19 +40,74 @@ type Node struct {
 	Child []*Node
 }
 
+func (s *ConvSuite) TestConn() {
+	cases := []*Node{
+		{ID: "2", PID: "", Deep: 0},
+		{ID: "1", PID: "", Deep: 0},
+		{ID: "1.22", PID: "1", Deep: 0},
+		{ID: "1.23", PID: "1", Deep: 0},
+		{ID: "1.21", PID: "1", Deep: 0},
+		{ID: "1.3.21", PID: "1.23", Deep: 0},
+		{ID: "1.2.2.1", PID: "1.3.21", Deep: 0},
+		{ID: "1.2.2.1", PID: "1.3.21", Deep: 0},
+		{ID: "1.2.2.1.5.5", PID: "1.3.21.1", Deep: 0},
+		{ID: "1.2.2.1.4.6", PID: "1.3.21.2", Deep: 0},
+		{ID: "12222221", PID: "32221", Deep: 0},
+		{ID: "222", PID: "2", Deep: 0},
+	}
+	res := func(s1, s2 string) bool {
+		v1, v2 := strings.Split(s1, "."), strings.Split(s2, ".")
+		if len(v1) == len(v2) {
+			return false
+		}
+		//默认v1 小
+		if len(v1) > len(v2) {
+			v1, v2 = v2, v1
+		}
+		for i, j := 0, 0; i < len(v1); i, j = i+1, j+1 {
+			if v1[i] != v2[i] {
+				return false
+			}
+		}
+
+		return true
+	}
+	s.Equal(true, res(cases[2].ID, cases[1].ID))
+	s.Equal(false, res(cases[3].ID, cases[4].ID))
+	s.Equal(true, res(cases[7].ID, cases[8].ID))
+	s.Equal(true, res(cases[7].ID, cases[9].ID))
+	var deep = map[int][]map[string]Node{}
+	for _, node := range cases {
+		length := len(strings.Split(node.ID, "."))
+		var n = node
+		deep[length] = append(deep[length], map[string]Node{node.ID: *n})
+	}
+	toJs(deep)
+
+	//for i := 1; i < 6; i++ {
+	//	for _, m := range deep[i] {
+	//		for _, node := range m {
+	//
+	//		}
+	//	}
+	//}
+
+}
 func (s *ConvSuite) TestConvArr2() {
 	memo := make(map[string]*Node)
 	cases := []*Node{
-		{ID: "321", PID: "23"},
-		{ID: "22", PID: "1"},
-		{ID: "23", PID: "1"},
-		{ID: "21", PID: "1"},
-		{ID: "1221", PID: "321"},
-		{ID: "1221", PID: "321"},
-		{ID: "12222221", PID: "32221"},
-		{ID: "222", PID: "2"},
-		{ID: "2", PID: "root"},
-		{ID: "1", PID: "root"},
+		{ID: "2", PID: "", Deep: 0},
+		{ID: "1", PID: "", Deep: 0},
+		{ID: "1.22", PID: "1", Deep: 0},
+		{ID: "1.23", PID: "1", Deep: 0},
+		{ID: "1.21", PID: "1", Deep: 0},
+		{ID: "1.3.21", PID: "1.23", Deep: 0},
+		{ID: "1.2.2.1", PID: "1.3.21", Deep: 0},
+		{ID: "1.2.2.1", PID: "1.3.21", Deep: 0},
+		{ID: "1.2.2.1.5.5", PID: "1.3.21.1", Deep: 0},
+		{ID: "1.2.2.1.4.6", PID: "1.3.21.2", Deep: 0},
+		{ID: "12222221", PID: "32221", Deep: 0},
+		{ID: "222", PID: "2", Deep: 0},
 	}
 	for _, v := range cases {
 		if _, ok := memo[v.ID]; ok {
@@ -69,7 +125,7 @@ func (s *ConvSuite) TestConvArr2() {
 			}
 		}
 	}
-	mmt(memo["root"].Child)
+	mmt(memo)
 }
 
 func (s *ConvSuite) TestConvArr() {
@@ -115,19 +171,19 @@ var getTree = func(id string, insert *Node, oldNode []*Node, deep int) {}
 
 func (s *ConvSuite) TestConvArr3() {
 	cases := []*Node{
-
-		{ID: "2", PID: "", Deep: 0},
-		{ID: "1", PID: "", Deep: 0},
+		//
+		//{ID: "2", PID: "", Deep: 0},
+		//{ID: "1", PID: "", Deep: 0},
 		{ID: "1.22", PID: "1", Deep: 0},
 		{ID: "1.23", PID: "1", Deep: 0},
 		{ID: "1.21", PID: "1", Deep: 0},
 		{ID: "1.3.21", PID: "1.23", Deep: 0},
-		{ID: "1.2.2.1", PID: "1.3.21", Deep: 0},
-		{ID: "1.2.2.1", PID: "1.3.21", Deep: 0},
 		{ID: "1.2.2.1.5.5", PID: "1.3.21.1", Deep: 0},
+		{ID: "1.2.2.1", PID: "1.3.21", Deep: 0},
 		{ID: "1.2.2.1.4.6", PID: "1.3.21.2", Deep: 0},
-		{ID: "12222221", PID: "32221", Deep: 0},
-		{ID: "222", PID: "2", Deep: 0},
+		{ID: "1.2.2.1", PID: "1.3.21", Deep: 0},
+		//{ID: "12222221", PID: "32221", Deep: 0},
+		//{ID: "222", PID: "2", Deep: 0},
 	}
 	inde := make([]int, 0)
 	for i := range cases {
@@ -166,12 +222,53 @@ func (s *ConvSuite) TestConvArr3() {
 		}
 	}
 	roots := getRoot("", cases)
+	// 没有头节点
+	if len(roots) == 0 {
+		// 寻找最小纵深的集合
+		var hash = map[int][]string{}
+		var min = len(strings.Split(cases[0].ID, "."))
+		for _, node := range cases {
+			var deep = len(strings.Split(node.ID, "."))
+			min = minInt(deep, min)
+			hash[deep] = append(hash[deep], node.PID) // 放入父id
+		}
+		for _, s2 := range RemoveRepeatedElement(hash[min]) {
+			roots = append(roots, getRoot(s2, cases)...)
+		}
+	}
+
 	for _, root := range roots {
 		var deep = 1
 		getTree(root.ID, root, cases, deep)
 	}
 	toJs(roots)
-	fmt.Println(inde)
+	//fmt.Println(inde)
+	fmt.Println(utils.Consisten(inde))
+}
+
+func minInt(x, y int) int {
+	if x > y {
+		return y
+	}
+	return x
+
+}
+
+func RemoveRepeatedElement(arr []string) (newArr []string) {
+	newArr = make([]string, 0)
+	for i := 0; i < len(arr); i++ {
+		repeat := false
+		for j := i + 1; j < len(arr); j++ {
+			if arr[i] == arr[j] {
+				repeat = true
+				break
+			}
+		}
+		if !repeat {
+			newArr = append(newArr, arr[i])
+		}
+	}
+	return
 }
 
 func mmt(v interface{}) {
@@ -181,6 +278,7 @@ func mmt(v interface{}) {
 
 // mysql 常用场合
 func (s *ConvSuite) TestConvANny() {
+	fmt.Println(math.Min(1.0, 9.2))
 	cases := []struct {
 		ori    interface{}
 		except interface{}
@@ -233,6 +331,8 @@ func BenchmarkHash(b *testing.B) {
 			}
 		}
 	}
+	//1 -> 1.1 -> 1.1.1 ->1.1.1.1 -> 1.1.1.2.3.4 -> 1.1.2.3.4.5
+	//a-> b -> c -> d ->e -> f
 }
 
 //func BenchmarkBack(b *testing.B) {
