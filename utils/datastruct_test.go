@@ -43,3 +43,12 @@ func BenchmarkList2(b *testing.B) {
 	}
 
 }
+
+func BenchmarkNewPool(b *testing.B) {
+	s := []string{"12", "ddsds", "xcc", "x2cc"}
+	xs := []string{"ddsds", "x2cc", "12", "xcc"}
+	for i := 0; i < b.N; i++ {
+		fetch1(s, xs)
+	}
+
+}

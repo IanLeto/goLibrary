@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-// 三种常见的不安全并发模型 注意，并发安全与否与是否为指针操作无关
+// UnsafeDemo 三种常见的不安全并发模型 注意，并发安全与否与是否为指针操作无关
 func UnsafeDemo() int {
 	unsafe := struct {
 		a   int

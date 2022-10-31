@@ -83,6 +83,15 @@ func (s *TestRateSuit) TestConsisten() {
 
 }
 
+// pool
+func (s *TestRateSuit) TestPool() {
+	//ori := []int{7, 8, 9, 10, 1, 3, 3, 5, 6}
+
+	s.Equal([]int{}, utils.Consisten([]int{7, 8, 9, 10, 4, 5, 6}))
+	s.Equal([]int{11}, utils.Consisten([]int{7, 8, 9, 10, 4, 12, 5, 6}))
+
+}
+
 func TestRaSuite(t *testing.T) {
 	suite.Run(t, new(TestRateSuit))
 }
