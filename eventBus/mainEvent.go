@@ -1,4 +1,4 @@
-package eventBusDemo
+package eventBus
 
 import "github.com/asaskevich/EventBus"
 

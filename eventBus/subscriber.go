@@ -1,4 +1,4 @@
-package eventBusDemo
+package eventBus
 
 import (
 	"fmt"
@@ -17,4 +17,3 @@ func ReceiveDemo() {
 
 	//err := GlobalEvent.SubscribeAsync("hh", func() {},false)
 }
-

@@ -1,4 +1,4 @@
-package eventBusDemo
+package eventBus
 
 import (
 	"fmt"
@@ -40,9 +40,4 @@ func (t *DemoTask) Run() {
 // step1 初始化一个周期任务
 func NewTask() *DemoTask {
 	return &DemoTask{}
-}
-
-// 如何使用
-func Usage() {
-
 }
