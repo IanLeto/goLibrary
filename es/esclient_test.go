@@ -105,6 +105,43 @@ func formatHit(result *elastic.SearchResult) {
 	}
 }
 
+func (s *TestESSuit) TestCreate() {
+	var mapping = `{
+		  "settings": {
+			"number_of_shards": 1,
+			"number_of_replicas": 0 
+		  },
+		  "mappings": {
+			
+			  "properties": {
+				"user": {
+				  "type": "keyword"
+				},
+				"message": {
+				  "type": "text",
+				  "store": true,
+				  "fielddata": true
+				},
+				"retweets": {
+				  "type": "long"
+				},
+				"tags": {
+				  "type": "keyword"
+				},
+				"location": {
+				  "type": "geo_point"
+				},
+				"suggest_field": {
+				  "type": "completion"
+				}
+			  
+			}
+		  }
+		}`
+	res, err := s.client.CreateIndex("twitter").Body(mapping).Do(s.ctx)
+	s.NoError(err)
+	fmt.Println(res.Index)
+}
 func (s *TestESSuit) TestQuery() {
 	bq := elastic.NewBoolQuery()
 	bq.MustNot(elastic.NewTermQuery("Uploader", ""))
@@ -121,7 +158,11 @@ func (s *TestESSuit) TestDel() {
 	res, err := s.client.DeleteByQuery().Index("script").Query(bq).Do(s.ctx)
 	s.NoError(err)
 	fmt.Println(res.Total)
-	//formatHit(res)
+}
+
+// es arr
+func (s *TestESSuit) TestArray() {
+
 }
 
 // 基础查询，查询 uploader 为 ian 且有效的数据
