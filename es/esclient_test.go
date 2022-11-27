@@ -27,7 +27,16 @@ func (s *TestESSuit) SetupTest() {
 	s.NoError(err)
 	s.client = client
 	s.ctx = context.Background()
+	t := time.NewTicker(1 * time.Second)
+	go func() {
+		for {
+			select {
+			case <-t.C:
 
+			}
+		}
+
+	}()
 }
 
 type Sp struct {
