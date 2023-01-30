@@ -27,6 +27,7 @@ demo utils
     - redis/ redis rediscli
     - grpc / grpcDemo
     - consul
+    - json 专项目
 #### 工具使用
     - tools 如何部署一个http server by docker:// tools/docker/simpleHttpserver
     - pprof 如何使用pprof 测试接口速度
