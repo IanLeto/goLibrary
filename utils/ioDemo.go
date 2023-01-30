@@ -4,10 +4,8 @@ import (
 	"bufio"
 	"fmt"
 	"github.com/cstockton/go-conv"
-	"goLibrary/utils/path"
 	"io"
 	"os"
-	"os/exec"
 	"path/filepath"
 	"strconv"
 	"time"
@@ -82,23 +80,20 @@ func IanIODemo(input, output string) {
 
 }
 
-// BoWrite 将cmd 的输出不断地写入file
-func BoWrite() {
-	c1 := exec.Command("/bin/bash", path.GetFilePath("goLibrary/utils/test.sh"))
-	outputFile, err := os.OpenFile(path.GetFilePath("goLibrary/utils/test.txt"), os.O_RDWR|os.O_APPEND, 0777)
-	if err != nil {
-		panic(err)
-	}
-	writer := bufio.NewWriterSize(outputFile, 10)
-	r, err := c1.StdoutPipe()
-	_, err = io.Copy(writer, r)
-	if err != nil {
-		panic(err)
-	}
-	c1.Start()
-	c1.Wait()
-	fmt.Println("done")
-}
+// KeepWrite 将cmd 的输出不断地写入file
+// 脚本文件，目标文件建
+//func KeepWrite(shellPath, filePath string) {
+//	cmd := exec.Command("/bin/bash", path.GetFilePath(shellPath))
+//	outputFile, err := os.OpenFile(path.GetFilePath(filePath), os.O_RDWR|os.O_APPEND, 0777)
+//	NoErr(err)
+//	writer := bufio.NewWriterSize(outputFile, 10)
+//	stdOut, err := cmd.CombinedOutput()
+//	_, err = io.Copy(writer, stdOut)
+//	NoErr(err)
+//	NoErr(cmd.Start())
+//	NoErr(cmd.Wait())
+//	fmt.Println("done")
+//}
 
 // 判断所给路径文件/文件夹是否存在
 
@@ -115,7 +110,7 @@ func Exists(path string) bool {
 	return true
 }
 
-// 拼接文件名称
+// FileUrlADD 拼接文件名称
 func FileUrlADD(path1, path2 string) string {
 	return filepath.Join(path1, path2)
 }
@@ -140,10 +135,8 @@ func CreatOrOver(path string) (*os.File, error) {
 // 写入文件
 func Write(content, fileName string) {
 	fileObj, err := os.OpenFile(fileName, os.O_WRONLY|os.O_CREATE, 0666)
-	if err != nil {
-		panic(err)
-	}
-	defer fileObj.Close()
+	NoErr(err)
+	defer NoErr(fileObj.Close())
 	writerObj := bufio.NewWriterSize(fileObj, 4096)
 	buf := []byte(content)
 	if _, err := writerObj.Write(buf); err != nil {

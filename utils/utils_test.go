@@ -1,6 +1,7 @@
 package utils_test
 
 import (
+	"encoding/json"
 	"fmt"
 	"github.com/stretchr/testify/suite"
 	"goLibrary/utils"
@@ -71,7 +72,6 @@ func (s *TestRateSuit) TestWget() {
 
 func (s *TestRateSuit) Test() {
 	ori := []int{7, 8, 9, 10, 1, 3, 3, 5, 6}
-
 	s.Equal([]int{7, 8, 9, 10, 1, 3, 5, 6}, utils.RmEle(5, ori))
 
 }
@@ -90,6 +90,44 @@ func (s *TestRateSuit) TestPool() {
 	s.Equal([]int{}, utils.Consisten([]int{7, 8, 9, 10, 4, 5, 6}))
 	s.Equal([]int{11}, utils.Consisten([]int{7, 8, 9, 10, 4, 12, 5, 6}))
 
+}
+
+func (s *TestRateSuit) TestConvStruct() {
+	type Label struct {
+		App     string `json:"app"`
+		K8sApp  string `json:"k8s_app"`
+		PodHash string `json:"pod_hash"`
+		Release string `json:"release"`
+	}
+	type ProjectLog struct {
+		Time                float64 `json:"time"`
+		Node                string  `json:"node"`
+		PodName             string  `json:"pod_name"`
+		ContainerID         string  `json:"container_id"`
+		LogData             string  `json:"log_data"`
+		LogType             string  `json:"log_type"`
+		LogLevel            string  `json:"log_level"`
+		FileName            string  `json:"file_name"` // stdout
+		DockerContainerName string  `json:"docker_container_name"`
+		K8sContainerName    string  `json:"k8s_container_name"`
+		RegionID            string  `json:"region_id"`
+		RegionName          string  `json:"region_name"`
+		ContainerID8        string  `json:"container_id8"`
+		RootAccount         string  `json:"root_account"`
+		NS                  string  `json:"ns"`
+		K8sLabel            Label   `json:"k8s_label"`
+		ApplicationName     string  `json:"application_name"`
+		ProjectName         string  `json:"project_name"`
+		Paths               string  `json:"paths"` // stdout
+		Source              string  `json:"source"`
+		Component           string  `json:"component"`
+		Provider            string  `json:"provider"`
+		Product             string  `json:"product"`
+		IndexPrefix         string  `json:"index_prefix"` // log-kubernetes
+	}
+	var formater = ProjectLog{}
+	res, _ := json.Marshal(formater)
+	fmt.Println(string(res))
 }
 
 func TestRaSuite(t *testing.T) {

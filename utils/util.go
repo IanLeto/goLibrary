@@ -167,3 +167,11 @@ func Consisten(a []int) []int {
 	}
 	return res
 }
+
+func JustSee(s interface{}) {
+	res, err := json.Marshal(s)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(string(res))
+}

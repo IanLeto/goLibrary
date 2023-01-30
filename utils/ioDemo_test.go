@@ -17,7 +17,7 @@ func (s *IOSuite) SetupTest() {
 
 // TestMarshal :
 func (s *IOSuite) TestHelloWorld() {
-	BoWrite()
+	//KeepWrite("goLibrary/utils/test.sh", "goLibrary/utils/test.txt")
 }
 
 // TestMarshal :

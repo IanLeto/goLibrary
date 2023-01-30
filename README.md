@@ -38,6 +38,7 @@ demo utils
     - 文件路径拼接 文件拼接路径 
     - wget
     - 增加反射benchmark 
+    - struct转json
 #### 代码模板
     -  /template/utestTemplate_test.go 代码单元测试模板
  
