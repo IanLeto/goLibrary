@@ -41,7 +41,11 @@ func (s *TestK8sSuit) TestConf() {
 
 func (s *TestK8sSuit) TestAPI() {
 	s.client.CoreV1()
-	s.client.CoreV1()
+
+}
+
+func (s *TestK8sSuit) TestRuntime() {
+
 }
 
 func (s *TestK8sSuit) TestHook() {
