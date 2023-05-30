@@ -41,6 +41,20 @@ func (s *JsonSuite) TestDeepEqual() {
 	s.Equal(true, reflect.DeepEqual(map2, map1))
 }
 
+func (s *JsonSuite) TestJsonReformat() {
+	jsonStr := `{
+     "k":"v",
+"key1": {
+"k":1}
+}`
+	var data map[string]interface{}
+	err := json.Unmarshal([]byte(jsonStr), &data)
+	s.NoError(err)
+	jsonByte, err := json.Marshal(data)
+	fmt.Println(string(jsonByte))
+
+}
+
 // 直接赋值
 // 需求 我有段json {"key":"value"} 要直接给到另一个json的某个字段下
 func (s *JsonSuite) TestStyax() {

@@ -13,10 +13,6 @@ type TesttimeUtils_testSuite struct {
 	timeDemo time.Time
 }
 
-func (s *TesttimeUtils_testSuite) TestFunc() {
-
-}
-
 func (s *TesttimeUtils_testSuite) SetupTest() {
 	s.timeDemo = time.Now()
 	// int64 to timestamp
