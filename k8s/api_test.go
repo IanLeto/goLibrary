@@ -39,6 +39,7 @@ func (s *TestK8sSuit) TestConf() {
 	}
 }
 
+// 分页
 func (s *TestK8sSuit) TestAPI() {
 	s.client.CoreV1()
 

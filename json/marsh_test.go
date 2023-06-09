@@ -16,6 +16,29 @@ func (s *JsonSuite) SetupTest() {
 }
 
 // TestMarshal :
+func (s *JsonSuite) TestUmarshal() {
+
+	type NodeEntity struct {
+		ID       string        `json:"_id"`
+		Name     string        `json:"name"`
+		Content  string        `json:"content"`
+		Depend   string        `json:"depend"`
+		Father   string        `json:"father"`
+		FatherID string        `json:"father_id"`
+		Done     bool          `json:"done"`
+		Status   string        `json:"status"`
+		Note     string        `json:"note"`
+		Tags     []string      `json:"tags"`
+		Children []string      `json:"children"`
+		Nodes    []*NodeEntity `json:"nodes"`
+	}
+	var x = NodeEntity{}
+	res, err := json.Marshal(x)
+	s.NoError(err)
+	fmt.Println(string(res))
+}
+
+// TestMarshal :
 func (s *JsonSuite) TestHelloWorld() {
 	data := []byte("{\"key\":\"word\",\"context\": {\"k1\":\"v1\"}}")
 	var a = struct {
