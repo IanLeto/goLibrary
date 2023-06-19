@@ -2,12 +2,10 @@ package k8s
 
 import (
 	"context"
-	"goLibrary/utils"
 	"io"
 	v12 "k8s.io/api/core/v1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"strings"
-	"time"
 )
 
 type LogLineID struct {
@@ -16,10 +14,10 @@ type LogLineID struct {
 }
 
 type Selection struct {
-	ReferencePoint  LogLineID `json:"reference_point"`
-	OffsetFrom      int       `json:"offset_from"`
-	OffsetTo        int       `json:"offset_to"`
-	LogFilePosition string    `json:"log_file_position"`
+	ReferencePoint  *LogLineID `json:"reference_point"`
+	OffsetFrom      int        `json:"offset_from"`
+	OffsetTo        int        `json:"offset_to"`
+	LogFilePosition string     `json:"log_file_position"`
 }
 
 type LogLine struct {
@@ -27,37 +25,30 @@ type LogLine struct {
 	Content   string `json:"content"`
 }
 
-func NewLog() {
+func Pages(offsetFrom, offsetTo int, times string, referenceLineNum int, logFilePosition string) (Selection, []LogLine, string, string, bool) {
+
 	var (
-		conn       = NewK8sConn(context.TODO(), nil)
-		byteLimit  = int64(50000)
-		lineLimit  = int64(50)
-		writer     = strings.Builder{}
-		logs       []LogLine
-		offsetFrom = 200000
-		offsetTo   = 20000
+		conn      = NewK8sConn(context.TODO(), nil)
+		byteLimit = int64(50000)
+		lineLimit = int64(100)
+		writer    = strings.Builder{}
+		logs      []LogLine
 	)
 	logSelector := &Selection{
-		ReferencePoint: LogLineID{
-			LogTimestamp: time.Now().Format(time.RFC3339), // 前端传入
-			LineNum:      -1,                              // 前端传入
+		ReferencePoint: &LogLineID{
+			LogTimestamp: times,
+			LineNum:      referenceLineNum,
 		},
-		OffsetFrom:      10,
-		OffsetTo:        100,
-		LogFilePosition: "",
+		OffsetFrom:      offsetFrom,
+		OffsetTo:        offsetTo,
+		LogFilePosition: logFilePosition,
 	}
-	pods, err := conn.CoreV1().Pods("default").Get(context.TODO(), "logie-7ccc6d4ccb-928dv", v1.GetOptions{})
-	if err != nil {
-		panic(err)
-	}
+	pods, _ := conn.CoreV1().Pods("default").Get(context.TODO(), "logie-7ccc6d4ccb-928dv", v1.GetOptions{})
 	container := pods.Spec.Containers[0]
 	logOptions := &v12.PodLogOptions{
 		Container:  container.Name,
-		Follow:     false,
-		Previous:   false,
 		Timestamps: true,
 	}
-
 	if logSelector.LogFilePosition == "beginning" {
 		logOptions.LimitBytes = &byteLimit
 	} else {
@@ -69,7 +60,6 @@ func NewLog() {
 		panic(err)
 	}
 	_, err = io.Copy(&writer, reader)
-	utils.NoErr(err)
 	for _, line := range strings.Split(writer.String(), "\n") {
 		if line == "" {
 			continue
@@ -82,41 +72,86 @@ func NewLog() {
 			})
 		}
 	}
-	var point int
-	var (
-		index int //
-
-	)
-	index = len(logs) - 1 // 先考虑从最后一行开始
-
-	var (
-		referenceLineIndex = index //
-		requestedNumItems  = logSelector.OffsetFrom - logSelector.OffsetTo
-	)
-	if referenceLineIndex == -1 || requestedNumItems <= 0 || len(logs) == 0 {
-		return
+	requestedNumItems := logSelector.OffsetTo - logSelector.OffsetFrom
+	referenceIndex := 0
+	if logSelector.ReferencePoint == nil || logSelector.ReferencePoint.LogTimestamp == "newset" {
+		referenceIndex = len(logs) - 1
+	} else if logSelector.ReferencePoint.LogTimestamp == "oldest" {
+		referenceIndex = 0
+	}
+	logTimestamp := logSelector.ReferencePoint.LogTimestamp
+	lineMatched := 0
+	matchingStartAt := 0
+	for idx := range logs {
+		if logs[idx].Timestamp == logTimestamp {
+			if lineMatched == 0 {
+				matchingStartAt = idx
+			}
+			lineMatched += 1
+		} else if lineMatched > 0 {
+			break
+		}
+	}
+	var logLineId = logSelector.ReferencePoint
+	var offset int
+	if logLineId.LineNum < 0 {
+		offset = lineMatched + logLineId.LineNum
+	} else {
+		offset = logLineId.LineNum - 1
 	}
 
-	fromIndex := referenceLineIndex + logSelector.OffsetFrom
-	toIndex := referenceLineIndex + logSelector.OffsetTo
+	if offset >= 0 && offset < lineMatched {
+		referenceIndex = matchingStartAt + offset
+	} else {
+		referenceIndex = -1
+	}
+	fromIndex := referenceIndex + logSelector.OffsetFrom
+	toIndex := referenceIndex + logSelector.OffsetTo
 	lastPage := false
-	// 要查询的日志行数大于实际日志行数
 	if requestedNumItems > len(logs) {
-		fromIndex = 0       // 从第一行开始
-		toIndex = len(logs) // 到最后一行结束
-		lastPage = true     // 最后一页
-	} else if toIndex > len(logs) { // 首次查询，toindex 一定会 > len(logs)
-		fromIndex -= toIndex - len(logs) // 首次查询，fromIndex 一定会 远远 > len(logs)
-		toIndex = len(logs)              // 最大行数
-		lastPage = false                 // 不是最后一页
+		fromIndex = 0
+		toIndex = len(logs)
+		lastPage = true
+	} else if toIndex > len(logs) {
+		fromIndex -= toIndex - len(logs)
+		toIndex = len(logs)
+		lastPage = logSelector.LogFilePosition == "beginning"
 	} else if fromIndex < 0 {
-		// todo
+		toIndex += -fromIndex
+		fromIndex = 0
+		lastPage = logSelector.LogFilePosition == "end"
+	}
+	logTimestamp2 := logs[len(logs)/2].Timestamp
+	var step int
+	if logs[len(logs)-1].Timestamp == logTimestamp2 {
+		step = 1
+	} else {
+		step = -1
+	}
+	offset2 := step
+	for ; len(logs)/2 >= 0 && len(logs)/2-offset2 < len(logs); offset2 += step {
+		if !(logs[len(logs)-offset2].Timestamp == logTimestamp2) {
+			break
+		}
+	}
+	newSelection := Selection{
+		ReferencePoint: &LogLineID{
+			LogTimestamp: logTimestamp2,
+			LineNum:      offset2,
+		},
+		OffsetFrom:      fromIndex - len(logs)/2,
+		OffsetTo:        toIndex - len(logs)/2,
+		LogFilePosition: logSelector.LogFilePosition,
 	}
 
-	newSelection := Selection{
-		ReferencePoint:  LogLineID{},
-		OffsetFrom:      0,
-		OffsetTo:        0,
-		LogFilePosition: "",
-	}
+	var (
+		logLines3     = logs[fromIndex:toIndex]
+		fromData3     = logs[fromIndex].Timestamp
+		toDate3       = logs[toIndex-1].Timestamp
+		logSelection3 = newSelection
+		lastPage3     = lastPage
+	)
+
+	return logSelection3, logLines3, fromData3, toDate3, lastPage3
+
 }
