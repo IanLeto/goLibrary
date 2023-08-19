@@ -1,4 +1,4 @@
-package httpClientDemo
+package httpClient
 
 import (
 	"github.com/dghubble/sling"

@@ -11,19 +11,6 @@ import (
 	"time"
 )
 
-//OpenFile函数flag参数
-//打开方式	说明
-//O_RDONLY	只读方式打开
-//O_WRONLY	只写方式打开
-//O_RDWR	读写方式打开
-//O_APPEND	追加方式打开
-//O_CREATE	不存在，则创建
-//O_EXCL	如果文件存在，且标定了O_CREATE的话，则产生一个错误
-//O_TRUNG	如果文件存在，且它成功地被打开为只写或读写方式，将其长度裁剪唯一。（覆盖）
-//O_NOCTTY	如果文件名代表一个终端设备，则不把该设备设为调用进程的控制设备
-//O_NONBLOCK	如果文件名代表一个FIFO,或一个块设备，字符设备文件，则在以后的文件及I/O操作中置为非阻塞模式。
-//O_SYNC	当进行一系列写操作时，每次都要等待上次的I/O操作完成再进行。
-
 // 如何在go 中使用IO
 func IanIODemo(input, output string) {
 	// 初始化输入输出
@@ -70,7 +57,7 @@ func IanIODemo(input, output string) {
 			panic(err)
 		}
 		defer func() {
-			CheckPanicError(outputFile.Close())
+			//CheckPanicError(outputFile.Close())
 		}()
 	}
 
@@ -152,6 +139,7 @@ func ReadFile() {
 		fmt.Println("文件打开失败：", err)
 		return
 	}
+	//os.OpenFile()
 	defer fileObj.Close()
 	//一个文件对象本身是实现了io.Reader的 使用bufio.NewReader去初始化一个Reader对象，存在buffer中的，读取一次就会被清空
 	reader := bufio.NewReader(fileObj)

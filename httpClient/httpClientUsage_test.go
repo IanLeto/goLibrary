@@ -1,21 +1,21 @@
-package httpClientDemo_test
+package httpClient_test
 
 import (
 	"github.com/stretchr/testify/suite"
-	"goLibrary/httpClientDemo"
+	"goLibrary/httpClient"
 	"testing"
 )
 
 // HttpClientSuite :
 type HttpClientSuite struct {
 	suite.Suite
-	c *httpClientDemo.LocalhostClient
+	c *httpClient.LocalhostClient
 }
 
 func (s *HttpClientSuite) SetupTest() {
 	// 直接初始化
 	// 我们的base 路径已经写好了
-	s.c = httpClientDemo.NewLocalhostClient(nil)
+	s.c = httpClient.NewLocalhostClient(nil)
 }
 
 // TestMarshal :

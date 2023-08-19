@@ -30,6 +30,10 @@ func (s *TesttimeUtils_testSuite) SetupTest() {
 	s.Equal(msec, tmsec.UnixNano()/1e6)
 	s.Equal(nsec, tnsec.UnixNano())
 
+	// 标准时间转时间戳
+	t, _ := time.Parse(time.RFC3339, "2020-02-26T15:13:10+08:00")
+	logrus.Info(1, t.Unix())
+
 	// sec timestamp to msec timestamp
 	logrus.Info(sec * int64(time.Millisecond))
 	logrus.Info(sec * int64(time.Nanosecond))
@@ -73,6 +77,9 @@ func (s *TesttimeUtils_testSuite) SetupTest() {
 	logrus.Info(time.Unix(0, 1583982851473426).Format(time.RFC3339Nano))
 	logrus.Info(time.Unix(0, 1583983973246439000).Format(time.RFC3339Nano))
 	logrus.Info(time.Unix(0, 1583983973246439).Format(time.RFC3339))
+}
+func (s *TesttimeUtils_testSuite) TestGetLog() {
+
 }
 
 func TestTimeDemoSuite(t *testing.T) {

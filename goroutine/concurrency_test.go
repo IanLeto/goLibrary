@@ -1,14 +1,15 @@
 package goroutine_test
 
 import (
+	"context"
 	"fmt"
 	"github.com/stretchr/testify/suite"
 	"sync"
 	"testing"
+	"time"
 )
 
 // bench
-
 type ConcurrencySuite struct {
 	suite.Suite
 }
@@ -134,6 +135,29 @@ func BenchmarkMemoryPool2(b *testing.B) {
 	}
 }
 
+func (s *ConcurrencySuite) TestDraw() {
+
+}
+
+func (s *ConcurrencySuite) TestCan() {
+	ctx, cancel := context.WithCancel(context.Background())
+	ctx2, cancel2 := context.WithTimeout(ctx, 2*time.Second)
+loop:
+	for {
+		select {
+		case <-ctx2.Done():
+			fmt.Println(1)
+			break loop
+		default:
+			go func() {
+				time.Sleep(10 * time.Second)
+			}()
+
+		}
+	}
+	cancel2()
+	cancel()
+}
 func TestConcurrency(t *testing.T) {
 	suite.Run(t, new(ConcurrencySuite))
 }

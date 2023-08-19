@@ -1,4 +1,4 @@
-package httpClientDemo
+package httpClient
 
 func NewHttpClient() {
 }
