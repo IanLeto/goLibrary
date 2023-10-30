@@ -4,6 +4,9 @@ import (
 	"context"
 	"flag"
 	"goLibrary/config"
+	_ "k8s.io/api/core/v1"                     // k8s 核心组件的包,也就是传统组件
+	_ "k8s.io/apimachinery/pkg/apis/meta/v1"   // k8s 容器管理,在线商店之类的包
+	_ "k8s.io/apimachinery/pkg/runtime/schema" // k8s
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/tools/clientcmd"
 	"log"

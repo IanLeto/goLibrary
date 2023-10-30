@@ -6,7 +6,7 @@ type APIClient interface {
 	GetHelloWorld()
 }
 
-// sling 存路经用
+// XXClient sling 存路经用
 type XXClient struct {
 	commonArgs *CommonArgs
 	agent      *sling.Sling

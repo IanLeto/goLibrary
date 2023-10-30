@@ -32,7 +32,8 @@ func (s *IOSuite) SetupTest() {
 }
 
 // TestMarshal :
-func (s *IOSuite) TestHelloWorld() {
+func (s *IOSuite) TestIOReader() {
+
 }
 
 func TestViperConfiguration(t *testing.T) {

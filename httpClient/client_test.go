@@ -5,6 +5,9 @@ import (
 	"github.com/stretchr/testify/suite"
 	"io/ioutil"
 	"net/http"
+	"net/http/httputil"
+	url2 "net/url"
+	"os"
 	"testing"
 	"time"
 )
@@ -17,6 +20,18 @@ type HttpClient2 struct {
 
 func (s *HttpClient2) SetupTest() {
 	s.client = http.Client{}
+}
+
+// http: 任何类型的请求都可以发送的http 示例
+func (s *HttpClient2) TestAnyClient() {
+	request, err := http.NewRequest("GET", "http://example.com", nil)
+	s.NoError(err)
+	resp, err := s.client.Do(request)
+	s.NoError(err)
+	s.Equal(200, resp.StatusCode)
+	res, err := httputil.DumpResponse(resp, true)
+	fmt.Printf("%s\n", res)
+
 }
 
 // TestMarshal : 测试有http keepalive 的速度 30s
@@ -65,6 +80,24 @@ func (s *HttpClient2) TestNoKeepAlive() {
 	}
 	elapsed := time.Since(start)
 	fmt.Println("Total time:", elapsed)
+}
+
+// http: 设置代理
+func (s *HttpClient2) TestProxy() {
+	proxyUrl, err := url2.Parse("localhost:8080")
+	s.NoError(err)
+	s.client.Transport = &http.Transport{
+		Proxy: http.ProxyURL(proxyUrl),
+	}
+	resp, err := s.client.Get("http://example.com")
+	s.NoError(err)
+	s.Equal(200, resp.StatusCode)
+	s.NoError(resp.Write(os.Stdout))
+}
+
+// http:
+func (s *HttpClient2) TestRedirect() {
+
 }
 
 // TestHttpClient :

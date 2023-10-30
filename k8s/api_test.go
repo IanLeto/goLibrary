@@ -3,6 +3,7 @@ package k8s
 import (
 	"context"
 	"github.com/stretchr/testify/suite"
+	v12 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes/scheme"
 
 	v1 "k8s.io/api/core/v1"
@@ -19,10 +20,6 @@ type TestK8sSuit struct {
 func (s *TestK8sSuit) SetupTest() {
 	s.ctx = context.TODO()
 	s.client = NewK8sConn(context.TODO(), nil)
-}
-
-func (s *TestK8sSuit) TestConf() {
-
 }
 
 // 分页
@@ -42,11 +39,20 @@ func (s *TestK8sSuit) TestAPI() {
 	_, err := s.client.CoreV1().RESTClient().Get().Namespace("default").Resource("pods").
 		SubResource("log").VersionedParams(logOptions, scheme.ParameterCodec).Stream(s.ctx)
 	s.NoError(err)
-
 }
-
-func (s *TestK8sSuit) TestHook() {
-
+func (s *TestK8sSuit) TestPodList() {
+	_, err := s.client.CoreV1().Pods("default").List(s.ctx, v12.ListOptions{
+		LabelSelector:        "",
+		FieldSelector:        "",
+		Watch:                false,
+		AllowWatchBookmarks:  false,
+		ResourceVersion:      "",
+		ResourceVersionMatch: "",
+		TimeoutSeconds:       nil,
+		Limit:                0,
+		Continue:             "",
+	})
+	s.NoError(err)
 }
 
 func TestSuite(t *testing.T) {
