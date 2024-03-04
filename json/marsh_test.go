@@ -67,9 +67,9 @@ func (s *JsonSuite) TestDeepEqual() {
 func (s *JsonSuite) TestJsonReformat() {
 	jsonStr := `{
      "k":"v",
-"key1": {
-"k":1}
-}`
+		"key1": {
+		"k":1}
+		}`
 	var data map[string]interface{}
 	err := json.Unmarshal([]byte(jsonStr), &data)
 	s.NoError(err)
