@@ -12,6 +12,23 @@ type JsonSuite struct {
 	suite.Suite
 }
 
+var testData = `
+{
+"id":1
+"output": "{"gid":"","uid":""}\r\n{"gid":"","uid":""}"
+}
+`
+
+type Input struct {
+	Cid    string `json:"cid"`
+	Output []byte
+}
+type Data struct {
+	Name   string `json:"name"`
+	Trace  string `json:"trace"`
+	Number int    `json:"number"`
+}
+
 func (s *JsonSuite) SetupTest() {
 }
 
