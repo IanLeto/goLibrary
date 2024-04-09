@@ -1,6 +1,8 @@
 package io_test
 
 import (
+	"bufio"
+	"fmt"
 	"github.com/stretchr/testify/suite"
 	"os"
 
@@ -33,7 +35,14 @@ func (s *IOSuite) SetupTest() {
 
 // TestMarshal :
 func (s *IOSuite) TestIOReader() {
-
+	file, err := os.OpenFile("x.log", os.O_RDWR|os.O_CREATE|os.O_APPEND, 0777)
+	s.NoError(err)
+	defer func() { _ = file.Close() }()
+	reader := bufio.NewReader(file)
+	buf := make([]byte, 1024)
+	//读取 Reader 对象中的内容到 []byte 类型的 buf 中
+	_, err = reader.Read(buf)
+	fmt.Println(string(buf))
 }
 
 func TestViperConfiguration(t *testing.T) {
