@@ -14,7 +14,7 @@ type JsonSuite struct {
 }
 
 var testData = `
-{
+{:
 "id":1
 "output": "{"gid":"","uid":""}\r\n{"gid":"","uid":""}"
 }
@@ -133,7 +133,7 @@ func (s *JsonSuite) TestFormat() {
 	)
 	input := `{
 		"id":1,
-		"output": "{\"gid\":\"\",\"cid\":\"\"}\r\n{\"gid\":\"1\",\"cid\":\"\"}"
+		"output": "{\"gid\":\"\",\"cid\":\"\"}\r\n{\"gid\":\"1\",\"cid\":\"\tjj\"}"
 	}`
 	err := json.Unmarshal([]byte(input), &data)
 	s.NoError(err)
@@ -150,6 +150,106 @@ func (s *JsonSuite) TestFormat() {
 	fmt.Println(string(x))
 
 }
+func (s *JsonSuite) TestFormat2() {
+	var (
+		err error
+	)
+	type Data struct {
+		Gid string `json:"gid"`
+		Cid string `json:"cid"`
+	}
+
+	// InputData 表示输入的JSON结构
+	// JSON 字符串包含制表符 \t
+	jsonStr := "{\"gid\": \"1\",\"cid\": \"\tjj\"}"
+	s.NoError(err)
+	var data Data
+	err = json.Unmarshal([]byte(jsonStr), &data)
+	if err != nil {
+		fmt.Println("Error unmarshaling JSON:", err)
+		return
+	}
+
+	fmt.Printf("Parsed Data:\nGid: %s\nCid: %s\n", data.Gid, data.Cid)
+
+	// 将数据重新编码为 JSON，以查看输出
+	encodedJSON, err := json.MarshalIndent(data, "", "  ")
+	if err != nil {
+		fmt.Println("Error marshaling JSON:", err)
+		return
+	}
+
+	fmt.Println("Encoded JSON:")
+	fmt.Println(string(encodedJSON))
+
+}
+
+// escapeJSONString 函数转义 JSON 字符串中无法反序列化的字符（例如制表符、换行符、回车符）
+func escapeJSONString(jsonStr string) (string, error) {
+	// 使用 strings.Replacer 转义特殊字符
+	replacer := strings.NewReplacer(
+		"\t", "\\t",
+		"\n", "\\n",
+		"\r", "\\r",
+		"\"", "\\\"",
+		"\\", "\\\\",
+	)
+	escapedStr := replacer.Replace(jsonStr)
+
+	// 尝试反序列化以验证 JSON 字符串的有效性
+	var js map[string]interface{}
+	err := json.Unmarshal([]byte(escapedStr), &js)
+	if err != nil {
+		return "", fmt.Errorf("invalid JSON string after escaping: %w", err)
+	}
+
+	return escapedStr, nil
+}
+func (s *JsonSuite) TestFormat3() {
+	var (
+		err error
+	)
+	type Data struct {
+		Gid string `json:"gid"`
+		Cid string `json:"cid"`
+	}
+
+	// InputData 表示输入的JSON结构
+	// JSON 字符串包含制表符 \t
+	jsonStr := "{\"gid\": \"1\",\"cid\": \"\tjj\"}"
+	s.NoError(err)
+	var data Data
+	jsonStr, err = escapeJSONString(jsonStr)
+	s.NoError(err)
+	err = json.Unmarshal([]byte(jsonStr), &data)
+	if err != nil {
+		fmt.Println("Error unmarshaling JSON:", err)
+		return
+	}
+
+	fmt.Printf("Parsed Data:\nGid: %s\nCid: %s\n", data.Gid, data.Cid)
+
+	// 将数据重新编码为 JSON，以查看输出
+	encodedJSON, err := json.MarshalIndent(data, "", "  ")
+	if err != nil {
+		fmt.Println("Error marshaling JSON:", err)
+		return
+	}
+
+	fmt.Println("Encoded JSON:")
+	fmt.Println(string(encodedJSON))
+
+}
+
+//func main() {
+//	jsonStr := "{\"gid\": \"1\",\"cid\": \"\tj\nj\r\"}"
+//	escapedStr, err := escapeJSONString(jsonStr)
+//	if err != nil {
+//		fmt.Println("Error:", err)
+//	} else {
+//		fmt.Println("Escaped JSON String:", escapedStr)
+//	}
+//}
 
 func TestJSONConfiguration(t *testing.T) {
 	suite.Run(t, new(JsonSuite))
