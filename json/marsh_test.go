@@ -191,8 +191,8 @@ func escapeJSONString(jsonStr string) (string, error) {
 		"\t", "\\t",
 		"\n", "\\n",
 		"\r", "\\r",
-		"\"", "\\\"",
-		"\\", "\\\\",
+		//"\"", "\\\"",
+		//"\\", "\\\\",
 	)
 	escapedStr := replacer.Replace(jsonStr)
 
@@ -206,9 +206,8 @@ func escapeJSONString(jsonStr string) (string, error) {
 	return escapedStr, nil
 }
 func (s *JsonSuite) TestFormat3() {
-	var (
-		err error
-	)
+	var err error
+
 	type Data struct {
 		Gid string `json:"gid"`
 		Cid string `json:"cid"`
@@ -218,9 +217,11 @@ func (s *JsonSuite) TestFormat3() {
 	// JSON 字符串包含制表符 \t
 	jsonStr := "{\"gid\": \"1\",\"cid\": \"\tjj\"}"
 	s.NoError(err)
+
 	var data Data
 	jsonStr, err = escapeJSONString(jsonStr)
 	s.NoError(err)
+
 	err = json.Unmarshal([]byte(jsonStr), &data)
 	if err != nil {
 		fmt.Println("Error unmarshaling JSON:", err)
@@ -238,7 +239,6 @@ func (s *JsonSuite) TestFormat3() {
 
 	fmt.Println("Encoded JSON:")
 	fmt.Println(string(encodedJSON))
-
 }
 
 //func main() {
