@@ -213,9 +213,7 @@ func (s *JsonSuite) TestFormat3() {
 		Cid string `json:"cid"`
 	}
 
-	// InputData 表示输入的JSON结构
-	// JSON 字符串包含制表符 \t
-	jsonStr := "{\"gid\": \"1\",\"cid\": \"\tjj\"}"
+	jsonStr := "{\"gid\": \"\r1\",\"cid\": \"\tjj\"}"
 	s.NoError(err)
 
 	var data Data
@@ -223,22 +221,30 @@ func (s *JsonSuite) TestFormat3() {
 	s.NoError(err)
 
 	err = json.Unmarshal([]byte(jsonStr), &data)
-	if err != nil {
-		fmt.Println("Error unmarshaling JSON:", err)
-		return
+	s.NoError(err)
+
+	s.Equal("\r1", data.Gid)
+	s.Equal("\tjj", data.Cid)
+}
+
+func (s *JsonSuite) TestFormat4() {
+	var err error
+
+	type Data struct {
+		Gid string `json:"gid"`
+		Cid string `json:"cid"`
 	}
 
-	fmt.Printf("Parsed Data:\nGid: %s\nCid: %s\n", data.Gid, data.Cid)
+	jsonStr := "{\"gid\": \"\r1\",\"cid\": \"\tjj\"}"
+	s.NoError(err)
 
-	// 将数据重新编码为 JSON，以查看输出
-	encodedJSON, err := json.MarshalIndent(data, "", "  ")
-	if err != nil {
-		fmt.Println("Error marshaling JSON:", err)
-		return
-	}
+	var data Data
 
-	fmt.Println("Encoded JSON:")
-	fmt.Println(string(encodedJSON))
+	err = json.Unmarshal([]byte(jsonStr), &data)
+	s.NoError(err)
+
+	s.Equal("\r1", data.Gid)
+	s.Equal("\tjj", data.Cid)
 }
 
 //func main() {
