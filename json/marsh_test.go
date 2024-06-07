@@ -191,8 +191,6 @@ func escapeJSONString(jsonStr string) (string, error) {
 		"\t", "\\t",
 		"\n", "\\n",
 		"\r", "\\r",
-		//"\"", "\\\"",
-		//"\\", "\\\\",
 	)
 	escapedStr := replacer.Replace(jsonStr)
 
@@ -245,6 +243,31 @@ func (s *JsonSuite) TestFormat4() {
 
 	s.Equal("\r1", data.Gid)
 	s.Equal("\tjj", data.Cid)
+}
+func (s *JsonSuite) TestFormat5() {
+	type Data struct {
+		Gid string `json:"gid"`
+		Cid string `json:"cid"`
+	}
+	cases := []struct {
+		ori    interface{}
+		except interface{}
+	}{
+		{ori: "{\"gid\": \"\r1\",\"cid\": \"jj\"}", except: "jj"},
+		{ori: "{\"gid\": \"\r1\",\"cid\": \"\tjj\"}", except: "\tjj"},
+		{ori: "{\"gid\": \"\r1\",\"cid\": \"\t\tjj\"}", except: "\t\tjj"},
+		{ori: "{\"gid\": \"\r1\",\"cid\": \"\n\tjj\"}", except: "\n\tjj"},
+		{ori: "{\"gid\": \"\r1\",\"cid\": \"\n\\tjj\"}", except: "\n\tjj"},
+		{ori: "{\"gid\": \"\r1\",\"cid\": \"\n\\\tjj\"}", except: "\n\\tjj"},
+	}
+	var data Data
+	for _, i := range cases {
+		str, _ := i.ori.(string)
+		v, err := escapeJSONString(str)
+		err = json.Unmarshal([]byte(v), &data)
+		s.NoError(err)
+		s.Equal(i.except, data.Cid)
+	}
 }
 
 //func main() {

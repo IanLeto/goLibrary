@@ -1,12 +1,144 @@
 {
-  "items": [
+  "Name": "/",
+  "SpanContext": {
+    "TraceID": "3dbaa706c85570fe6a92daaac5bf2779",
+    "SpanID": "bb8f4124f2b8ab31",
+    "TraceFlags": "01",
+    "TraceState": "",
+    "Remote": false
+  },
+  "Parent": {
+    "TraceID": "00000000000000000000000000000000",
+    "SpanID": "0000000000000000",
+    "TraceFlags": "00",
+    "TraceState": "",
+    "Remote": false
+  },
+  "SpanKind": 2,
+  "StartTime": "2024-06-07T15:16:45.256423+08:00",
+  "EndTime": "2024-06-07T15:16:45.256631971+08:00",
+  "Attributes": [
     {
-      "gid": "",
-      "cid": ""
-    },{
-      "gid": "1",
-      "cid": ""
+      "Key": "http.method",
+      "Value": {
+        "Type": "STRING",
+        "Value": "GET"
+      }
+    },
+    {
+      "Key": "http.scheme",
+      "Value": {
+        "Type": "STRING",
+        "Value": "http"
+      }
+    },
+    {
+      "Key": "net.host.name",
+      "Value": {
+        "Type": "STRING",
+        "Value": "localhost"
+      }
+    },
+    {
+      "Key": "net.host.port",
+      "Value": {
+        "Type": "INT64",
+        "Value": 8080
+      }
+    },
+    {
+      "Key": "net.sock.peer.addr",
+      "Value": {
+        "Type": "STRING",
+        "Value": "::1"
+      }
+    },
+    {
+      "Key": "net.sock.peer.port",
+      "Value": {
+        "Type": "INT64",
+        "Value": 64952
+      }
+    },
+    {
+      "Key": "user_agent.original",
+      "Value": {
+        "Type": "STRING",
+        "Value": "curl/7.64.1"
+      }
+    },
+    {
+      "Key": "http.target",
+      "Value": {
+        "Type": "STRING",
+        "Value": "/rolldice"
+      }
+    },
+    {
+      "Key": "net.protocol.version",
+      "Value": {
+        "Type": "STRING",
+        "Value": "1.1"
+      }
+    },
+    {
+      "Key": "http.response_content_length",
+      "Value": {
+        "Type": "INT64",
+        "Value": 45
+      }
+    },
+    {
+      "Key": "http.status_code",
+      "Value": {
+        "Type": "INT64",
+        "Value": 301
+      }
     }
-  ]
-
+  ],
+  "Events": null,
+  "Links": null,
+  "Status": {
+    "Code": "Unset",
+    "Description": ""
+  },
+  "DroppedAttributes": 0,
+  "DroppedEvents": 0,
+  "DroppedLinks": 0,
+  "ChildSpanCount": 0,
+  "Resource": [
+    {
+      "Key": "service.name",
+      "Value": {
+        "Type": "STRING",
+        "Value": "unknown_service:___go_build_goLibrary_openTempl"
+      }
+    },
+    {
+      "Key": "telemetry.sdk.language",
+      "Value": {
+        "Type": "STRING",
+        "Value": "go"
+      }
+    },
+    {
+      "Key": "telemetry.sdk.name",
+      "Value": {
+        "Type": "STRING",
+        "Value": "opentelemetry"
+      }
+    },
+    {
+      "Key": "telemetry.sdk.version",
+      "Value": {
+        "Type": "STRING",
+        "Value": "1.27.0"
+      }
+    }
+  ],
+  "InstrumentationLibrary": {
+    "Name": "go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp",
+    "Version": "0.52.0",
+    "SchemaURL": ""
+  }
 }
