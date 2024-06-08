@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/stretchr/testify/suite"
 	"reflect"
+	"strconv"
 	"strings"
 	"testing"
 )
@@ -95,6 +96,49 @@ func (s *JsonSuite) TestStyax() {
 // 测试带转义字符的json
 // TestJSONConfiguration :
 func (s *JsonSuite) TestFormat() {
+	// InputData 表示输入的JSON结构
+	type InputData struct {
+		ID     int    `json:"id"`
+		Output string `json:"output"`
+	}
+
+	// OutputItem 表示输出数组中的JSON对象结构
+	type OutputItem struct {
+		Gid string `json:"gid"`
+		Cid string `json:"cid"`
+	}
+
+	// ExpectedOutput 表示期望的输出JSON结构
+	type ExpectedOutput struct {
+		Items []OutputItem `json:"items"`
+	}
+	var (
+		data = InputData{}
+	)
+	input := `{
+    "id": 1,
+    "output": "{\"gid\":\"\",\"cid\":\"\"}\r\n{\"gid\":\"1\",\"cid\":\"\"}\r\n{\"gid\":\"\"\"\",\"cid\":\"\"}\r\n{\"gid\":\"\\\",\"cid\":\"\"}\r\n{\"gid\":\"
+\",\"cid\":\"\"}\r\n{\"gid\":\"	\",\"cid\":\"\"}\r\n{\"gid\":\"\",\"cid\":\"\"}"
+}`
+	err := json.Unmarshal([]byte(input), &data)
+	s.NoError(err)
+	fmt.Println(data.Output)
+	items := strings.Split(data.Output, "\r\n")
+	var output ExpectedOutput
+	for _, item := range items {
+		var outputItem OutputItem
+		strconv.Quote(item)
+		err := json.Unmarshal([]byte(item), &outputItem)
+		s.NoError(err)
+		output.Items = append(output.Items, outputItem)
+	}
+	x, _ := json.MarshalIndent(output, "", "  ")
+	fmt.Println(string(x))
+
+}
+
+// TestJSONConfiguration :
+func (s *JsonSuite) TestQuestJson() {
 	// InputData 表示输入的JSON结构
 	type InputData struct {
 		ID     int    `json:"id"`
