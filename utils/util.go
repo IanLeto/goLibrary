@@ -4,6 +4,8 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"net/http"
+	"net/url"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -104,7 +106,6 @@ func GetFilePath(path string) string {
 	return filepath.Join(Root, path)
 }
 
-//
 func Wget(url, target, logOut string, retry string, limit int) error {
 	cmd := exec.Command("wget", "-O", target, "-o", logOut, "-t", retry, url)
 	return cmd.Start()
@@ -174,4 +175,32 @@ func JustSee(s interface{}) {
 		panic(err)
 	}
 	fmt.Println(string(res))
+}
+
+func ParseAndBuildHTTPRequest(input string) (*http.Request, error) {
+	parsedURL, err := url.Parse(input)
+	if err != nil || !parsedURL.IsAbs() {
+		// 如果不是合法的URL或者没有协议，返回错误
+		return nil, fmt.Errorf("invalid URL: %s", input)
+	}
+
+	protocol := parsedURL.Scheme
+	domain := parsedURL.Host
+	path := parsedURL.Path
+
+	// 如果路径为空，设置为根路径
+	if path == "" {
+		path = "/"
+	}
+
+	// 构建新的URL
+	newURL := fmt.Sprintf("%s://%s%s", protocol, domain, path)
+
+	// 创建HTTP请求
+	req, err := http.NewRequest("GET", newURL, nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
 }

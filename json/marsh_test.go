@@ -259,6 +259,7 @@ func (s *JsonSuite) TestFormat5() {
 		{ori: "{\"gid\": \"\r1\",\"cid\": \"\n\tjj\"}", except: "\n\tjj"},
 		{ori: "{\"gid\": \"\r1\",\"cid\": \"\n\\tjj\"}", except: "\n\tjj"},
 		{ori: "{\"gid\": \"\r1\",\"cid\": \"\n\\\tjj\"}", except: "\n\\tjj"},
+		{ori: "{\"gid\": \"\r1\",\"cid\": \"in_11\"}", except: "in_11"},
 	}
 	var data Data
 	for _, i := range cases {

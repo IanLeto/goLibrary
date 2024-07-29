@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"github.com/stretchr/testify/suite"
 	"goLibrary/utils"
+	"net/http"
+	"net/url"
 	"testing"
 )
 
@@ -90,6 +92,45 @@ func (s *TestRateSuit) TestPool() {
 	s.Equal([]int{}, utils.Consisten([]int{7, 8, 9, 10, 4, 5, 6}))
 	s.Equal([]int{11}, utils.Consisten([]int{7, 8, 9, 10, 4, 12, 5, 6}))
 
+}
+
+func (s *TestRateSuit) TestURL() {
+	cases := []struct {
+		ori    string
+		except *http.Request
+		err    bool
+	}{
+		{
+			ori:    "http://example.com/test",
+			except: &http.Request{Method: "GET", URL: &url.URL{Scheme: "http", Host: "example.com", Path: "/test"}},
+			err:    false,
+		},
+		{
+			ori:    "https://www.example.org/api/v1",
+			except: &http.Request{Method: "GET", URL: &url.URL{Scheme: "https", Host: "www.example.org", Path: "/api/v1"}},
+			err:    false,
+		},
+		//{
+		//	ori:    "invalid_url",
+		//	except: nil,
+		//	err:    true,
+		//},
+		{
+			ori:    "ftp://example.com/resource",
+			except: &http.Request{Method: "GET", URL: &url.URL{Scheme: "ftp", Host: "example.com", Path: "/resource"}},
+			err:    false,
+		},
+	}
+
+	for _, c := range cases {
+		req, err := utils.ParseAndBuildHTTPRequest(c.ori)
+
+		s.NoError(err)
+		s.Equal(c.except.Method, req.Method)
+		s.Equal(c.except.URL.Scheme, req.URL.Scheme)
+		s.Equal(c.except.URL.Host, req.URL.Host)
+		s.Equal(c.except.URL.Path, req.URL.Path)
+	}
 }
 
 func (s *TestRateSuit) TestConvStruct() {

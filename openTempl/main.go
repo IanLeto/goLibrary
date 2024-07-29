@@ -2,6 +2,9 @@ package main
 
 import (
 	"context"
+	"go.opentelemetry.io/otel/attribute"
+	"go.opentelemetry.io/otel/sdk/resource"
+	semconv "go.opentelemetry.io/otel/semconv/v1.17.0"
 	"io"
 	"math/rand"
 	"net"
@@ -95,8 +98,11 @@ func newTraceProvider() (*trace.TracerProvider, error) {
 
 	traceProvider := trace.NewTracerProvider(
 		trace.WithBatcher(traceExporter,
-			// Default is 5s. Set to 1s for demonstrative purposes.
 			trace.WithBatchTimeout(time.Second)),
+		trace.WithResource(resource.NewWithAttributes(semconv.SchemaURL,
+			semconv.ServiceNameKey.String("ian"),
+			attribute.String("test", "xxx"),
+		)),
 	)
 	return traceProvider, nil
 }
