@@ -78,6 +78,48 @@ func (s *JsonSuite) TestJsonReformat() {
 	fmt.Println(string(jsonByte))
 
 }
+func (s *JsonSuite) TestJsonReformat2() {
+
+	type User struct {
+		ID    int             `json:"id"`
+		Name  string          `json:"name"`
+		Query json.RawMessage `json:"query"`
+	}
+
+	jsonStr := []byte(`{
+	   "id": 123,
+	   "name": "John Doe",
+	   "query": "SELECT * FROM users WHERE name LIKE 'John%' AND age > 18 AND city = ''&~~\t"C&"SAL^&(*&''New York' AND interests LIKE '%sports%' AND interests LIKE '%music&arts%'"
+	}`)
+	//jsonStr := []byte(`{
+	//    "id": 123,
+	//    "name": "John Doe",
+	//    "query": "SELECT * FROM users WHERE name LIKE 'John%' AND age > 18 AND city = ''&~~\t\"C&\"SAL^&(*&''New York' AND interests LIKE '%sports%' AND interests LIKE '%music&arts%'"
+	//}`)
+	//var ConfigCompatibleWithStandardLibrary = jsoniter1.Config{
+	//	IndentionStep:                 0,
+	//	MarshalFloatWith6Digits:       true,
+	//	EscapeHTML:                    true,
+	//	SortMapKeys:                   true,
+	//	UseNumber:                     true,
+	//	DisallowUnknownFields:         true,
+	//	TagKey:                        "",
+	//	OnlyTaggedField:               false,
+	//	ValidateJsonRawMessage:        false,
+	//	ObjectFieldMustBeSimpleString: true,
+	//	CaseSensitive:                 true,
+	//}.Froze()
+
+	var user User
+	//err := ConfigCompatibleWithStandardLibrary.Unmarshal([]byte(jsonStr), &user)
+	//s.NoError(err)
+	s.NoError(json.Unmarshal([]byte(jsonStr), &user))
+	//if err != nil {
+	//	fmt.Println("Error:", err)
+	//	return
+	//}
+
+}
 
 // 直接赋值
 // 需求 我有段json {"key":"value"} 要直接给到另一个json的某个字段下
