@@ -244,6 +244,30 @@ func (s *JsonSuite) TestFormat4() {
 	s.Equal("\r1", data.Gid)
 	s.Equal("\tjj", data.Cid)
 }
+
+func (s *JsonSuite) TestFormat6() {
+	type User struct {
+		ID   int    `json:"id"`
+		Name string `json:"name"`
+		//Query any    `json:"query"`
+	}
+
+	jsonStr := `{
+        "id": 123,
+        "name": "John Doe",
+        "query": "SELECT * FROM users WHERE name LIKE 'John%' AND age > 18 AND city = '\t%2C"%c"\"""New York' AND interests LIKE '%sports%' AND interests LIKE '%music&arts%'''%c''"
+    }`
+
+	var user User
+	err := json.Unmarshal([]byte(jsonStr), &user)
+	if err != nil {
+
+		fmt.Println("Error:", err)
+		return
+	}
+
+	//fmt.Printf("ID: %d\nName: %s\nQuery: %s\n", user.ID, user.Name, user.Query)
+}
 func (s *JsonSuite) TestFormat5() {
 	type Data struct {
 		Gid string `json:"gid"`
