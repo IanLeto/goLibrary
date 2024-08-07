@@ -257,7 +257,7 @@ func (s *JsonSuite) TestFormat6() {
         "name": "John Doe",
         "query": "SELECT * FROM users WHERE name LIKE 'John%' AND age > 18 AND city = '\t%2C"%c"\"""New York' AND interests LIKE '%sports%' AND interests LIKE '%music&arts%'''%c''"
     }`
-
+	fmt.Println(jsonStr)
 	var user User
 	err := json.Unmarshal([]byte(jsonStr), &user)
 	if err != nil {
