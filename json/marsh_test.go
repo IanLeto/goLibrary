@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/stretchr/testify/suite"
 	"reflect"
+	"strconv"
 	"strings"
 	"testing"
 )
@@ -94,6 +95,48 @@ func (s *JsonSuite) TestJsonReformat() {
 	fmt.Println(string(jsonByte))
 
 }
+func (s *JsonSuite) TestJsonReformat2() {
+
+	type User struct {
+		ID    int             `json:"id"`
+		Name  string          `json:"name"`
+		Query json.RawMessage `json:"query"`
+	}
+
+	jsonStr := []byte(`{
+	   "id": 123,
+	   "name": "John Doe",
+	   "query": "SELECT * FROM users WHERE name LIKE 'John%' AND age > 18 AND city = ''&~~\t"C&"SAL^&(*&''New York' AND interests LIKE '%sports%' AND interests LIKE '%music&arts%'"
+	}`)
+	//jsonStr := []byte(`{
+	//    "id": 123,
+	//    "name": "John Doe",
+	//    "query": "SELECT * FROM users WHERE name LIKE 'John%' AND age > 18 AND city = ''&~~\t\"C&\"SAL^&(*&''New York' AND interests LIKE '%sports%' AND interests LIKE '%music&arts%'"
+	//}`)
+	//var ConfigCompatibleWithStandardLibrary = jsoniter1.Config{
+	//	IndentionStep:                 0,
+	//	MarshalFloatWith6Digits:       true,
+	//	EscapeHTML:                    true,
+	//	SortMapKeys:                   true,
+	//	UseNumber:                     true,
+	//	DisallowUnknownFields:         true,
+	//	TagKey:                        "",
+	//	OnlyTaggedField:               false,
+	//	ValidateJsonRawMessage:        false,
+	//	ObjectFieldMustBeSimpleString: true,
+	//	CaseSensitive:                 true,
+	//}.Froze()
+
+	var user User
+	//err := ConfigCompatibleWithStandardLibrary.Unmarshal([]byte(jsonStr), &user)
+	//s.NoError(err)
+	s.NoError(json.Unmarshal([]byte(jsonStr), &user))
+	//if err != nil {
+	//	fmt.Println("Error:", err)
+	//	return
+	//}
+
+}
 
 // 直接赋值
 // 需求 我有段json {"key":"value"} 要直接给到另一个json的某个字段下
@@ -112,6 +155,49 @@ func (s *JsonSuite) TestStyax() {
 // 测试带转义字符的json
 // TestJSONConfiguration :
 func (s *JsonSuite) TestFormat() {
+	// InputData 表示输入的JSON结构
+	type InputData struct {
+		ID     int    `json:"id"`
+		Output string `json:"output"`
+	}
+
+	// OutputItem 表示输出数组中的JSON对象结构
+	type OutputItem struct {
+		Gid string `json:"gid"`
+		Cid string `json:"cid"`
+	}
+
+	// ExpectedOutput 表示期望的输出JSON结构
+	type ExpectedOutput struct {
+		Items []OutputItem `json:"items"`
+	}
+	var (
+		data = InputData{}
+	)
+	input := `{
+    "id": 1,
+    "output": "{\"gid\":\"\",\"cid\":\"\"}\r\n{\"gid\":\"1\",\"cid\":\"\"}\r\n{\"gid\":\"\"\"\",\"cid\":\"\"}\r\n{\"gid\":\"\\\",\"cid\":\"\"}\r\n{\"gid\":\"
+\",\"cid\":\"\"}\r\n{\"gid\":\"	\",\"cid\":\"\"}\r\n{\"gid\":\"\",\"cid\":\"\"}"
+}`
+	err := json.Unmarshal([]byte(input), &data)
+	s.NoError(err)
+	fmt.Println(data.Output)
+	items := strings.Split(data.Output, "\r\n")
+	var output ExpectedOutput
+	for _, item := range items {
+		var outputItem OutputItem
+		strconv.Quote(item)
+		err := json.Unmarshal([]byte(item), &outputItem)
+		s.NoError(err)
+		output.Items = append(output.Items, outputItem)
+	}
+	x, _ := json.MarshalIndent(output, "", "  ")
+	fmt.Println(string(x))
+
+}
+
+// TestJSONConfiguration :
+func (s *JsonSuite) TestQuestJson() {
 	// InputData 表示输入的JSON结构
 	type InputData struct {
 		ID     int    `json:"id"`
