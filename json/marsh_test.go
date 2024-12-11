@@ -1,7 +1,9 @@
 package json_test
 
 import (
+	"bytes"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"github.com/stretchr/testify/suite"
 	"reflect"
@@ -381,15 +383,79 @@ func (s *JsonSuite) TestFormat5() {
 	}
 }
 
-//func main() {
-//	jsonStr := "{\"gid\": \"1\",\"cid\": \"\tj\nj\r\"}"
-//	escapedStr, err := escapeJSONString(jsonStr)
-//	if err != nil {
-//		fmt.Println("Error:", err)
-//	} else {
-//		fmt.Println("Escaped JSON String:", escapedStr)
+//	func main() {
+//		jsonStr := "{\"gid\": \"1\",\"cid\": \"\tj\nj\r\"}"
+//		escapedStr, err := escapeJSONString(jsonStr)
+//		if err != nil {
+//			fmt.Println("Error:", err)
+//		} else {
+//			fmt.Println("Escaped JSON String:", escapedStr)
+//		}
 //	}
-//}
+type KeyStatus string
+
+const (
+	KeyNotExist         KeyStatus = "key does not exist"
+	KeyExist            KeyStatus = "key exists"
+	KeyExistAndIsString KeyStatus = "key exists and is a string"
+	KeyExistAndNotEmpty KeyStatus = "key exists and is a non-empty string"
+	KeyExistAndIsNull   KeyStatus = "key exists and is null"
+)
+
+// CheckKeyStatus 检查 key 的状态并返回结果
+func CheckKeyStatus(key string, data []byte) (KeyStatus, error) {
+	// 格式化 JSON 数据
+	var formatted bytes.Buffer
+	if err := json.Indent(&formatted, data, "", "  "); err != nil {
+		return "", errors.New("invalid JSON format: " + err.Error())
+	}
+
+	// 解析 JSON 数据为 map
+	var parsedData map[string]interface{}
+	if err := json.Unmarshal(data, &parsedData); err != nil {
+		return "", errors.New("failed to parse JSON: " + err.Error())
+	}
+
+	// 判断 key 的状态
+	value, exists := parsedData[key]
+	if !exists {
+		return KeyNotExist, nil
+	}
+
+	switch v := value.(type) {
+	case nil:
+		return KeyExistAndIsNull, nil
+	case string:
+		if v == "" {
+			return KeyExistAndIsString, nil
+		}
+		return KeyExistAndNotEmpty, nil
+	default:
+		return KeyExist, nil
+	}
+}
+
+func (s *JsonSuite) TestFormat7() {
+	// 示例 JSON 数据
+	data := []byte(`{
+		"name": "John",
+		"age": null,
+		"empty_string": "",
+		"address": "123 Lane",
+		"skills": ["Go", "Python"]
+	}`)
+
+	// 检查不同 key 的状态
+	keys := []string{"name", "age", "empty_string", "address", "skills", "nonexistent_key"}
+	for _, key := range keys {
+		status, err := CheckKeyStatus(key, data)
+		if err != nil {
+			fmt.Printf("Error checking key '%s': %v\n", key, err)
+			continue
+		}
+		fmt.Printf("Key '%s': %s\n", key, status)
+	}
+}
 
 func TestJSONConfiguration(t *testing.T) {
 	suite.Run(t, new(JsonSuite))
