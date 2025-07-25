@@ -130,13 +130,7 @@ func (s *JsonSuite) TestJsonReformat2() {
 	//}.Froze()
 
 	var user User
-	//err := ConfigCompatibleWithStandardLibrary.Unmarshal([]byte(jsonStr), &user)
-	//s.NoError(err)
 	s.NoError(json.Unmarshal([]byte(jsonStr), &user))
-	//if err != nil {
-	//	fmt.Println("Error:", err)
-	//	return
-	//}
 
 }
 
